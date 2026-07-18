@@ -18,5 +18,14 @@ venv/
 # Local scratch data
 data/_scratch/
 
+# Local expanded dots stores / rehydrated caches.
+# Canonical ontology maps live in ontologies/*.json (committed); the per-document
+# store that ValueRepository expands them into is regenerable, so keep it local.
+data/
+.stores/
+
+# Generated graph visualizations (regenerable from the data)
+*.html
+
 # pyvis-generated vendored assets (written next to output HTML)
 lib/
