@@ -168,3 +168,29 @@ python examples/dataset_htc.py
 The script prints the member table and aggregates, then persists the whole set
 as one document and reloads it (verifying the round-trip). Output goes to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_dataset/` folder in your temp dir).
+
+## `empirical_functions.py` — contextualizing data with `Function`
+
+Shows the `Sample` / `Function` layer: a measured quantity captured together
+with the *conditions* it was measured at, single- or multi-dimensional.
+
+- **1-D** — molar heat capacity `cp(T)` of N₂ tabulated at several temperatures.
+  Demonstrates linear `interpolate` / `__call__` between measured points (no
+  extrapolation).
+- **3-D** — catalytic reaction `conversion(T, P, space_velocity)`. Demonstrates
+  `nearest(...)` and `at(...)` lookups, and `section(P=..., SV=...)` to project
+  conversion vs. temperature at fixed conditions.
+
+Each input coordinate and output is a ground-truthed `Scalar`/`Range` (a couple
+of the conversion points are `Range`s to model measurement uncertainty), the
+schema (variable names + per-axis units + output unit) is enforced on every
+sample, and each whole function persists as a **single** `dots` document.
+
+### Run
+
+```bash
+python examples/empirical_functions.py
+```
+
+Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_functions/` folder in
+your temp dir).

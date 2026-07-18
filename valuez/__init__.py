@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from . import reasoning, units
 from .dataset import DataSet
+from .function import Function, Sample
 from .metaphysics import Individual, Instantiation, MetaphysicalEntity, Universal
 from .qualitative import (
     Boolean,
@@ -40,6 +41,8 @@ __all__ = [
     "Scalar",
     "Range",
     "DataSet",
+    "Sample",
+    "Function",
     "Number",
     "Qualitative",
     "Categorical",
