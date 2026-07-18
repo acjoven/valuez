@@ -142,6 +142,33 @@ values through `dots`, and writes an interactive **ontology graph**
 (`ontology_graph.html`) with asserted plus inferred edges. Output goes to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_metaphysics/` folder in your temp dir).
 
+## `dataset_htc.py` — collecting related quantitative values with `DataSet`
+
+Shows when a `DataSet` is worth more than a plain list. It compiles the
+natural-convection heat-transfer coefficient of air, `h`, as reported across
+several sources — a mix of `Scalar` and `Range` values in `W/(m²·K)`.
+
+- **Invariants**: every member must be quantitative and share the one unit, so
+  the aggregates are meaningful.
+- **Interval-aware aggregates**: `min` / `max` / `mean` / `span` and
+  `envelope()` treat a `Range` by its bounds; the envelope is the overall band
+  across all sources.
+- **Collection-level provenance**: the `DataSet` is itself a ground-truthed
+  `Value`, so the whole compilation persists as a **single** `dots` document
+  (one id) instead of loose rows.
+- **List ergonomics**: iterate/index/slice it like a list; `grounded()` and
+  `by_kind()` return sub-`DataSet`s.
+
+### Run
+
+```bash
+python examples/dataset_htc.py
+```
+
+The script prints the member table and aggregates, then persists the whole set
+as one document and reloads it (verifying the round-trip). Output goes to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_dataset/` folder in your temp dir).
+
 ## `empirical_functions.py` — contextualizing data with `Function`
 
 Shows the `Sample` / `Function` layer: a measured quantity captured together
