@@ -6,6 +6,8 @@ cover over the functional ``dots`` storage/query/graph layer.
 """
 from __future__ import annotations
 
+from . import units
+from .units import pint_available, to_quantity, unit_registry, validate_unit
 from .values import Number, Range, Reference, Scalar, Value
 
 __version__ = "0.1.0"
@@ -16,5 +18,10 @@ __all__ = [
     "Scalar",
     "Range",
     "Number",
+    "units",
+    "pint_available",
+    "unit_registry",
+    "validate_unit",
+    "to_quantity",
     "__version__",
 ]

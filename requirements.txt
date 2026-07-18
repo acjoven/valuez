@@ -1,0 +1,10 @@
+# valuez runtime dependencies.
+#
+# `dots` (storage/query/graph) is a sibling repository; install it editable, e.g.
+#   pip install -e ../dots
+# It is intentionally not listed here because it is not published to PyPI.
+
+pint==0.25.3
+
+# Test tooling
+pytest==8.3.3

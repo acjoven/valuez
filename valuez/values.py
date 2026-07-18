@@ -22,6 +22,8 @@ from datetime import datetime, timezone
 from typing import Any, ClassVar, Dict, Optional, Type, Union
 import uuid
 
+from . import units
+
 __all__ = ["Reference", "Value", "Scalar", "Range", "Number"]
 
 Number = Union[int, float]
@@ -134,7 +136,7 @@ class Value(ABC):
             raise TypeError("reference must be a Reference instance or None")
         self.id: str = id or str(uuid.uuid4())
         self.label = label
-        self.unit = unit
+        self.unit = units.validate_unit(unit)
         self.reference = reference
 
     @abstractmethod
@@ -202,6 +204,10 @@ class Scalar(Value):
     def _payload(self) -> Dict[str, Any]:
         return {"value": self.value}
 
+    def to_quantity(self) -> Any:
+        """Return this scalar as a pint ``Quantity`` (optional; requires pint)."""
+        return units.to_quantity(self.value, self.unit)
+
     @classmethod
     def _from_payload(cls, data: Dict[str, Any], reference: Optional[Reference]) -> "Scalar":
         return cls(
@@ -216,8 +222,11 @@ class Scalar(Value):
 class Range(Value):
     """A closed quantitative interval ``[low, high]``.
 
-    Optionally carries a ``nominal`` (representative/expected) value that must
-    fall within the interval.
+    ``nominal`` (the representative/expected value) is optional. When it is not
+    supplied it defaults to the average of the two extremes (the
+    :attr:`midpoint`). When supplied explicitly it must fall within the
+    interval, and only then is it persisted, so the "defaulted" nature of an
+    unset nominal round-trips faithfully.
     """
 
     kind: ClassVar[str] = "range"
@@ -239,13 +248,13 @@ class Range(Value):
         if self.low > self.high:
             raise ValueError(f"Range low ({self.low}) must be <= high ({self.high})")
         if nominal is not None:
-            self.nominal: Optional[Number] = _check_number(nominal, "nominal")
-            if not self.contains(self.nominal):
+            self._nominal: Optional[Number] = _check_number(nominal, "nominal")
+            if not self.contains(self._nominal):
                 raise ValueError(
-                    f"Range nominal ({self.nominal}) must lie within [{self.low}, {self.high}]"
+                    f"Range nominal ({self._nominal}) must lie within [{self.low}, {self.high}]"
                 )
         else:
-            self.nominal = None
+            self._nominal = None
 
     @property
     def width(self) -> Number:
@@ -255,16 +264,30 @@ class Range(Value):
     def midpoint(self) -> float:
         return (self.low + self.high) / 2.0
 
+    @property
+    def nominal(self) -> Number:
+        """Representative value: the explicit nominal, else the midpoint average."""
+        return self._nominal if self._nominal is not None else self.midpoint
+
+    @property
+    def has_explicit_nominal(self) -> bool:
+        """Whether a nominal was supplied rather than defaulted to the average."""
+        return self._nominal is not None
+
     def contains(self, x: Number, *, inclusive: bool = True) -> bool:
         _check_number(x, "x")
         if inclusive:
             return self.low <= x <= self.high
         return self.low < x < self.high
 
+    def to_quantity(self) -> Any:
+        """Return the nominal as a pint ``Quantity`` (optional; requires pint)."""
+        return units.to_quantity(self.nominal, self.unit)
+
     def _payload(self) -> Dict[str, Any]:
         payload: Dict[str, Any] = {"low": self.low, "high": self.high}
-        if self.nominal is not None:
-            payload["nominal"] = self.nominal
+        if self._nominal is not None:
+            payload["nominal"] = self._nominal
         return payload
 
     @classmethod

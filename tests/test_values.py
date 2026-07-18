@@ -40,9 +40,23 @@ def test_range_invalid_bounds():
         Range(20, 10)
 
 
-def test_range_nominal_must_be_inside():
+def test_range_nominal_defaults_to_average():
+    r = Range(10, 20)
+    assert not r.has_explicit_nominal
+    assert r.nominal == 15.0  # average of the extremes
+    assert r.nominal == r.midpoint
+    # A defaulted nominal is not persisted, so it stays "defaulted" on reload.
+    assert "nominal" not in r.to_dict()
+    restored = Value.from_dict(r.to_dict())
+    assert not restored.has_explicit_nominal
+    assert restored.nominal == 15.0
+
+
+def test_range_nominal_explicit_and_bounds():
     r = Range(0, 100, nominal=50)
+    assert r.has_explicit_nominal
     assert r.nominal == 50
+    assert r.to_dict()["nominal"] == 50
     with pytest.raises(ValueError):
         Range(0, 100, nominal=150)
 
