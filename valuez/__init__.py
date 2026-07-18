@@ -7,6 +7,7 @@ cover over the functional ``dots`` storage/query/graph layer.
 from __future__ import annotations
 
 from . import reasoning, units
+from .dataset import DataSet
 from .metaphysics import Individual, Instantiation, MetaphysicalEntity, Universal
 from .qualitative import (
     Boolean,
@@ -38,6 +39,7 @@ __all__ = [
     "Quantitative",
     "Scalar",
     "Range",
+    "DataSet",
     "Number",
     "Qualitative",
     "Categorical",
