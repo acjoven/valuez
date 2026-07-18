@@ -103,3 +103,41 @@ The script prints the framework, persists all values through `dots`, and writes
 an interactive **argument map** (`argument_map.html`) wiring premises →
 arguments → conclusions plus the attack relations. Output goes to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_philosophy/` folder in your temp dir).
+
+## `metaphysics_framework.py` — particulars, universals, and structural orders
+
+Shows the **metaphysics slice**: the particular/universal distinction, a *typed*
+instantiation relation, and the `reasoning` helper for structural orders.
+
+It encodes a small ontology:
+
+- `Universal`s (kinds/properties: `LivingThing`, `Animal`, `Mammal`, `Human`,
+  `Colored`, `Red`, `Scarlet`) and `Individual`s (particulars: `Socrates`,
+  `Plato`, `ThisApple`), each with an optional **`ontological_status`**
+  (`concrete` / `abstract` / `fundamental`).
+- `Instantiation` — a **typed** edge that enforces
+  `Individual --instantiates--> Universal` (e.g. `Socrates instantiates Human`);
+  passing a universal as the source (or an individual as the target) raises.
+- `Relation`s over a controlled predicate vocabulary for the structural orders:
+  `is-a` (kind subsumption), `part-of` (mereology), `grounds`
+  (determinate ⇒ determinable).
+
+It then uses `valuez.reasoning`:
+
+- `infer_transitive` — derives the **transitive closure** of `is-a` and
+  `part-of`, emitting *new* edges tagged `modality="inferred"` (e.g.
+  `Human is-a LivingThing`, `Cell part-of Organism`).
+- `is_acyclic` / `find_cycles` — checks that `grounds` (a strict order) has no
+  cycles, then adds a deliberately illicit `Colored grounds Scarlet` edge to
+  demonstrate **cycle detection**.
+
+### Run
+
+```bash
+python examples/metaphysics_framework.py
+```
+
+The script prints the ontology and the inferred/checked results, persists all
+values through `dots`, and writes an interactive **ontology graph**
+(`ontology_graph.html`) with asserted plus inferred edges. Output goes to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_metaphysics/` folder in your temp dir).
