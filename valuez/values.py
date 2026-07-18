@@ -24,7 +24,7 @@ import uuid
 
 from . import units
 
-__all__ = ["Reference", "Value", "Scalar", "Range", "Number"]
+__all__ = ["Reference", "Value", "Quantitative", "Scalar", "Range", "Number"]
 
 Number = Union[int, float]
 
@@ -129,19 +129,20 @@ class Value(ABC):
         *,
         id: Optional[str] = None,
         label: Optional[str] = None,
-        unit: Optional[str] = None,
         reference: Optional[Reference] = None,
     ) -> None:
         if reference is not None and not isinstance(reference, Reference):
             raise TypeError("reference must be a Reference instance or None")
         self.id: str = id or str(uuid.uuid4())
         self.label = label
-        self.unit = units.validate_unit(unit)
         self.reference = reference
 
     @abstractmethod
     def _payload(self) -> Dict[str, Any]:
         """Return the value-specific fields (e.g. ``{"value": 1.0}``)."""
+
+    def _augment_common(self, data: Dict[str, Any]) -> None:
+        """Hook for family-level shared fields (e.g. ``unit``). Default: no-op."""
 
     @classmethod
     @abstractmethod
@@ -156,8 +157,7 @@ class Value(ABC):
         data: Dict[str, Any] = {"id": self.id, "kind": self.kind}
         if self.label is not None:
             data["label"] = self.label
-        if self.unit is not None:
-            data["unit"] = self.unit
+        self._augment_common(data)
         data.update(self._payload())
         if self.reference is not None:
             data["reference"] = self.reference.to_dict()
@@ -184,7 +184,31 @@ class Value(ABC):
         return f"{type(self).__name__}({self._payload()}, id={self.id!r})"
 
 
-class Scalar(Value):
+class Quantitative(Value):
+    """Base for numeric values that may carry a physical ``unit``.
+
+    Units are validated through :mod:`valuez.units` (pint-backed). This
+    intermediate keeps unit handling off the generic :class:`Value` base so
+    non-numeric (qualitative) values do not inherit a meaningless ``unit``.
+    """
+
+    def __init__(
+        self,
+        *,
+        unit: Optional[str] = None,
+        id: Optional[str] = None,
+        label: Optional[str] = None,
+        reference: Optional[Reference] = None,
+    ) -> None:
+        super().__init__(id=id, label=label, reference=reference)
+        self.unit = units.validate_unit(unit)
+
+    def _augment_common(self, data: Dict[str, Any]) -> None:
+        if self.unit is not None:
+            data["unit"] = self.unit
+
+
+class Scalar(Quantitative):
     """A single quantitative value (optionally with a unit)."""
 
     kind: ClassVar[str] = "scalar"
@@ -219,7 +243,7 @@ class Scalar(Value):
         )
 
 
-class Range(Value):
+class Range(Quantitative):
     """A closed quantitative interval ``[low, high]``.
 
     ``nominal`` (the representative/expected value) is optional. When it is not
