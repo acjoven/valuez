@@ -13,6 +13,8 @@ module covers *categorical* data — values drawn from a controlled set of terms
 - :class:`Nominal` -- an unordered category (colour, material grade, ...).
 - :class:`Ordinal` -- an ordered category (low/med/high, Likert, ...) supporting
   rank and comparison via an ordered vocabulary.
+- :class:`Boolean` -- the binary special case (pass/fail, present/absent).
+- :class:`Textual` -- free-form, uncontrolled text (a description or note).
 
 All of these reuse :class:`~valuez.values.Value`'s identity, reference-based
 ground-truthing, ``kind`` registry, and dict (de)serialization, so they persist
@@ -24,7 +26,15 @@ from typing import Any, ClassVar, Dict, List, Optional
 
 from .values import Reference, Value
 
-__all__ = ["Vocabulary", "Qualitative", "Categorical", "Nominal", "Ordinal"]
+__all__ = [
+    "Vocabulary",
+    "Qualitative",
+    "Categorical",
+    "Nominal",
+    "Ordinal",
+    "Boolean",
+    "Textual",
+]
 
 
 class Vocabulary:
@@ -218,3 +228,94 @@ class Ordinal(Categorical):
         if not self._comparable(other):
             return NotImplemented
         return self.rank >= other.rank  # type: ignore[attr-defined]
+
+
+class Boolean(Qualitative):
+    """A binary (true/false) value -- the "flag" special case of a category.
+
+    Optional ``true_label`` / ``false_label`` let a flag read naturally in a
+    given domain (e.g. ``pass`` / ``fail`` or ``present`` / ``absent``); the
+    :attr:`term` property returns the label for the current state.
+    """
+
+    kind: ClassVar[str] = "boolean"
+
+    def __init__(
+        self,
+        state: bool,
+        *,
+        true_label: Optional[str] = None,
+        false_label: Optional[str] = None,
+        id: Optional[str] = None,
+        label: Optional[str] = None,
+        reference: Optional[Reference] = None,
+    ) -> None:
+        super().__init__(id=id, label=label, reference=reference)
+        if not isinstance(state, bool):
+            raise TypeError(f"state must be a bool, got {type(state).__name__}")
+        self.state = state
+        self.true_label = true_label
+        self.false_label = false_label
+
+    @property
+    def term(self) -> str:
+        if self.state:
+            return self.true_label or "true"
+        return self.false_label or "false"
+
+    def __bool__(self) -> bool:
+        return self.state
+
+    def _payload(self) -> Dict[str, Any]:
+        payload: Dict[str, Any] = {"state": self.state}
+        if self.true_label is not None:
+            payload["true_label"] = self.true_label
+        if self.false_label is not None:
+            payload["false_label"] = self.false_label
+        return payload
+
+    @classmethod
+    def _from_payload(cls, data: Dict[str, Any], reference: Optional[Reference]) -> "Boolean":
+        return cls(
+            data["state"],
+            true_label=data.get("true_label"),
+            false_label=data.get("false_label"),
+            label=data.get("label"),
+            reference=reference,
+            id=data.get("id"),
+        )
+
+
+class Textual(Qualitative):
+    """Free-form, uncontrolled text (a description, name or note).
+
+    Unlike :class:`Categorical`, a textual value is not validated against a
+    vocabulary; it is arbitrary prose that can still be ground-truthed.
+    """
+
+    kind: ClassVar[str] = "text"
+
+    def __init__(
+        self,
+        text: str,
+        *,
+        id: Optional[str] = None,
+        label: Optional[str] = None,
+        reference: Optional[Reference] = None,
+    ) -> None:
+        super().__init__(id=id, label=label, reference=reference)
+        if not isinstance(text, str):
+            raise TypeError(f"text must be a string, got {type(text).__name__}")
+        self.text = text
+
+    def _payload(self) -> Dict[str, Any]:
+        return {"text": self.text}
+
+    @classmethod
+    def _from_payload(cls, data: Dict[str, Any], reference: Optional[Reference]) -> "Textual":
+        return cls(
+            data["text"],
+            label=data.get("label"),
+            reference=reference,
+            id=data.get("id"),
+        )
