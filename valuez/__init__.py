@@ -6,7 +6,8 @@ cover over the functional ``dots`` storage/query/graph layer.
 """
 from __future__ import annotations
 
-from . import units
+from . import reasoning, units
+from .metaphysics import Individual, Instantiation, MetaphysicalEntity, Universal
 from .qualitative import (
     Boolean,
     Categorical,
@@ -53,6 +54,11 @@ __all__ = [
     "visualize_relations",
     "build_argument_graph",
     "visualize_arguments",
+    "MetaphysicalEntity",
+    "Individual",
+    "Universal",
+    "Instantiation",
+    "reasoning",
     "units",
     "pint_available",
     "unit_registry",
