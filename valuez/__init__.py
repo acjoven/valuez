@@ -16,7 +16,16 @@ from .qualitative import (
     Textual,
     Vocabulary,
 )
-from .semantic import Concept, Relation, build_relation_graph, visualize_relations
+from .semantic import (
+    Argument,
+    Concept,
+    Proposition,
+    Relation,
+    build_argument_graph,
+    build_relation_graph,
+    visualize_arguments,
+    visualize_relations,
+)
 from .units import pint_available, to_quantity, unit_registry, validate_unit
 from .values import Number, Quantitative, Range, Reference, Scalar, Value
 
@@ -38,8 +47,12 @@ __all__ = [
     "Vocabulary",
     "Concept",
     "Relation",
+    "Proposition",
+    "Argument",
     "build_relation_graph",
     "visualize_relations",
+    "build_argument_graph",
+    "visualize_arguments",
     "units",
     "pint_available",
     "unit_registry",

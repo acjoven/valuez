@@ -70,3 +70,36 @@ Time constant tau              : 22.2 to 277.8 min
 Time to reach 100 degC         : 29 to 361 min
 Time to reach 50 degC          : 53 to 666 min
 ```
+
+## `philosophy_framework.py` — a philosophical framework (Gettier problem)
+
+Shows that the semantic + argument primitives can model a **philosophical
+framework** as a traceable graph, not just an engineering dataset.
+
+It encodes the classical analysis of knowledge and Gettier's challenge:
+
+- `Concept`s — `Knowledge`, `JustifiedTrueBelief`, `Belief`, `Truth`, `Justification`.
+- `Relation`s over a controlled **predicate vocabulary**
+  (`defines`, `presupposes`, `attacks`, ...) with qualifiers — a `modality`
+  (`necessary`, `defeasible`, ...) and a `strength` in `[0, 1]`. E.g.
+  `JustifiedTrueBelief --presupposes [necessary]--> Justification`.
+- `Proposition`s — reified, truth-apt claims (P1, P2, conclusion), each cited.
+- `Argument`s — premises ⇒ conclusion (Gettier's reductio; a no-false-lemmas
+  rebuttal), with `scheme` labels.
+- Argument-level `attacks` relations forming a small Dung-style network:
+  `Gettier-Argument attacks JustifiedTrueBelief`, and
+  `No-False-Lemmas attacks Gettier-Argument`.
+
+Every claim/relation is ground-truthed via `Reference` (Plato's *Theaetetus*,
+Gettier 1963, Clark 1963).
+
+### Run
+
+```bash
+python examples/philosophy_framework.py
+```
+
+The script prints the framework, persists all values through `dots`, and writes
+an interactive **argument map** (`argument_map.html`) wiring premises →
+arguments → conclusions plus the attack relations. Output goes to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_philosophy/` folder in your temp dir).
