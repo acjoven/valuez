@@ -72,6 +72,47 @@ def test_key_concepts_and_relations_present():
     assert ("CategoricalImperative", "requires", "Universalizability") in edges
 
 
+def test_extension_ci_formulas():
+    onto = _onto()
+    unames = {u.name for u in onto["universals"]}
+    formulas = {"FormulaOfUniversalLaw", "FormulaOfHumanity",
+                "FormulaOfAutonomy", "FormulaOfKingdomOfEnds"}
+    assert formulas <= unames
+    edges = {(r.source, r.predicate, r.target) for r in onto["relations"]}
+    for f in formulas:
+        assert (f, "formulation-of", "CategoricalImperative") in edges
+    # each formula is subsumed under the categorical imperative
+    pairs = reasoning.transitive_closure(onto["relations"], "is-a")
+    assert ("FormulaOfHumanity", "MoralConcept") in pairs
+
+
+def test_extension_antinomies_and_paralogisms():
+    onto = _onto()
+    unames = {u.name for u in onto["universals"]}
+    antinomies = {"FirstAntinomy", "SecondAntinomy", "ThirdAntinomy", "FourthAntinomy"}
+    paralogisms = {"ParalogismOfSubstantiality", "ParalogismOfSimplicity",
+                   "ParalogismOfPersonality", "ParalogismOfIdeality"}
+    assert antinomies <= unames and paralogisms <= unames
+    pairs = reasoning.transitive_closure(onto["relations"], "is-a")
+    for a in antinomies:
+        assert (a, "Antinomy") in pairs
+    for p in paralogisms:
+        assert (p, "Paralogism") in pairs
+    edges = {(r.source, r.predicate, r.target) for r in onto["relations"]}
+    assert ("ThirdAntinomy", "addresses", "Freedom") in edges
+
+
+def test_extension_postulates_and_arguments():
+    onto = _onto()
+    unames = {u.name for u in onto["universals"]}
+    assert {"Postulate", "HighestGood", "ImmortalityOfSoul", "ExistenceOfGod"} <= unames
+    pairs = reasoning.transitive_closure(onto["relations"], "is-a")
+    assert ("ImmortalityOfSoul", "MoralConcept") in pairs  # Postulate is-a MoralConcept
+    labels = {a.handle for a in onto["arguments"]}
+    assert {"Transcendental-Deduction", "Good-Will-Argument",
+            "Third-Antinomy-Resolution", "Postulates-Argument"} <= labels
+
+
 def test_ontology_roundtrips_through_repository(tmp_path):
     onto = _onto()
     everything = (onto["individuals"] + onto["universals"] + onto["relations"]
