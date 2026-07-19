@@ -194,3 +194,49 @@ python examples/empirical_functions.py
 
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_functions/` folder in
 your temp dir).
+
+## `kant_ontology.py` — the critical philosophy of Immanuel Kant
+
+A larger **content** example: a curated ontology of Kant's system spanning the
+three Critiques, built entirely from the semantic + metaphysics primitives.
+
+- **Particulars** (`Individual`): Kant and his major works.
+- **Universals** (`Universal`, ~134): faculties (sensibility / understanding /
+  reason), representations (intuition / concept / category / idea), the full
+  **table of categories** (four titles + twelve), phenomena vs. noumena, the
+  ideas of reason (soul / cosmos / God), the four **antinomies** (with their
+  paired **thesis / antithesis** claims) and four **paralogisms**, further
+  sections of the Analytic (metaphysical deduction, schematism, principles,
+  refutation of idealism), the moral concepts (categorical imperative and its
+  four **formulas**, autonomy, good will, kingdom of ends, the **postulates**
+  and the **highest good**), and the third-Critique concepts in depth
+  (reflecting vs. determining judgment, the four **moments of taste**,
+  mathematical / dynamical **sublime**, aesthetic idea, common sense, fine art,
+  and **teleological judgment** / natural purpose / organism). Each carries an
+  `ontological_status` (`transcendental` / `a priori` / `phenomenal` /
+  `noumenal` / ...).
+- **Instantiation**: typed `Individual --instantiates--> Universal` edges.
+- **Relations** (~242) over a controlled vocabulary: `is-a`, `part-of`
+  (structure of the Critiques), `contrasts-with` (Kant's dichotomies and the
+  antinomic thesis/antithesis pairs), `formulation-of` (the CI formulas), plus
+  `grounds` / `requires` / `produces` / `enables` / `presupposes` /
+  `applies-to` / `addresses` / `is-form-of`, including cross-Critique bridges
+  (e.g. transcendental idealism grounding freedom).
+- **Propositions** (14 cited theses) and five **Arguments**: the Transcendental
+  Deduction, the good-will argument, the resolution of the Third Antinomy, the
+  moral argument for the postulates, and the deduction of taste.
+
+The script checks **referential integrity** (every edge endpoint is a defined
+node), reasons over the graph (transitive closure of `is-a`; acyclicity of the
+strict orders), persists everything through `dots`, **exports the canonical
+`ontologies/kant.json`**, and renders an interactive graph.
+
+### Run
+
+```bash
+python examples/kant_ontology.py
+```
+
+`ontologies/kant.json` is the committed source-of-truth artifact; the rendered
+`kant_ontology.html` / `kant_arguments.html` go to `$VALUEZ_EXAMPLE_OUT`
+(default: a `valuez_kant/` folder in your temp dir).
