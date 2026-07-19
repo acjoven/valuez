@@ -201,21 +201,25 @@ A larger **content** example: a curated ontology of Kant's system spanning the
 three Critiques, built entirely from the semantic + metaphysics primitives.
 
 - **Particulars** (`Individual`): Kant and his major works.
-- **Universals** (`Universal`, ~85): faculties (sensibility / understanding /
+- **Universals** (`Universal`, ~110): faculties (sensibility / understanding /
   reason), representations (intuition / concept / category / idea), the full
   **table of categories** (four titles + twelve), phenomena vs. noumena, the
-  ideas of reason (soul / cosmos / God), the moral concepts (categorical
-  imperative, autonomy, good will, kingdom of ends ...), and the aesthetic
-  concepts (beautiful / sublime / judgment of taste). Each carries an
+  ideas of reason (soul / cosmos / God), the four **antinomies** and four
+  **paralogisms**, further sections of the Analytic (metaphysical deduction,
+  schematism, principles, refutation of idealism), the moral concepts
+  (categorical imperative and its four **formulas**, autonomy, good will,
+  kingdom of ends, the **postulates** and the **highest good**), and the
+  aesthetic concepts (beautiful / sublime / judgment of taste). Each carries an
   `ontological_status` (`transcendental` / `a priori` / `phenomenal` /
   `noumenal` / ...).
 - **Instantiation**: typed `Individual --instantiates--> Universal` edges.
 - **Relations** over a controlled vocabulary: `is-a`, `part-of` (structure of
-  the first Critique), `contrasts-with` (Kant's dichotomies), plus `grounds` /
-  `requires` / `produces` / `enables` / `presupposes` / `applies-to` /
-  `addresses` / `is-form-of`.
-- **Propositions** (cited theses) and one **Argument** sketching the
-  Transcendental Deduction.
+  the first Critique), `contrasts-with` (Kant's dichotomies), `formulation-of`
+  (the CI formulas), plus `grounds` / `requires` / `produces` / `enables` /
+  `presupposes` / `applies-to` / `addresses` / `is-form-of`.
+- **Propositions** (cited theses) and four **Arguments**: the Transcendental
+  Deduction, the good-will argument, the resolution of the Third Antinomy, and
+  the moral argument for the postulates.
 
 The script checks **referential integrity** (every edge endpoint is a defined
 node), reasons over the graph (transitive closure of `is-a`; acyclicity of the

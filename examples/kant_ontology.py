@@ -65,7 +65,7 @@ PREDICATES = Vocabulary(
     [
         "is-a", "part-of", "wrote", "instantiates", "contrasts-with", "requires",
         "produces", "grounds", "applies-to", "enables", "presupposes",
-        "is-form-of", "addresses",
+        "is-form-of", "addresses", "formulation-of",
     ],
     reference=Reference("Framework convention", description="Allowed relation types."),
 )
@@ -189,6 +189,35 @@ UNIVERSALS = [
     ("JudgmentOfTaste", "Aesthetic judgment claiming subjective universality.", "abstract"),
     ("Purposiveness", "Form of finality without a determinate end.", "abstract"),
     ("Genius", "Talent through which nature gives the rule to art.", "abstract"),
+    # formulas of the categorical imperative (Groundwork II)
+    ("CategoricalImperativeFormula", "A formulation of the categorical imperative.", "abstract"),
+    ("FormulaOfUniversalLaw", "Act only on a maxim you can will to be a universal law.", "abstract"),
+    ("FormulaOfHumanity", "Treat humanity always as an end, never merely as a means.", "abstract"),
+    ("FormulaOfAutonomy", "The will legislating universal law through its own maxims.", "abstract"),
+    ("FormulaOfKingdomOfEnds", "Act as a legislating member of a kingdom of ends.", "abstract"),
+    # practical reason: postulates and the highest good (second Critique)
+    ("Postulate", "A postulate of pure practical reason.", "transcendental"),
+    ("HighestGood", "Summum bonum: virtue united with proportionate happiness.", "abstract"),
+    ("Virtue", "Moral strength of will in fulfilling one's duty.", "abstract"),
+    ("Happiness", "Satisfaction of the sum of one's inclinations.", "abstract"),
+    ("ImmortalityOfSoul", "Endless progress toward holiness; a postulate.", "transcendental"),
+    ("ExistenceOfGod", "Ground of the possibility of the highest good; a postulate.", "transcendental"),
+    # the four antinomies of pure reason (Dialectic)
+    ("FirstAntinomy", "The world's beginning and limits in time and space.", "transcendental"),
+    ("SecondAntinomy", "Simple parts versus infinite divisibility of substance.", "transcendental"),
+    ("ThirdAntinomy", "Causality through freedom versus universal natural causality.", "transcendental"),
+    ("FourthAntinomy", "A necessary being of the world versus none.", "transcendental"),
+    # the four paralogisms of rational psychology (Dialectic)
+    ("ParalogismOfSubstantiality", "Fallacy: the soul is a substance.", "transcendental"),
+    ("ParalogismOfSimplicity", "Fallacy: the soul is simple.", "transcendental"),
+    ("ParalogismOfPersonality", "Fallacy: the soul is a person, identical over time.", "transcendental"),
+    ("ParalogismOfIdeality", "Fallacy concerning the soul's relation to outer objects.", "transcendental"),
+    # further sections of the Analytic
+    ("LogicalFunctionsOfJudgment", "The table of the forms of judgment.", "a priori"),
+    ("MetaphysicalDeduction", "Derivation of the categories from the logical functions of judgment.", "abstract"),
+    ("Schematism", "How categories apply to appearances via transcendental schemata.", "abstract"),
+    ("PrinciplesOfPureUnderstanding", "Synthetic a priori principles grounded in the categories.", "abstract"),
+    ("RefutationOfIdealism", "Proof that inner experience presupposes outer objects.", "abstract"),
 ]
 
 # --------------------------------------------------------------------------- #
@@ -303,6 +332,76 @@ def _edges() -> List[tuple]:
         ("JudgmentOfTaste", "presupposes", "Purposiveness", CJ),
         ("Genius", "produces", "Beautiful", CJ),
     ]
+
+    # -- extension: taxonomy for the newly added concepts (is-a) --
+    isa2 = [
+        ("CategoricalImperativeFormula", "MoralConcept"),
+        ("FormulaOfUniversalLaw", "CategoricalImperativeFormula"),
+        ("FormulaOfHumanity", "CategoricalImperativeFormula"),
+        ("FormulaOfAutonomy", "CategoricalImperativeFormula"),
+        ("FormulaOfKingdomOfEnds", "CategoricalImperativeFormula"),
+        ("Postulate", "MoralConcept"), ("HighestGood", "MoralConcept"),
+        ("Virtue", "MoralConcept"), ("Happiness", "MoralConcept"),
+        ("Freedom", "Postulate"), ("ImmortalityOfSoul", "Postulate"), ("ExistenceOfGod", "Postulate"),
+        ("FirstAntinomy", "Antinomy"), ("SecondAntinomy", "Antinomy"),
+        ("ThirdAntinomy", "Antinomy"), ("FourthAntinomy", "Antinomy"),
+        ("ParalogismOfSubstantiality", "Paralogism"), ("ParalogismOfSimplicity", "Paralogism"),
+        ("ParalogismOfPersonality", "Paralogism"), ("ParalogismOfIdeality", "Paralogism"),
+        ("MetaphysicalDeduction", "CritiquePart"), ("Schematism", "CritiquePart"),
+        ("PrinciplesOfPureUnderstanding", "CritiquePart"), ("RefutationOfIdealism", "CritiquePart"),
+    ]
+    E += [(s, "is-a", t, GW if "Formula" in s or s in {"Postulate", "Virtue", "Happiness", "HighestGood"} else CPR)
+          for s, t in isa2]
+
+    # -- extension: part-of (further sections of the Analytic) --
+    part2 = [
+        ("MetaphysicalDeduction", "TranscendentalAnalytic"), ("Schematism", "TranscendentalAnalytic"),
+        ("PrinciplesOfPureUnderstanding", "TranscendentalAnalytic"), ("RefutationOfIdealism", "TranscendentalAnalytic"),
+    ]
+    E += [(s, "part-of", t, CPR) for s, t in part2]
+
+    # -- extension: the four formulas as formulations of the categorical imperative --
+    E += [
+        ("FormulaOfUniversalLaw", "formulation-of", "CategoricalImperative", GW),
+        ("FormulaOfHumanity", "formulation-of", "CategoricalImperative", GW),
+        ("FormulaOfAutonomy", "formulation-of", "CategoricalImperative", GW),
+        ("FormulaOfKingdomOfEnds", "formulation-of", "CategoricalImperative", GW),
+        ("FormulaOfUniversalLaw", "requires", "Universalizability", GW),
+        ("FormulaOfHumanity", "requires", "EndInItself", GW),
+        ("FormulaOfHumanity", "grounds", "Dignity", GW),
+        ("FormulaOfAutonomy", "grounds", "Autonomy", GW),
+        ("FormulaOfKingdomOfEnds", "requires", "KingdomOfEnds", GW),
+    ]
+
+    # -- extension: practical reason, postulates, the highest good --
+    E += [
+        ("PracticalReason", "produces", "Postulate", CPrR),
+        ("HighestGood", "requires", "Virtue", CPrR),
+        ("HighestGood", "requires", "Happiness", CPrR),
+        ("HighestGood", "presupposes", "ImmortalityOfSoul", CPrR),
+        ("HighestGood", "presupposes", "ExistenceOfGod", CPrR),
+    ]
+
+    # -- extension: what the antinomies and paralogisms address --
+    E += [
+        ("FirstAntinomy", "addresses", "Cosmos", CPR), ("SecondAntinomy", "addresses", "Cosmos", CPR),
+        ("ThirdAntinomy", "addresses", "Freedom", CPR), ("ThirdAntinomy", "addresses", "Causality", CPR),
+        ("FourthAntinomy", "addresses", "Cosmos", CPR),
+        ("ParalogismOfSubstantiality", "addresses", "Soul", CPR),
+        ("ParalogismOfSimplicity", "addresses", "Soul", CPR),
+        ("ParalogismOfPersonality", "addresses", "Soul", CPR),
+        ("ParalogismOfIdeality", "addresses", "Soul", CPR),
+    ]
+
+    # -- extension: mechanics of the Analytic --
+    E += [
+        ("MetaphysicalDeduction", "addresses", "LogicalFunctionsOfJudgment", CPR),
+        ("MetaphysicalDeduction", "addresses", "Category", CPR),
+        ("LogicalFunctionsOfJudgment", "grounds", "Category", CPR),
+        ("Schematism", "addresses", "Schema", CPR),
+        ("PrinciplesOfPureUnderstanding", "grounds", "Experience", CPR),
+        ("RefutationOfIdealism", "addresses", "Time", CPR),
+    ]
     return E
 
 
@@ -325,6 +424,14 @@ def _propositions() -> List[Proposition]:
                     truth_value=True, label="P-Autonomy", id="k_p_autonomy", reference=GW),
         Proposition("The beautiful is what pleases universally without a concept.",
                     truth_value=True, label="P-Beautiful", id="k_p_beautiful", reference=CJ),
+        Proposition("Nothing can be conceived as good without qualification except a good will.",
+                    truth_value=True, label="P-GoodWill", id="k_p_good_will", reference=GW),
+        Proposition("Freedom, immortality, and God are postulates of pure practical reason.",
+                    truth_value=True, label="P-Postulates", id="k_p_postulates", reference=CPrR),
+        Proposition("Freedom and natural necessity are reconcilable under transcendental idealism.",
+                    truth_value=True, label="P-FreedomNature", id="k_p_freedom_nature", reference=CPR),
+        Proposition("The highest good unites virtue with proportionate happiness.",
+                    truth_value=True, label="P-HighestGood", id="k_p_highest_good", reference=CPrR),
     ]
 
 
@@ -337,7 +444,31 @@ def _arguments() -> List[Argument]:
             "Therefore the categories necessarily apply to all objects of experience.",
             scheme="transcendental argument", label="Transcendental-Deduction",
             id="k_arg_deduction", reference=CPR,
-        )
+        ),
+        Argument(
+            ["A good will is good through its willing, not through its effects.",
+             "Every other good (talents, fortune, even happiness) can be put to bad use.",
+             "Only a good will is good without limitation."],
+            "Nothing can be conceived as good without qualification except a good will.",
+            scheme="analysis of common moral cognition", label="Good-Will-Argument",
+            id="k_arg_good_will", reference=GW,
+        ),
+        Argument(
+            ["If appearances were things in themselves, freedom and natural causality would contradict.",
+             "Under transcendental idealism, appearances are not things in themselves.",
+             "Natural causality then governs appearances, while freedom may govern things in themselves."],
+            "Therefore freedom and natural necessity can both hold without contradiction.",
+            scheme="resolution of an antinomy", label="Third-Antinomy-Resolution",
+            id="k_arg_third_antinomy", reference=CPR,
+        ),
+        Argument(
+            ["Practical reason commands us to promote the highest good.",
+             "The highest good (virtue with proportionate happiness) must therefore be possible.",
+             "Its possibility requires freedom, the immortality of the soul, and the existence of God."],
+            "Therefore we must postulate freedom, immortality, and the existence of God.",
+            scheme="moral argument", label="Postulates-Argument",
+            id="k_arg_postulates", reference=CPrR,
+        ),
     ]
 
 
