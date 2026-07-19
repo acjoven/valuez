@@ -113,6 +113,40 @@ def test_extension_postulates_and_arguments():
             "Third-Antinomy-Resolution", "Postulates-Argument"} <= labels
 
 
+def test_pass3_aesthetics_depth():
+    onto = _onto()
+    unames = {u.name for u in onto["universals"]}
+    moments = {"Disinterestedness", "SubjectiveUniversality",
+               "PurposivenessWithoutPurpose", "ExemplaryNecessity"}
+    assert moments <= unames
+    assert {"MathematicalSublime", "DynamicalSublime", "AestheticIdea",
+            "CommonSense", "TeleologicalJudgment", "NaturalPurpose"} <= unames
+    pairs = reasoning.transitive_closure(onto["relations"], "is-a")
+    for m in moments:
+        assert (m, "AestheticConcept") in pairs        # MomentOfTaste is-a AestheticConcept
+    assert ("MathematicalSublime", "AestheticConcept") in pairs
+    edges = {(r.source, r.predicate, r.target) for r in onto["relations"]}
+    assert ("JudgmentOfTaste", "presupposes", "CommonSense") in edges
+    assert "Deduction-of-Taste" in {a.handle for a in onto["arguments"]}
+
+
+def test_pass3_antinomic_claims_are_paired():
+    onto = _onto()
+    edges = {(r.source, r.predicate, r.target) for r in onto["relations"]}
+    for stem, antinomy in (("First", "FirstAntinomy"), ("Second", "SecondAntinomy"),
+                           ("Third", "ThirdAntinomy"), ("Fourth", "FourthAntinomy")):
+        thesis, antithesis = f"{stem}AntinomyThesis", f"{stem}AntinomyAntithesis"
+        assert (thesis, "contrasts-with", antithesis) in edges
+        assert (thesis, "part-of", antinomy) in edges
+        assert (antithesis, "part-of", antinomy) in edges
+
+
+def test_pass3_cross_critique_bridge():
+    onto = _onto()
+    edges = {(r.source, r.predicate, r.target) for r in onto["relations"]}
+    assert ("TranscendentalIdealism", "grounds", "Freedom") in edges
+
+
 def test_ontology_roundtrips_through_repository(tmp_path):
     onto = _onto()
     everything = (onto["individuals"] + onto["universals"] + onto["relations"]

@@ -7,6 +7,13 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Representation of imagination prompting much thought beyond any concept.",
+    "id": "k_aestheticidea",
+    "kind": "universal",
+    "name": "AestheticIdea",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "True by containment / conceptual analysis.",
     "id": "k_analytic",
     "kind": "universal",
@@ -19,6 +26,13 @@
     "kind": "universal",
     "name": "AnalyticJudgment",
     "ontological_status": "abstract"
+  },
+  {
+    "definition": "A thesis or antithesis of a cosmological antinomy.",
+    "id": "k_antinomicclaim",
+    "kind": "universal",
+    "name": "AntinomicClaim",
+    "ontological_status": "transcendental"
   },
   {
     "definition": "Contradiction reason falls into about the world-whole.",
@@ -92,6 +106,21 @@
       "source": "Kant, Critique of Practical Reason (1788)"
     },
     "scheme": "moral argument"
+  },
+  {
+    "conclusion": "Therefore judgments of taste are grounded in a common sense warranting their universal validity.",
+    "id": "k_arg_taste",
+    "kind": "argument",
+    "label": "Deduction-of-Taste",
+    "premises": [
+      "A judgment of taste claims the universal agreement of everyone.",
+      "It can rest neither on determinate concepts nor on private sensation.",
+      "It must therefore presuppose a common sense (sensus communis) shared by all."
+    ],
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "scheme": "deduction of taste"
   },
   {
     "conclusion": "Therefore freedom and natural necessity can both hold without contradiction.",
@@ -186,6 +215,13 @@
     "ontological_status": "transcendental"
   },
   {
+    "definition": "Sensus communis: the shared feeling presupposed by taste.",
+    "id": "k_commonsense",
+    "kind": "universal",
+    "name": "CommonSense",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "Category of relation (reciprocity).",
     "id": "k_community",
     "kind": "universal",
@@ -251,10 +287,24 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Judgment subsuming a particular under a given universal.",
+    "id": "k_determiningjudgment",
+    "kind": "universal",
+    "name": "DeterminingJudgment",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "The unconditional, incomparable worth of a person.",
     "id": "k_dignity",
     "kind": "universal",
     "name": "Dignity",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "First moment: delight in the beautiful is free of interest.",
+    "id": "k_disinterestedness",
+    "kind": "universal",
+    "name": "Disinterestedness",
     "ontological_status": "abstract"
   },
   {
@@ -272,6 +322,13 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Sublimity of nature's might contemplated in safety.",
+    "id": "k_dynamicalsublime",
+    "kind": "universal",
+    "name": "DynamicalSublime",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "A rational being with unconditional worth.",
     "id": "k_endinitself",
     "kind": "universal",
@@ -283,6 +340,13 @@
     "id": "k_epistemicdistinction",
     "kind": "universal",
     "name": "EpistemicDistinction",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Fourth moment: the necessary, exemplary delight of taste.",
+    "id": "k_exemplarynecessity",
+    "kind": "universal",
+    "name": "ExemplaryNecessity",
     "ontological_status": "abstract"
   },
   {
@@ -314,10 +378,31 @@
     "ontological_status": "transcendental"
   },
   {
+    "definition": "Art that is purposive yet appears as free as nature.",
+    "id": "k_fineart",
+    "kind": "universal",
+    "name": "FineArt",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "The world's beginning and limits in time and space.",
     "id": "k_firstantinomy",
     "kind": "universal",
     "name": "FirstAntinomy",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "The world is infinite in time and space.",
+    "id": "k_firstantinomyantithesis",
+    "kind": "universal",
+    "name": "FirstAntinomyAntithesis",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "The world has a beginning in time and limits in space.",
+    "id": "k_firstantinomythesis",
+    "kind": "universal",
+    "name": "FirstAntinomyThesis",
     "ontological_status": "transcendental"
   },
   {
@@ -360,6 +445,20 @@
     "id": "k_fourthantinomy",
     "kind": "universal",
     "name": "FourthAntinomy",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "No absolutely necessary being exists in or out of the world.",
+    "id": "k_fourthantinomyantithesis",
+    "kind": "universal",
+    "name": "FourthAntinomyAntithesis",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "An absolutely necessary being belongs to the world.",
+    "id": "k_fourthantinomythesis",
+    "kind": "universal",
+    "name": "FourthAntinomyThesis",
     "ontological_status": "transcendental"
   },
   {
@@ -561,6 +660,13 @@
     "ontological_status": "a priori"
   },
   {
+    "definition": "Sublimity of absolute magnitude overwhelming imagination.",
+    "id": "k_mathematicalsublime",
+    "kind": "universal",
+    "name": "MathematicalSublime",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "Subjective principle of volition.",
     "id": "k_maxim",
     "kind": "universal",
@@ -575,6 +681,13 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "One of the four moments analyzing the judgment of taste.",
+    "id": "k_momentoftaste",
+    "kind": "universal",
+    "name": "MomentOfTaste",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "A concept of Kantian moral philosophy.",
     "id": "k_moralconcept",
     "kind": "universal",
@@ -586,6 +699,13 @@
     "id": "k_morallaw",
     "kind": "universal",
     "name": "MoralLaw",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "A being both cause and effect of itself; an organized end.",
+    "id": "k_naturalpurpose",
+    "kind": "universal",
+    "name": "NaturalPurpose",
     "ontological_status": "abstract"
   },
   {
@@ -608,6 +728,23 @@
     "kind": "universal",
     "name": "Object",
     "ontological_status": "abstract"
+  },
+  {
+    "definition": "A living being judged as a natural purpose.",
+    "id": "k_organism",
+    "kind": "universal",
+    "name": "Organism",
+    "ontological_status": "phenomenal"
+  },
+  {
+    "id": "k_p_antinomy_resolution",
+    "kind": "proposition",
+    "label": "P-AntinomyResolution",
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "statement": "Every cosmological antinomy is resolved by distinguishing appearances from things in themselves.",
+    "truth_value": true
   },
   {
     "id": "k_p_appearances",
@@ -637,6 +774,16 @@
       "source": "Kant, Critique of the Power of Judgment (1790)"
     },
     "statement": "The beautiful is what pleases universally without a concept.",
+    "truth_value": true
+  },
+  {
+    "id": "k_p_beauty_symbol",
+    "kind": "proposition",
+    "label": "P-BeautySymbol",
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "statement": "The beautiful is the symbol of the morally good.",
     "truth_value": true
   },
   {
@@ -687,6 +834,16 @@
       "source": "Kant, Critique of Practical Reason (1788)"
     },
     "statement": "The highest good unites virtue with proportionate happiness.",
+    "truth_value": true
+  },
+  {
+    "id": "k_p_natural_purpose",
+    "kind": "proposition",
+    "label": "P-NaturalPurpose",
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "statement": "Organized beings must be judged as natural purposes.",
     "truth_value": true
   },
   {
@@ -828,6 +985,13 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Third moment: the form of finality without a determinate end.",
+    "id": "k_purposivenesswithoutpurpose",
+    "kind": "universal",
+    "name": "PurposivenessWithoutPurpose",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "Category of quality.",
     "id": "k_reality",
     "kind": "universal",
@@ -839,6 +1003,13 @@
     "id": "k_reason",
     "kind": "universal",
     "name": "Reason",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Judgment seeking a universal for a given particular.",
+    "id": "k_reflectingjudgment",
+    "kind": "universal",
+    "name": "ReflectingJudgment",
     "ontological_status": "transcendental"
   },
   {
@@ -7186,6 +7357,1706 @@
     "target": "Time"
   },
   {
+    "id": "k_rel_187",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "ReflectingJudgment",
+    "target": "PowerOfJudgment"
+  },
+  {
+    "id": "k_rel_188",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "DeterminingJudgment",
+    "target": "PowerOfJudgment"
+  },
+  {
+    "id": "k_rel_189",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "JudgmentOfTaste",
+    "target": "ReflectingJudgment"
+  },
+  {
+    "id": "k_rel_190",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "TeleologicalJudgment",
+    "target": "ReflectingJudgment"
+  },
+  {
+    "id": "k_rel_191",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "MomentOfTaste",
+    "target": "AestheticConcept"
+  },
+  {
+    "id": "k_rel_192",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "Disinterestedness",
+    "target": "MomentOfTaste"
+  },
+  {
+    "id": "k_rel_193",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "SubjectiveUniversality",
+    "target": "MomentOfTaste"
+  },
+  {
+    "id": "k_rel_194",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "PurposivenessWithoutPurpose",
+    "target": "MomentOfTaste"
+  },
+  {
+    "id": "k_rel_195",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "ExemplaryNecessity",
+    "target": "MomentOfTaste"
+  },
+  {
+    "id": "k_rel_196",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "MathematicalSublime",
+    "target": "Sublime"
+  },
+  {
+    "id": "k_rel_197",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "DynamicalSublime",
+    "target": "Sublime"
+  },
+  {
+    "id": "k_rel_198",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "AestheticIdea",
+    "target": "AestheticConcept"
+  },
+  {
+    "id": "k_rel_199",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "CommonSense",
+    "target": "AestheticConcept"
+  },
+  {
+    "id": "k_rel_200",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "FineArt",
+    "target": "AestheticConcept"
+  },
+  {
+    "id": "k_rel_201",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "Organism",
+    "target": "NaturalPurpose"
+  },
+  {
+    "id": "k_rel_202",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "DeterminingJudgment",
+    "target": "ReflectingJudgment"
+  },
+  {
+    "id": "k_rel_203",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "JudgmentOfTaste",
+    "target": "Disinterestedness"
+  },
+  {
+    "id": "k_rel_204",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "JudgmentOfTaste",
+    "target": "SubjectiveUniversality"
+  },
+  {
+    "id": "k_rel_205",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "JudgmentOfTaste",
+    "target": "PurposivenessWithoutPurpose"
+  },
+  {
+    "id": "k_rel_206",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "JudgmentOfTaste",
+    "target": "ExemplaryNecessity"
+  },
+  {
+    "id": "k_rel_207",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "JudgmentOfTaste",
+    "target": "CommonSense"
+  },
+  {
+    "id": "k_rel_208",
+    "kind": "relation",
+    "predicate": "is-form-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "PurposivenessWithoutPurpose",
+    "target": "Purposiveness"
+  },
+  {
+    "id": "k_rel_209",
+    "kind": "relation",
+    "predicate": "produces",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "Genius",
+    "target": "AestheticIdea"
+  },
+  {
+    "id": "k_rel_210",
+    "kind": "relation",
+    "predicate": "produces",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "Genius",
+    "target": "FineArt"
+  },
+  {
+    "id": "k_rel_211",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "AestheticIdea",
+    "target": "Beautiful"
+  },
+  {
+    "id": "k_rel_212",
+    "kind": "relation",
+    "predicate": "applies-to",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "TeleologicalJudgment",
+    "target": "NaturalPurpose"
+  },
+  {
+    "id": "k_rel_213",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of the Power of Judgment (1790)"
+    },
+    "source": "TeleologicalJudgment",
+    "target": "Purposiveness"
+  },
+  {
+    "id": "k_rel_214",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomyThesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_215",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomyAntithesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_216",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomyThesis",
+    "target": "FirstAntinomy"
+  },
+  {
+    "id": "k_rel_217",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomyAntithesis",
+    "target": "FirstAntinomy"
+  },
+  {
+    "id": "k_rel_218",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomyThesis",
+    "target": "FirstAntinomyAntithesis"
+  },
+  {
+    "id": "k_rel_219",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomyThesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_220",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomyAntithesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_221",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomyThesis",
+    "target": "SecondAntinomy"
+  },
+  {
+    "id": "k_rel_222",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomyAntithesis",
+    "target": "SecondAntinomy"
+  },
+  {
+    "id": "k_rel_223",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomyThesis",
+    "target": "SecondAntinomyAntithesis"
+  },
+  {
+    "id": "k_rel_224",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomyThesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_225",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomyAntithesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_226",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomyThesis",
+    "target": "ThirdAntinomy"
+  },
+  {
+    "id": "k_rel_227",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomyAntithesis",
+    "target": "ThirdAntinomy"
+  },
+  {
+    "id": "k_rel_228",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomyThesis",
+    "target": "ThirdAntinomyAntithesis"
+  },
+  {
+    "id": "k_rel_229",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomyThesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_230",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomyAntithesis",
+    "target": "AntinomicClaim"
+  },
+  {
+    "id": "k_rel_231",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomyThesis",
+    "target": "FourthAntinomy"
+  },
+  {
+    "id": "k_rel_232",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomyAntithesis",
+    "target": "FourthAntinomy"
+  },
+  {
+    "id": "k_rel_233",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomyThesis",
+    "target": "FourthAntinomyAntithesis"
+  },
+  {
+    "id": "k_rel_234",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "TranscendentalIdealism",
+    "target": "Freedom"
+  },
+  {
+    "id": "k_rel_235",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomy",
+    "target": "Cosmos"
+  },
+  {
+    "id": "k_rel_236",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "TranscendentalIdealism",
+    "target": "ThingInItself"
+  },
+  {
     "definition": "Vorstellung: any mental content.",
     "id": "k_representation",
     "kind": "universal",
@@ -7214,6 +9085,20 @@
     "ontological_status": "transcendental"
   },
   {
+    "definition": "Nothing simple exists; substance is infinitely divisible.",
+    "id": "k_secondantinomyantithesis",
+    "kind": "universal",
+    "name": "SecondAntinomyAntithesis",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Every composite substance consists of simple parts.",
+    "id": "k_secondantinomythesis",
+    "kind": "universal",
+    "name": "SecondAntinomyThesis",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "Faculty of receptivity yielding intuitions.",
     "id": "k_sensibility",
     "kind": "universal",
@@ -7233,6 +9118,13 @@
     "kind": "universal",
     "name": "Space",
     "ontological_status": "a priori"
+  },
+  {
+    "definition": "Second moment: taste claims universal agreement without a concept.",
+    "id": "k_subjectiveuniversality",
+    "kind": "universal",
+    "name": "SubjectiveUniversality",
+    "ontological_status": "abstract"
   },
   {
     "definition": "What pleases through the mind's response to the formless/immense.",
@@ -7270,6 +9162,13 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Reflecting judgment of nature as if purposive.",
+    "id": "k_teleologicaljudgment",
+    "kind": "universal",
+    "name": "TeleologicalJudgment",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "Reason in its cognitive (speculative) use.",
     "id": "k_theoreticalreason",
     "kind": "universal",
@@ -7288,6 +9187,20 @@
     "id": "k_thirdantinomy",
     "kind": "universal",
     "name": "ThirdAntinomy",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "There is no freedom; all is by natural causality.",
+    "id": "k_thirdantinomyantithesis",
+    "kind": "universal",
+    "name": "ThirdAntinomyAntithesis",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Causality through freedom is required to explain appearances.",
+    "id": "k_thirdantinomythesis",
+    "kind": "universal",
+    "name": "ThirdAntinomyThesis",
     "ontological_status": "transcendental"
   },
   {

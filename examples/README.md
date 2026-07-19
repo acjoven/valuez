@@ -201,25 +201,30 @@ A larger **content** example: a curated ontology of Kant's system spanning the
 three Critiques, built entirely from the semantic + metaphysics primitives.
 
 - **Particulars** (`Individual`): Kant and his major works.
-- **Universals** (`Universal`, ~110): faculties (sensibility / understanding /
+- **Universals** (`Universal`, ~134): faculties (sensibility / understanding /
   reason), representations (intuition / concept / category / idea), the full
   **table of categories** (four titles + twelve), phenomena vs. noumena, the
-  ideas of reason (soul / cosmos / God), the four **antinomies** and four
-  **paralogisms**, further sections of the Analytic (metaphysical deduction,
-  schematism, principles, refutation of idealism), the moral concepts
-  (categorical imperative and its four **formulas**, autonomy, good will,
-  kingdom of ends, the **postulates** and the **highest good**), and the
-  aesthetic concepts (beautiful / sublime / judgment of taste). Each carries an
+  ideas of reason (soul / cosmos / God), the four **antinomies** (with their
+  paired **thesis / antithesis** claims) and four **paralogisms**, further
+  sections of the Analytic (metaphysical deduction, schematism, principles,
+  refutation of idealism), the moral concepts (categorical imperative and its
+  four **formulas**, autonomy, good will, kingdom of ends, the **postulates**
+  and the **highest good**), and the third-Critique concepts in depth
+  (reflecting vs. determining judgment, the four **moments of taste**,
+  mathematical / dynamical **sublime**, aesthetic idea, common sense, fine art,
+  and **teleological judgment** / natural purpose / organism). Each carries an
   `ontological_status` (`transcendental` / `a priori` / `phenomenal` /
   `noumenal` / ...).
 - **Instantiation**: typed `Individual --instantiates--> Universal` edges.
-- **Relations** over a controlled vocabulary: `is-a`, `part-of` (structure of
-  the first Critique), `contrasts-with` (Kant's dichotomies), `formulation-of`
-  (the CI formulas), plus `grounds` / `requires` / `produces` / `enables` /
-  `presupposes` / `applies-to` / `addresses` / `is-form-of`.
-- **Propositions** (cited theses) and four **Arguments**: the Transcendental
-  Deduction, the good-will argument, the resolution of the Third Antinomy, and
-  the moral argument for the postulates.
+- **Relations** (~242) over a controlled vocabulary: `is-a`, `part-of`
+  (structure of the Critiques), `contrasts-with` (Kant's dichotomies and the
+  antinomic thesis/antithesis pairs), `formulation-of` (the CI formulas), plus
+  `grounds` / `requires` / `produces` / `enables` / `presupposes` /
+  `applies-to` / `addresses` / `is-form-of`, including cross-Critique bridges
+  (e.g. transcendental idealism grounding freedom).
+- **Propositions** (14 cited theses) and five **Arguments**: the Transcendental
+  Deduction, the good-will argument, the resolution of the Third Antinomy, the
+  moral argument for the postulates, and the deduction of taste.
 
 The script checks **referential integrity** (every edge endpoint is a defined
 node), reasons over the graph (transitive closure of `is-a`; acyclicity of the

@@ -218,6 +218,33 @@ UNIVERSALS = [
     ("Schematism", "How categories apply to appearances via transcendental schemata.", "abstract"),
     ("PrinciplesOfPureUnderstanding", "Synthetic a priori principles grounded in the categories.", "abstract"),
     ("RefutationOfIdealism", "Proof that inner experience presupposes outer objects.", "abstract"),
+    # third Critique: aesthetic judgment in depth
+    ("ReflectingJudgment", "Judgment seeking a universal for a given particular.", "transcendental"),
+    ("DeterminingJudgment", "Judgment subsuming a particular under a given universal.", "transcendental"),
+    ("MomentOfTaste", "One of the four moments analyzing the judgment of taste.", "abstract"),
+    ("Disinterestedness", "First moment: delight in the beautiful is free of interest.", "abstract"),
+    ("SubjectiveUniversality", "Second moment: taste claims universal agreement without a concept.", "abstract"),
+    ("PurposivenessWithoutPurpose", "Third moment: the form of finality without a determinate end.", "abstract"),
+    ("ExemplaryNecessity", "Fourth moment: the necessary, exemplary delight of taste.", "abstract"),
+    ("MathematicalSublime", "Sublimity of absolute magnitude overwhelming imagination.", "abstract"),
+    ("DynamicalSublime", "Sublimity of nature's might contemplated in safety.", "abstract"),
+    ("AestheticIdea", "Representation of imagination prompting much thought beyond any concept.", "abstract"),
+    ("CommonSense", "Sensus communis: the shared feeling presupposed by taste.", "abstract"),
+    ("FineArt", "Art that is purposive yet appears as free as nature.", "abstract"),
+    # third Critique: teleological judgment
+    ("TeleologicalJudgment", "Reflecting judgment of nature as if purposive.", "transcendental"),
+    ("NaturalPurpose", "A being both cause and effect of itself; an organized end.", "abstract"),
+    ("Organism", "A living being judged as a natural purpose.", "phenomenal"),
+    # dialectic: the antinomic claims (thesis / antithesis)
+    ("AntinomicClaim", "A thesis or antithesis of a cosmological antinomy.", "transcendental"),
+    ("FirstAntinomyThesis", "The world has a beginning in time and limits in space.", "transcendental"),
+    ("FirstAntinomyAntithesis", "The world is infinite in time and space.", "transcendental"),
+    ("SecondAntinomyThesis", "Every composite substance consists of simple parts.", "transcendental"),
+    ("SecondAntinomyAntithesis", "Nothing simple exists; substance is infinitely divisible.", "transcendental"),
+    ("ThirdAntinomyThesis", "Causality through freedom is required to explain appearances.", "transcendental"),
+    ("ThirdAntinomyAntithesis", "There is no freedom; all is by natural causality.", "transcendental"),
+    ("FourthAntinomyThesis", "An absolutely necessary being belongs to the world.", "transcendental"),
+    ("FourthAntinomyAntithesis", "No absolutely necessary being exists in or out of the world.", "transcendental"),
 ]
 
 # --------------------------------------------------------------------------- #
@@ -402,6 +429,57 @@ def _edges() -> List[tuple]:
         ("PrinciplesOfPureUnderstanding", "grounds", "Experience", CPR),
         ("RefutationOfIdealism", "addresses", "Time", CPR),
     ]
+
+    # -- pass 3: third Critique (aesthetics + teleology), is-a --
+    isa_cj = [
+        ("ReflectingJudgment", "PowerOfJudgment"), ("DeterminingJudgment", "PowerOfJudgment"),
+        ("JudgmentOfTaste", "ReflectingJudgment"), ("TeleologicalJudgment", "ReflectingJudgment"),
+        ("MomentOfTaste", "AestheticConcept"),
+        ("Disinterestedness", "MomentOfTaste"), ("SubjectiveUniversality", "MomentOfTaste"),
+        ("PurposivenessWithoutPurpose", "MomentOfTaste"), ("ExemplaryNecessity", "MomentOfTaste"),
+        ("MathematicalSublime", "Sublime"), ("DynamicalSublime", "Sublime"),
+        ("AestheticIdea", "AestheticConcept"), ("CommonSense", "AestheticConcept"), ("FineArt", "AestheticConcept"),
+        ("Organism", "NaturalPurpose"),
+    ]
+    E += [(s, "is-a", t, CJ) for s, t in isa_cj]
+
+    # -- pass 3: third Critique relations --
+    E += [
+        ("DeterminingJudgment", "contrasts-with", "ReflectingJudgment", CJ),
+        ("JudgmentOfTaste", "requires", "Disinterestedness", CJ),
+        ("JudgmentOfTaste", "requires", "SubjectiveUniversality", CJ),
+        ("JudgmentOfTaste", "requires", "PurposivenessWithoutPurpose", CJ),
+        ("JudgmentOfTaste", "requires", "ExemplaryNecessity", CJ),
+        ("JudgmentOfTaste", "presupposes", "CommonSense", CJ),
+        ("PurposivenessWithoutPurpose", "is-form-of", "Purposiveness", CJ),
+        ("Genius", "produces", "AestheticIdea", CJ),
+        ("Genius", "produces", "FineArt", CJ),
+        ("AestheticIdea", "grounds", "Beautiful", CJ),
+        ("TeleologicalJudgment", "applies-to", "NaturalPurpose", CJ),
+        ("TeleologicalJudgment", "presupposes", "Purposiveness", CJ),
+    ]
+
+    # -- pass 3: the antinomic claims (thesis / antithesis) --
+    claims = [
+        ("First", "FirstAntinomy"), ("Second", "SecondAntinomy"),
+        ("Third", "ThirdAntinomy"), ("Fourth", "FourthAntinomy"),
+    ]
+    for stem, antinomy in claims:
+        thesis, antithesis = f"{stem}AntinomyThesis", f"{stem}AntinomyAntithesis"
+        E += [
+            (thesis, "is-a", "AntinomicClaim", CPR),
+            (antithesis, "is-a", "AntinomicClaim", CPR),
+            (thesis, "part-of", antinomy, CPR),
+            (antithesis, "part-of", antinomy, CPR),
+            (thesis, "contrasts-with", antithesis, CPR),
+        ]
+
+    # -- pass 3: cross-Critique bridges --
+    E += [
+        ("TranscendentalIdealism", "grounds", "Freedom", CPR),
+        ("ThirdAntinomy", "addresses", "Cosmos", CPR),
+        ("TranscendentalIdealism", "grounds", "ThingInItself", CPR),
+    ]
     return E
 
 
@@ -432,6 +510,12 @@ def _propositions() -> List[Proposition]:
                     truth_value=True, label="P-FreedomNature", id="k_p_freedom_nature", reference=CPR),
         Proposition("The highest good unites virtue with proportionate happiness.",
                     truth_value=True, label="P-HighestGood", id="k_p_highest_good", reference=CPrR),
+        Proposition("The beautiful is the symbol of the morally good.",
+                    truth_value=True, label="P-BeautySymbol", id="k_p_beauty_symbol", reference=CJ),
+        Proposition("Organized beings must be judged as natural purposes.",
+                    truth_value=True, label="P-NaturalPurpose", id="k_p_natural_purpose", reference=CJ),
+        Proposition("Every cosmological antinomy is resolved by distinguishing appearances from things in themselves.",
+                    truth_value=True, label="P-AntinomyResolution", id="k_p_antinomy_resolution", reference=CPR),
     ]
 
 
@@ -468,6 +552,14 @@ def _arguments() -> List[Argument]:
             "Therefore we must postulate freedom, immortality, and the existence of God.",
             scheme="moral argument", label="Postulates-Argument",
             id="k_arg_postulates", reference=CPrR,
+        ),
+        Argument(
+            ["A judgment of taste claims the universal agreement of everyone.",
+             "It can rest neither on determinate concepts nor on private sensation.",
+             "It must therefore presuppose a common sense (sensus communis) shared by all."],
+            "Therefore judgments of taste are grounded in a common sense warranting their universal validity.",
+            scheme="deduction of taste", label="Deduction-of-Taste",
+            id="k_arg_taste", reference=CJ,
         ),
     ]
 
