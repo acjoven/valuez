@@ -64,6 +64,51 @@
     "scheme": "transcendental argument"
   },
   {
+    "conclusion": "Nothing can be conceived as good without qualification except a good will.",
+    "id": "k_arg_good_will",
+    "kind": "argument",
+    "label": "Good-Will-Argument",
+    "premises": [
+      "A good will is good through its willing, not through its effects.",
+      "Every other good (talents, fortune, even happiness) can be put to bad use.",
+      "Only a good will is good without limitation."
+    ],
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "scheme": "analysis of common moral cognition"
+  },
+  {
+    "conclusion": "Therefore we must postulate freedom, immortality, and the existence of God.",
+    "id": "k_arg_postulates",
+    "kind": "argument",
+    "label": "Postulates-Argument",
+    "premises": [
+      "Practical reason commands us to promote the highest good.",
+      "The highest good (virtue with proportionate happiness) must therefore be possible.",
+      "Its possibility requires freedom, the immortality of the soul, and the existence of God."
+    ],
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "scheme": "moral argument"
+  },
+  {
+    "conclusion": "Therefore freedom and natural necessity can both hold without contradiction.",
+    "id": "k_arg_third_antinomy",
+    "kind": "argument",
+    "label": "Third-Antinomy-Resolution",
+    "premises": [
+      "If appearances were things in themselves, freedom and natural causality would contradict.",
+      "Under transcendental idealism, appearances are not things in themselves.",
+      "Natural causality then governs appearances, while freedom may govern things in themselves."
+    ],
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "scheme": "resolution of an antinomy"
+  },
+  {
     "definition": "Self-legislation of the rational will.",
     "id": "k_autonomy",
     "kind": "universal",
@@ -82,6 +127,13 @@
     "id": "k_categoricalimperative",
     "kind": "universal",
     "name": "CategoricalImperative",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "A formulation of the categorical imperative.",
+    "id": "k_categoricalimperativeformula",
+    "kind": "universal",
+    "name": "CategoricalImperativeFormula",
     "ontological_status": "abstract"
   },
   {
@@ -241,6 +293,13 @@
     "ontological_status": "a priori"
   },
   {
+    "definition": "Ground of the possibility of the highest good; a postulate.",
+    "id": "k_existenceofgod",
+    "kind": "universal",
+    "name": "ExistenceOfGod",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "Empirical cognition; the unity of appearances under categories.",
     "id": "k_experience",
     "kind": "universal",
@@ -255,11 +314,53 @@
     "ontological_status": "transcendental"
   },
   {
+    "definition": "The world's beginning and limits in time and space.",
+    "id": "k_firstantinomy",
+    "kind": "universal",
+    "name": "FirstAntinomy",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "A priori form structuring sensibility.",
     "id": "k_formofintuition",
     "kind": "universal",
     "name": "FormOfIntuition",
     "ontological_status": "a priori"
+  },
+  {
+    "definition": "The will legislating universal law through its own maxims.",
+    "id": "k_formulaofautonomy",
+    "kind": "universal",
+    "name": "FormulaOfAutonomy",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Treat humanity always as an end, never merely as a means.",
+    "id": "k_formulaofhumanity",
+    "kind": "universal",
+    "name": "FormulaOfHumanity",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Act as a legislating member of a kingdom of ends.",
+    "id": "k_formulaofkingdomofends",
+    "kind": "universal",
+    "name": "FormulaOfKingdomOfEnds",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Act only on a maxim you can will to be a universal law.",
+    "id": "k_formulaofuniversallaw",
+    "kind": "universal",
+    "name": "FormulaOfUniversalLaw",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "A necessary being of the world versus none.",
+    "id": "k_fourthantinomy",
+    "kind": "universal",
+    "name": "FourthAntinomy",
+    "ontological_status": "transcendental"
   },
   {
     "definition": "Autonomy of the will; a postulate of practical reason.",
@@ -300,10 +401,24 @@
     }
   },
   {
+    "definition": "Satisfaction of the sum of one's inclinations.",
+    "id": "k_happiness",
+    "kind": "universal",
+    "name": "Happiness",
+    "ontological_status": "abstract"
+  },
+  {
     "definition": "Determination of the will by external ends.",
     "id": "k_heteronomy",
     "kind": "universal",
     "name": "Heteronomy",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Summum bonum: virtue united with proportionate happiness.",
+    "id": "k_highestgood",
+    "kind": "universal",
+    "name": "HighestGood",
     "ontological_status": "abstract"
   },
   {
@@ -343,6 +458,13 @@
     "reference": {
       "source": "Stanford Encyclopedia of Philosophy, 'Immanuel Kant'"
     }
+  },
+  {
+    "definition": "Endless progress toward holiness; a postulate.",
+    "id": "k_immortalityofsoul",
+    "kind": "universal",
+    "name": "ImmortalityOfSoul",
+    "ontological_status": "transcendental"
   },
   {
     "definition": "A command of practical reason.",
@@ -432,10 +554,24 @@
     "ontological_status": "a priori"
   },
   {
+    "definition": "The table of the forms of judgment.",
+    "id": "k_logicalfunctionsofjudgment",
+    "kind": "universal",
+    "name": "LogicalFunctionsOfJudgment",
+    "ontological_status": "a priori"
+  },
+  {
     "definition": "Subjective principle of volition.",
     "id": "k_maxim",
     "kind": "universal",
     "name": "Maxim",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Derivation of the categories from the logical functions of judgment.",
+    "id": "k_metaphysicaldeduction",
+    "kind": "universal",
+    "name": "MetaphysicalDeduction",
     "ontological_status": "abstract"
   },
   {
@@ -514,6 +650,16 @@
     "truth_value": true
   },
   {
+    "id": "k_p_freedom_nature",
+    "kind": "proposition",
+    "label": "P-FreedomNature",
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "statement": "Freedom and natural necessity are reconcilable under transcendental idealism.",
+    "truth_value": true
+  },
+  {
     "id": "k_p_ful",
     "kind": "proposition",
     "label": "P-FUL",
@@ -521,6 +667,36 @@
       "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
     },
     "statement": "Act only on that maxim you can will to become a universal law.",
+    "truth_value": true
+  },
+  {
+    "id": "k_p_good_will",
+    "kind": "proposition",
+    "label": "P-GoodWill",
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "statement": "Nothing can be conceived as good without qualification except a good will.",
+    "truth_value": true
+  },
+  {
+    "id": "k_p_highest_good",
+    "kind": "proposition",
+    "label": "P-HighestGood",
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "statement": "The highest good unites virtue with proportionate happiness.",
+    "truth_value": true
+  },
+  {
+    "id": "k_p_postulates",
+    "kind": "proposition",
+    "label": "P-Postulates",
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "statement": "Freedom, immortality, and God are postulates of pure practical reason.",
     "truth_value": true
   },
   {
@@ -551,6 +727,34 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Fallacy concerning the soul's relation to outer objects.",
+    "id": "k_paralogismofideality",
+    "kind": "universal",
+    "name": "ParalogismOfIdeality",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Fallacy: the soul is a person, identical over time.",
+    "id": "k_paralogismofpersonality",
+    "kind": "universal",
+    "name": "ParalogismOfPersonality",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Fallacy: the soul is simple.",
+    "id": "k_paralogismofsimplicity",
+    "kind": "universal",
+    "name": "ParalogismOfSimplicity",
+    "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Fallacy: the soul is a substance.",
+    "id": "k_paralogismofsubstantiality",
+    "kind": "universal",
+    "name": "ParalogismOfSubstantiality",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "One who practices philosophy.",
     "id": "k_philosopher",
     "kind": "universal",
@@ -579,6 +783,13 @@
     "ontological_status": "a priori"
   },
   {
+    "definition": "A postulate of pure practical reason.",
+    "id": "k_postulate",
+    "kind": "universal",
+    "name": "Postulate",
+    "ontological_status": "transcendental"
+  },
+  {
     "definition": "Urteilskraft: faculty subsuming particulars under universals.",
     "id": "k_powerofjudgment",
     "kind": "universal",
@@ -591,6 +802,13 @@
     "kind": "universal",
     "name": "PracticalReason",
     "ontological_status": "transcendental"
+  },
+  {
+    "definition": "Synthetic a priori principles grounded in the categories.",
+    "id": "k_principlesofpureunderstanding",
+    "kind": "universal",
+    "name": "PrinciplesOfPureUnderstanding",
+    "ontological_status": "abstract"
   },
   {
     "definition": "Prolegomena to Any Future Metaphysics (1783).",
@@ -624,6 +842,13 @@
     "ontological_status": "transcendental"
   },
   {
+    "definition": "Proof that inner experience presupposes outer objects.",
+    "id": "k_refutationofidealism",
+    "kind": "universal",
+    "name": "RefutationOfIdealism",
+    "ontological_status": "abstract"
+  },
+  {
     "id": "k_rel_000",
     "kind": "relation",
     "predicate": "is-a",
@@ -647,7 +872,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -680,7 +906,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -713,7 +940,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -746,7 +974,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -779,7 +1008,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -812,7 +1042,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -845,7 +1076,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -878,7 +1110,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -911,7 +1144,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -944,7 +1178,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -977,7 +1212,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1010,7 +1246,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1043,7 +1280,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1076,7 +1314,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1109,7 +1348,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1142,7 +1382,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1175,7 +1416,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1208,7 +1450,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1241,7 +1484,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1274,7 +1518,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1307,7 +1552,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1340,7 +1586,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1373,7 +1620,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1406,7 +1654,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1439,7 +1688,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1472,7 +1722,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1505,7 +1756,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1538,7 +1790,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1571,7 +1824,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1604,7 +1858,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1637,7 +1892,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1670,7 +1926,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1703,7 +1960,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1736,7 +1994,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1769,7 +2028,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1802,7 +2062,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1835,7 +2096,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1868,7 +2130,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1901,7 +2164,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1934,7 +2198,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -1967,7 +2232,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2000,7 +2266,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2033,7 +2300,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2066,7 +2334,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2099,7 +2368,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2132,7 +2402,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2165,7 +2436,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2198,7 +2470,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2231,7 +2504,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2264,7 +2538,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2297,7 +2572,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2330,7 +2606,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2363,7 +2640,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2396,7 +2674,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2429,7 +2708,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2462,7 +2742,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2495,7 +2776,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2528,7 +2810,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2561,7 +2844,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2594,7 +2878,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2627,7 +2912,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2660,7 +2946,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2693,7 +2980,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2726,7 +3014,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2759,7 +3048,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2792,7 +3082,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2825,7 +3116,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2858,7 +3150,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2891,7 +3184,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2924,7 +3218,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2957,7 +3252,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -2990,7 +3286,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3023,7 +3320,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3056,7 +3354,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3089,7 +3388,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3122,7 +3422,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3155,7 +3456,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3188,7 +3490,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3221,7 +3524,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3254,7 +3558,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3287,7 +3592,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3320,7 +3626,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3353,7 +3660,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3386,7 +3694,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3419,7 +3728,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "Appearance",
@@ -3449,7 +3759,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "Analytic",
@@ -3479,7 +3790,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "APriori",
@@ -3509,7 +3821,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "CategoricalImperative",
@@ -3539,7 +3852,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "Autonomy",
@@ -3569,7 +3883,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "Beautiful",
@@ -3599,7 +3914,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "source": "Intuition",
@@ -3629,7 +3945,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3662,7 +3979,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3695,7 +4013,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3728,7 +4047,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3761,7 +4081,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3794,7 +4115,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3827,7 +4149,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3860,7 +4183,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3893,7 +4217,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3926,7 +4251,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3959,7 +4285,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -3992,7 +4319,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4025,7 +4353,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4058,7 +4387,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4091,7 +4421,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4124,7 +4455,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4157,7 +4489,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4190,7 +4523,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4223,7 +4557,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4256,7 +4591,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4289,7 +4625,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4322,7 +4659,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4355,7 +4693,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4388,7 +4727,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4421,7 +4761,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4454,7 +4795,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4487,7 +4829,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4520,7 +4863,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4553,7 +4897,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4586,7 +4931,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4619,7 +4965,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4652,7 +4999,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4685,7 +5033,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4718,7 +5067,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4751,7 +5101,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4784,7 +5135,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4817,7 +5169,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4850,7 +5203,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4883,7 +5237,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -4891,6 +5246,1944 @@
     },
     "source": "Genius",
     "target": "Beautiful"
+  },
+  {
+    "id": "k_rel_130",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "CategoricalImperativeFormula",
+    "target": "MoralConcept"
+  },
+  {
+    "id": "k_rel_131",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfUniversalLaw",
+    "target": "CategoricalImperativeFormula"
+  },
+  {
+    "id": "k_rel_132",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfHumanity",
+    "target": "CategoricalImperativeFormula"
+  },
+  {
+    "id": "k_rel_133",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfAutonomy",
+    "target": "CategoricalImperativeFormula"
+  },
+  {
+    "id": "k_rel_134",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfKingdomOfEnds",
+    "target": "CategoricalImperativeFormula"
+  },
+  {
+    "id": "k_rel_135",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "Postulate",
+    "target": "MoralConcept"
+  },
+  {
+    "id": "k_rel_136",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "HighestGood",
+    "target": "MoralConcept"
+  },
+  {
+    "id": "k_rel_137",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "Virtue",
+    "target": "MoralConcept"
+  },
+  {
+    "id": "k_rel_138",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "Happiness",
+    "target": "MoralConcept"
+  },
+  {
+    "id": "k_rel_139",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "Freedom",
+    "target": "Postulate"
+  },
+  {
+    "id": "k_rel_140",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ImmortalityOfSoul",
+    "target": "Postulate"
+  },
+  {
+    "id": "k_rel_141",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ExistenceOfGod",
+    "target": "Postulate"
+  },
+  {
+    "id": "k_rel_142",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomy",
+    "target": "Antinomy"
+  },
+  {
+    "id": "k_rel_143",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomy",
+    "target": "Antinomy"
+  },
+  {
+    "id": "k_rel_144",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomy",
+    "target": "Antinomy"
+  },
+  {
+    "id": "k_rel_145",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomy",
+    "target": "Antinomy"
+  },
+  {
+    "id": "k_rel_146",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfSubstantiality",
+    "target": "Paralogism"
+  },
+  {
+    "id": "k_rel_147",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfSimplicity",
+    "target": "Paralogism"
+  },
+  {
+    "id": "k_rel_148",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfPersonality",
+    "target": "Paralogism"
+  },
+  {
+    "id": "k_rel_149",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfIdeality",
+    "target": "Paralogism"
+  },
+  {
+    "id": "k_rel_150",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "MetaphysicalDeduction",
+    "target": "CritiquePart"
+  },
+  {
+    "id": "k_rel_151",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "Schematism",
+    "target": "CritiquePart"
+  },
+  {
+    "id": "k_rel_152",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "PrinciplesOfPureUnderstanding",
+    "target": "CritiquePart"
+  },
+  {
+    "id": "k_rel_153",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "RefutationOfIdealism",
+    "target": "CritiquePart"
+  },
+  {
+    "id": "k_rel_154",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "MetaphysicalDeduction",
+    "target": "TranscendentalAnalytic"
+  },
+  {
+    "id": "k_rel_155",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "Schematism",
+    "target": "TranscendentalAnalytic"
+  },
+  {
+    "id": "k_rel_156",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "PrinciplesOfPureUnderstanding",
+    "target": "TranscendentalAnalytic"
+  },
+  {
+    "id": "k_rel_157",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "RefutationOfIdealism",
+    "target": "TranscendentalAnalytic"
+  },
+  {
+    "id": "k_rel_158",
+    "kind": "relation",
+    "predicate": "formulation-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfUniversalLaw",
+    "target": "CategoricalImperative"
+  },
+  {
+    "id": "k_rel_159",
+    "kind": "relation",
+    "predicate": "formulation-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfHumanity",
+    "target": "CategoricalImperative"
+  },
+  {
+    "id": "k_rel_160",
+    "kind": "relation",
+    "predicate": "formulation-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfAutonomy",
+    "target": "CategoricalImperative"
+  },
+  {
+    "id": "k_rel_161",
+    "kind": "relation",
+    "predicate": "formulation-of",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfKingdomOfEnds",
+    "target": "CategoricalImperative"
+  },
+  {
+    "id": "k_rel_162",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfUniversalLaw",
+    "target": "Universalizability"
+  },
+  {
+    "id": "k_rel_163",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfHumanity",
+    "target": "EndInItself"
+  },
+  {
+    "id": "k_rel_164",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfHumanity",
+    "target": "Dignity"
+  },
+  {
+    "id": "k_rel_165",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfAutonomy",
+    "target": "Autonomy"
+  },
+  {
+    "id": "k_rel_166",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Groundwork of the Metaphysics of Morals (1785)"
+    },
+    "source": "FormulaOfKingdomOfEnds",
+    "target": "KingdomOfEnds"
+  },
+  {
+    "id": "k_rel_167",
+    "kind": "relation",
+    "predicate": "produces",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "source": "PracticalReason",
+    "target": "Postulate"
+  },
+  {
+    "id": "k_rel_168",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "source": "HighestGood",
+    "target": "Virtue"
+  },
+  {
+    "id": "k_rel_169",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "source": "HighestGood",
+    "target": "Happiness"
+  },
+  {
+    "id": "k_rel_170",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "source": "HighestGood",
+    "target": "ImmortalityOfSoul"
+  },
+  {
+    "id": "k_rel_171",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Practical Reason (1788)"
+    },
+    "source": "HighestGood",
+    "target": "ExistenceOfGod"
+  },
+  {
+    "id": "k_rel_172",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FirstAntinomy",
+    "target": "Cosmos"
+  },
+  {
+    "id": "k_rel_173",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "SecondAntinomy",
+    "target": "Cosmos"
+  },
+  {
+    "id": "k_rel_174",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomy",
+    "target": "Freedom"
+  },
+  {
+    "id": "k_rel_175",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ThirdAntinomy",
+    "target": "Causality"
+  },
+  {
+    "id": "k_rel_176",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "FourthAntinomy",
+    "target": "Cosmos"
+  },
+  {
+    "id": "k_rel_177",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfSubstantiality",
+    "target": "Soul"
+  },
+  {
+    "id": "k_rel_178",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfSimplicity",
+    "target": "Soul"
+  },
+  {
+    "id": "k_rel_179",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfPersonality",
+    "target": "Soul"
+  },
+  {
+    "id": "k_rel_180",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "ParalogismOfIdeality",
+    "target": "Soul"
+  },
+  {
+    "id": "k_rel_181",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "MetaphysicalDeduction",
+    "target": "LogicalFunctionsOfJudgment"
+  },
+  {
+    "id": "k_rel_182",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "MetaphysicalDeduction",
+    "target": "Category"
+  },
+  {
+    "id": "k_rel_183",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "LogicalFunctionsOfJudgment",
+    "target": "Category"
+  },
+  {
+    "id": "k_rel_184",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "Schematism",
+    "target": "Schema"
+  },
+  {
+    "id": "k_rel_185",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "PrinciplesOfPureUnderstanding",
+    "target": "Experience"
+  },
+  {
+    "id": "k_rel_186",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kantian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of"
+      ]
+    },
+    "reference": {
+      "source": "Kant, Critique of Pure Reason (1781/1787)"
+    },
+    "source": "RefutationOfIdealism",
+    "target": "Time"
   },
   {
     "definition": "Vorstellung: any mental content.",
@@ -4905,6 +7198,20 @@
     "kind": "universal",
     "name": "Schema",
     "ontological_status": "a priori"
+  },
+  {
+    "definition": "How categories apply to appearances via transcendental schemata.",
+    "id": "k_schematism",
+    "kind": "universal",
+    "name": "Schematism",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Simple parts versus infinite divisibility of substance.",
+    "id": "k_secondantinomy",
+    "kind": "universal",
+    "name": "SecondAntinomy",
+    "ontological_status": "transcendental"
   },
   {
     "definition": "Faculty of receptivity yielding intuitions.",
@@ -4975,6 +7282,13 @@
     "kind": "universal",
     "name": "ThingInItself",
     "ontological_status": "noumenal"
+  },
+  {
+    "definition": "Causality through freedom versus universal natural causality.",
+    "id": "k_thirdantinomy",
+    "kind": "universal",
+    "name": "ThirdAntinomy",
+    "ontological_status": "transcendental"
   },
   {
     "definition": "A priori form of inner intuition.",
@@ -5061,6 +7375,13 @@
     "ontological_status": "abstract"
   },
   {
+    "definition": "Moral strength of will in fulfilling one's duty.",
+    "id": "k_virtue",
+    "kind": "universal",
+    "name": "Virtue",
+    "ontological_status": "abstract"
+  },
+  {
     "id": "k_wrote_k_critiqueofjudgment",
     "kind": "relation",
     "predicate": "wrote",
@@ -5084,7 +7405,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -5117,7 +7439,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -5150,7 +7473,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -5183,7 +7507,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
@@ -5216,7 +7541,8 @@
         "enables",
         "presupposes",
         "is-form-of",
-        "addresses"
+        "addresses",
+        "formulation-of"
       ]
     },
     "reference": {
