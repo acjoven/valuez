@@ -194,3 +194,40 @@ python examples/empirical_functions.py
 
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_functions/` folder in
 your temp dir).
+
+## `kant_ontology.py` — the critical philosophy of Immanuel Kant
+
+A larger **content** example: a curated ontology of Kant's system spanning the
+three Critiques, built entirely from the semantic + metaphysics primitives.
+
+- **Particulars** (`Individual`): Kant and his major works.
+- **Universals** (`Universal`, ~85): faculties (sensibility / understanding /
+  reason), representations (intuition / concept / category / idea), the full
+  **table of categories** (four titles + twelve), phenomena vs. noumena, the
+  ideas of reason (soul / cosmos / God), the moral concepts (categorical
+  imperative, autonomy, good will, kingdom of ends ...), and the aesthetic
+  concepts (beautiful / sublime / judgment of taste). Each carries an
+  `ontological_status` (`transcendental` / `a priori` / `phenomenal` /
+  `noumenal` / ...).
+- **Instantiation**: typed `Individual --instantiates--> Universal` edges.
+- **Relations** over a controlled vocabulary: `is-a`, `part-of` (structure of
+  the first Critique), `contrasts-with` (Kant's dichotomies), plus `grounds` /
+  `requires` / `produces` / `enables` / `presupposes` / `applies-to` /
+  `addresses` / `is-form-of`.
+- **Propositions** (cited theses) and one **Argument** sketching the
+  Transcendental Deduction.
+
+The script checks **referential integrity** (every edge endpoint is a defined
+node), reasons over the graph (transitive closure of `is-a`; acyclicity of the
+strict orders), persists everything through `dots`, **exports the canonical
+`ontologies/kant.json`**, and renders an interactive graph.
+
+### Run
+
+```bash
+python examples/kant_ontology.py
+```
+
+`ontologies/kant.json` is the committed source-of-truth artifact; the rendered
+`kant_ontology.html` / `kant_arguments.html` go to `$VALUEZ_EXAMPLE_OUT`
+(default: a `valuez_kant/` folder in your temp dir).
