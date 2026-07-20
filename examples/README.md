@@ -195,6 +195,38 @@ python examples/empirical_functions.py
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_functions/` folder in
 your temp dir).
 
+## `reading_session.py` — build an ontology *as you read*
+
+The ergonomic counterpart to `kant_ontology.py`. It reconstructs the epistemic
+core of the first Critique (sensibility / understanding, space & time, the
+categories, the Transcendental Deduction) using the Tier-1 authoring helper
+`valuez.Reading` instead of the raw `Concept` / `Relation` API.
+
+The point is to show how much scaffolding the session removes:
+
+- `with book.at("A51/B75"):` cites a passage **once**; every concept, relation,
+  and claim in the block inherits that `Reference` automatically.
+- `book.universal(name, definition)` is **create-or-reuse** (declaring a term
+  twice returns the same node and can enrich a missing definition).
+- `book.relate(src, pred, tgt)` validates **eagerly** — both endpoints must be
+  declared and the predicate must be in the controlled `Vocabulary` — so typos
+  raise at the line that introduced them, not in a late integrity sweep.
+- `book.instantiate(...)` enforces `Individual --instantiates--> Universal`.
+- `book.check()`, `book.is_acyclic(...)`, `book.infer_transitive(...)`,
+  `book.export(...)`, and `book.render(...)` cover validation, reasoning,
+  persistence, and visualization in one call each.
+
+### Run
+
+```bash
+python examples/reading_session.py
+```
+
+Writes `reading_session.json` and an interactive graph (with inferred `is-a`
+edges overlaid) to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_reading/` folder in
+your temp dir). For the optional, suggestion-only LLM tier that would feed
+candidates into this same session, see [`docs/llm_assist.md`](../docs/llm_assist.md).
+
 ## `kant_ontology.py` — the critical philosophy of Immanuel Kant
 
 A larger **content** example: a curated ontology of Kant's system spanning the

@@ -19,6 +19,7 @@ from .qualitative import (
     Textual,
     Vocabulary,
 )
+from .reading import OntologyBuilder, Reading
 from .semantic import (
     Argument,
     Concept,
@@ -63,6 +64,8 @@ __all__ = [
     "Individual",
     "Universal",
     "Instantiation",
+    "Reading",
+    "OntologyBuilder",
     "reasoning",
     "units",
     "pint_available",
