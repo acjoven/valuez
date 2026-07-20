@@ -514,6 +514,16 @@ class Reading:
         repo.add_values(self.values())
         return repo
 
+    def bibliography(self, **kwargs: Any) -> Any:
+        """Collect the cited bibliographic sources into a :class:`ReferenceRepository`.
+
+        Only keyed sources are gathered by default; see
+        :meth:`ReferenceRepository.from_values` for options.
+        """
+        from .bibliography import ReferenceRepository
+
+        return ReferenceRepository.from_values(self.values(), **kwargs)
+
     def export(self, path: Union[str, Path], data_dir: Optional[Union[str, Path]] = None) -> Path:
         """Write the canonical single-file ontology JSON (the artifact to commit)."""
         return self.to_repository(data_dir=data_dir).export_ontology(path)

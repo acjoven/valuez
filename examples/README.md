@@ -227,6 +227,23 @@ edges overlaid) to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_reading/` folder in
 your temp dir). For the optional, suggestion-only LLM tier that would feed
 candidates into this same session, see [`docs/llm_assist.md`](../docs/llm_assist.md).
 
+## `bibliography_demo.py` — manage sources as BibTeX
+
+Shows `valuez.ReferenceRepository`: load a BibTeX library, ground several values
+in a single **shared keyed source** (no duplicated citation strings), cite a
+source inside a `Reading` session by key, then export the library back to `.bib`
+and render a formatted bibliography. BibTeX I/O uses the optional `pybtex`
+dependency.
+
+### Run
+
+```bash
+python examples/bibliography_demo.py
+```
+
+Writes `sources.bib` to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_bibliography/`
+folder in your temp dir).
+
 ## `kant_ontology.py` — the critical philosophy of Immanuel Kant
 
 A larger **content** example: a curated ontology of Kant's system spanning the

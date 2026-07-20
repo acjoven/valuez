@@ -6,5 +6,10 @@
 
 pint==0.25.3
 
+# Optional: BibTeX-backed source management (valuez.bibliography /
+# ReferenceRepository). The library degrades gracefully without it -- only the
+# BibTeX import/export/format operations require it.
+pybtex==0.26.1
+
 # Test tooling
 pytest==8.3.3
