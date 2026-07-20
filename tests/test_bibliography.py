@@ -171,3 +171,72 @@ def test_format_bibliography_html_backend():
     repo = ReferenceRepository([_kant()])
     formatted = repo.format_bibliography(style="unsrt", backend="html")
     assert "kant1998" in formatted
+
+
+# --------------------------------------------------------------------------- #
+# Collection helper: from_values + Reading/ValueRepository wrappers            #
+# --------------------------------------------------------------------------- #
+def _incropera() -> Reference:
+    return Reference("Fundamentals of Heat and Mass Transfer", key="incropera2007",
+                     entry_type="book", fields={"year": "2007"})
+
+
+def test_from_values_collects_keyed_sources_and_dedups():
+    incr = _incropera()
+    values = [
+        Scalar(2.0, unit="W/m^2/K", reference=incr),
+        Scalar(25.0, unit="W/m^2/K", reference=incr),  # same shared source
+        Scalar(1.0, reference=_kant()),
+        Scalar(3.0),  # ungrounded -> ignored
+    ]
+    bib = ReferenceRepository.from_values(values)
+    assert sorted(bib.keys()) == ["incropera2007", "kant1998"]
+
+
+def test_from_values_accepts_bare_references():
+    bib = ReferenceRepository.from_values([_kant(), _incropera()])
+    assert len(bib) == 2
+
+
+def test_from_values_skips_unkeyed_by_default_and_can_include():
+    passage = Reference("Some Book", locator="p.12")  # no key
+    values = [Scalar(1.0, reference=passage), Scalar(2.0, reference=_kant())]
+    assert ReferenceRepository.from_values(values).keys() == ["kant1998"]
+    both = ReferenceRepository.from_values(values, include_unkeyed=True)
+    assert "kant1998" in both
+    assert "some_book" in both  # synthesized from the source string
+
+
+def test_from_values_conflict_policies():
+    a = Reference("X", key="dup", entry_type="misc", fields={"year": "2000"})
+    b = Reference("Y", key="dup", entry_type="misc", fields={"year": "2001"})
+    assert ReferenceRepository.from_values([a, b]).reference("dup").fields["year"] == "2000"
+    replaced = ReferenceRepository.from_values([a, b], on_conflict="replace")
+    assert replaced.reference("dup").fields["year"] == "2001"
+    with pytest.raises(ValueError):
+        ReferenceRepository.from_values([a, b], on_conflict="raise")
+    with pytest.raises(ValueError):
+        ReferenceRepository.from_values([a], on_conflict="bogus")
+
+
+def test_reading_bibliography_wrapper():
+    from valuez import Reading, Vocabulary
+
+    book = Reading(source="CPR", predicates=Vocabulary("p", ["is-a"]))
+    with book.cite(_kant()):
+        book.universal("Space")
+        book.universal("Intuition")
+        book.relate("Space", "is-a", "Intuition")
+    bib = book.bibliography()
+    assert bib.keys() == ["kant1998"]
+
+
+def test_value_repository_bibliography_wrapper(tmp_path):
+    from valuez.repository import ValueRepository
+
+    incr = _incropera()
+    repo = ValueRepository(data_dir=tmp_path / "store")
+    repo.add_values([Scalar(2.0, reference=incr), Scalar(1.0, reference=_kant())])
+    bib = repo.bibliography()
+    assert sorted(bib.keys()) == ["incropera2007", "kant1998"]
+    assert "@book{kant1998" in bib.export_bibtex()

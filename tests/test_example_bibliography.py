@@ -19,6 +19,8 @@ def test_demo_runs_and_writes_bibtex(tmp_path, monkeypatch, capsys):
     demo.main()
     out = capsys.readouterr().out
     assert "Imported 3 sources" in out
-    bib = (tmp_path / "sources.bib").read_text()
+    # The exported file holds only the CITED sources (collected from the values).
+    bib = (tmp_path / "cited.bib").read_text()
     assert "@book{incropera2007" in bib
-    assert "@article{churchill1975" in bib
+    assert "@book{kant1998" in bib
+    assert "churchill1975" not in bib  # loaded but never cited

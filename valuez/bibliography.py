@@ -25,6 +25,7 @@ and the whole set of sources an ontology cites can be exported as a bibliography
 from __future__ import annotations
 
 import os
+import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Tuple, Union
 
@@ -103,6 +104,20 @@ def entry_to_reference(key: str, entry: Any) -> Reference:
     )
 
 
+def _slug_key(source: str) -> str:
+    """A citation-key-friendly slug of a source string."""
+    slug = re.sub(r"[^0-9a-zA-Z]+", "_", source).strip("_").lower()
+    return slug or "ref"
+
+
+def _as_reference(item: Any) -> Optional[Reference]:
+    """Extract a Reference from a Reference or any object with a ``.reference``."""
+    if isinstance(item, Reference):
+        return item
+    ref = getattr(item, "reference", None)
+    return ref if isinstance(ref, Reference) else None
+
+
 class ReferenceRepository:
     """A keyed, de-duplicated collection of bibliographic sources.
 
@@ -141,6 +156,55 @@ class ReferenceRepository:
 
     def add_all(self, references: Iterable[Reference], *, replace: bool = False) -> List[str]:
         return [self.add(r, replace=replace) for r in references]
+
+    @classmethod
+    def from_values(
+        cls,
+        values: Iterable[Any],
+        *,
+        include_unkeyed: bool = False,
+        on_conflict: str = "first",
+    ) -> "ReferenceRepository":
+        """Collect the sources cited across an ontology into one repository.
+
+        ``values`` may be :class:`~valuez.Reference` instances or any objects that
+        carry a ``.reference`` (e.g. every :class:`~valuez.values.Value`), so this
+        works directly on a :class:`~valuez.Reading` session's ``values()``, a
+        list of stored objects, etc.
+
+        Only references with a citation ``key`` are collected by default (those
+        are the bibliographic *sources*); pass ``include_unkeyed=True`` to also
+        gather passage-only references, synthesizing a key from their ``source``.
+        ``on_conflict`` decides what happens when one key maps to two different
+        references: ``"first"`` keeps the first seen (default), ``"replace"``
+        keeps the last, and ``"raise"`` raises.
+        """
+        if on_conflict not in ("first", "replace", "raise"):
+            raise ValueError("on_conflict must be 'first', 'replace', or 'raise'")
+        repo = cls()
+        for item in values:
+            ref = _as_reference(item)
+            if ref is None:
+                continue
+            key = ref.key
+            if not key:
+                if not include_unkeyed:
+                    continue
+                base = _slug_key(ref.source)
+                key, n = base, 2
+                while key in repo:
+                    key, n = f"{base}_{n}", n + 1
+                data = ref.to_dict()
+                data.setdefault("bibtex", {})["key"] = key
+                ref = Reference.from_dict(data)
+            existing = repo.get(key)
+            if existing is not None and existing != ref:
+                if on_conflict == "raise":
+                    raise ValueError(f"key {key!r} cited with conflicting references")
+                if on_conflict == "first":
+                    continue
+            repo.add(ref, replace=True)
+        return repo
 
     def get(self, key: str) -> Optional[Reference]:
         return self._by_key.get(key)

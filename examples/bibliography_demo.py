@@ -87,13 +87,20 @@ def main() -> None:
           f"[{space.reference.key}] {space.reference.entry_type}")
     print()
 
-    # 4) Export the whole library and render a formatted bibliography.
-    bib_path = out_dir / "sources.bib"
-    refs.export_bibtex(bib_path)  # returns the BibTeX text; also writes the file
+    # 4) Collect the sources actually CITED across an ontology, from the values
+    #    themselves -- no need to track them by hand.
+    cited = ReferenceRepository.from_values(h_free + book.values())
+    print(f"Sources cited across the values + reading: {sorted(cited.keys())}")
+    print("  (churchill1975 was loaded but never cited, so it is absent)")
+    print()
+
+    # 5) Export the cited library and render a formatted bibliography.
+    bib_path = out_dir / "cited.bib"
+    cited.export_bibtex(bib_path)  # returns the BibTeX text; also writes the file
     print(f"BibTeX written: {bib_path}")
     print()
     print("Formatted bibliography (pybtex 'plain' style):")
-    for key, text in sorted(refs.format_bibliography().items()):
+    for key, text in sorted(cited.format_bibliography().items()):
         print(f"  [{key}] {text}")
     print(line)
 

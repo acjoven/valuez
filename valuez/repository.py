@@ -80,6 +80,22 @@ class ValueRepository:
     def query(self, expr: str):
         return run_jmespath(expr, self._store.load_all())
 
+    def bibliography(self, **kwargs):
+        """Collect the sources cited by all stored documents into a ReferenceRepository.
+
+        Rehydrates each document's ``reference`` and gathers the bibliographic
+        (keyed) sources; see ``ReferenceRepository.from_values`` for options.
+        """
+        from .bibliography import ReferenceRepository
+        from .values import Reference
+
+        refs = [
+            Reference.from_dict(doc["reference"])
+            for doc in self._store.load_all()
+            if doc.get("reference")
+        ]
+        return ReferenceRepository.from_values(refs, **kwargs)
+
     def to_graph_html(self, out: str, source="source", target="target"):
         g = build_graph_from_docs(self._store.load_all(), source, target)
         return visualize_graph(g, Path(out))

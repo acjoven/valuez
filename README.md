@@ -105,7 +105,7 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 | Layer | Types | Purpose |
 | --- | --- | --- |
 | **Provenance** | `Reference` | Ground-truth pointer (source, locator, confidence, metadata) with optional BibTeX fields (key, entry type, authors). |
-| | `ReferenceRepository` | Keyed, de-duplicated source manager: import/export `.bib` and render bibliographies (via optional `pybtex`). |
+| | `ReferenceRepository` | Keyed source manager: collect cited sources (`from_values`), import/export `.bib`, render bibliographies (via optional `pybtex`). |
 | **Quantitative** | `Scalar`, `Range` | A number / a closed interval `[low, high]` with optional `nominal`; pint-backed units. |
 | | `DataSet` | A unit-coherent collection of `Scalar`/`Range` with interval-aware aggregates. |
 | | `Sample`, `Function` | Input→output observations and an n-D function with interpolation / nearest-neighbor / sectioning. |
@@ -169,6 +169,16 @@ h = Scalar(25.0, unit="W/m^2/K", reference=refs.reference("incropera2007"))
 
 refs.export_bibtex("out.bib")                     # write the library back out
 print(refs.format_bibliography()["incropera2007"])  # formatted citation
+```
+
+To collect the sources actually *cited* across an ontology (rather than track
+them by hand), build a repository straight from the values:
+
+```python
+cited = ReferenceRepository.from_values(reading.values())  # or a list of values
+cited = reading.bibliography()                             # equivalent shortcut
+cited = value_repo.bibliography()                          # from a stored ontology
+cited.export_bibtex("cited.bib")
 ```
 
 BibTeX I/O and formatting use the optional `pybtex` dependency; `valuez` core
