@@ -19,7 +19,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from datetime import datetime, timezone
-from typing import Any, ClassVar, Dict, Optional, Type, Union
+from typing import Any, ClassVar, Dict, Iterable, List, Optional, Type, Union
 import uuid
 
 from . import units
@@ -43,6 +43,16 @@ class Reference:
     the value was taken from and, optionally, a finer-grained locator within
     that source, a human description, a subjective confidence in the ground
     truth (``0..1``), a retrieval timestamp, and arbitrary extra metadata.
+
+    A reference may additionally carry a **structured bibliographic record** in
+    the BibTeX sense: a citation ``key``, an ``entry_type`` (``article`` /
+    ``book`` / ...), a ``fields`` map (``title`` / ``year`` / ``doi`` / ...), and
+    ``persons`` keyed by role (``author`` / ``editor``, each a list of
+    ``"Last, First"`` name strings; ``authors`` is a shorthand for the
+    ``author`` role). These fields let a reference round-trip to/from ``.bib``
+    files and be managed by :class:`~valuez.bibliography.ReferenceRepository`.
+    The BibTeX conversion itself lives in :mod:`valuez.bibliography` (backed by
+    the optional ``pybtex`` dependency); this class stays a pure data holder.
     """
 
     def __init__(
@@ -54,17 +64,52 @@ class Reference:
         confidence: Optional[float] = None,
         retrieved_at: Optional[str] = None,
         metadata: Optional[Dict[str, Any]] = None,
+        key: Optional[str] = None,
+        entry_type: Optional[str] = None,
+        fields: Optional[Dict[str, Any]] = None,
+        authors: Optional[Iterable[str]] = None,
+        persons: Optional[Dict[str, Iterable[str]]] = None,
     ) -> None:
         if not source or not isinstance(source, str):
             raise ValueError("Reference.source must be a non-empty string")
         if confidence is not None and not (0.0 <= float(confidence) <= 1.0):
             raise ValueError("Reference.confidence must be within [0, 1]")
+        if key is not None and (not isinstance(key, str) or not key):
+            raise ValueError("Reference.key must be a non-empty string or None")
+        if entry_type is not None and (not isinstance(entry_type, str) or not entry_type):
+            raise ValueError("Reference.entry_type must be a non-empty string or None")
         self.source = source
         self.locator = locator
         self.description = description
         self.confidence = float(confidence) if confidence is not None else None
         self.retrieved_at = retrieved_at
         self.metadata: Dict[str, Any] = dict(metadata) if metadata else {}
+        self.key = key
+        self.entry_type = entry_type
+        self.fields: Dict[str, str] = {}
+        if fields:
+            for name, value in fields.items():
+                if not isinstance(name, str) or not name:
+                    raise ValueError("bibliographic field names must be non-empty strings")
+                self.fields[name] = value if isinstance(value, str) else str(value)
+        self.persons: Dict[str, List[str]] = {}
+        merged: Dict[str, Iterable[str]] = dict(persons) if persons else {}
+        if authors:
+            merged["author"] = list(authors) + list(merged.get("author", []))
+        for role, names in merged.items():
+            if not isinstance(role, str) or not role:
+                raise ValueError("person role must be a non-empty string")
+            self.persons[role] = [str(n) for n in names]
+
+    @property
+    def authors(self) -> List[str]:
+        """Convenience accessor for the ``author`` person role."""
+        return list(self.persons.get("author", []))
+
+    @property
+    def has_bibentry(self) -> bool:
+        """Whether this reference carries any structured bibliographic data."""
+        return bool(self.key or self.entry_type or self.fields or self.persons)
 
     @classmethod
     def now(cls, source: str, **kwargs: Any) -> "Reference":
@@ -84,10 +129,22 @@ class Reference:
             data["retrieved_at"] = self.retrieved_at
         if self.metadata:
             data["metadata"] = dict(self.metadata)
+        bib: Dict[str, Any] = {}
+        if self.key is not None:
+            bib["key"] = self.key
+        if self.entry_type is not None:
+            bib["entry_type"] = self.entry_type
+        if self.fields:
+            bib["fields"] = dict(self.fields)
+        if self.persons:
+            bib["persons"] = {role: list(names) for role, names in self.persons.items()}
+        if bib:
+            data["bibtex"] = bib
         return data
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Reference":
+        bib = data.get("bibtex") or {}
         return cls(
             source=data["source"],
             locator=data.get("locator"),
@@ -95,6 +152,10 @@ class Reference:
             confidence=data.get("confidence"),
             retrieved_at=data.get("retrieved_at"),
             metadata=data.get("metadata") or {},
+            key=bib.get("key"),
+            entry_type=bib.get("entry_type"),
+            fields=bib.get("fields"),
+            persons=bib.get("persons"),
         )
 
     def __eq__(self, other: object) -> bool:

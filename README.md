@@ -104,7 +104,8 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 
 | Layer | Types | Purpose |
 | --- | --- | --- |
-| **Provenance** | `Reference` | Ground-truth pointer (source, locator, confidence, metadata). |
+| **Provenance** | `Reference` | Ground-truth pointer (source, locator, confidence, metadata) with optional BibTeX fields (key, entry type, authors). |
+| | `ReferenceRepository` | Keyed, de-duplicated source manager: import/export `.bib` and render bibliographies (via optional `pybtex`). |
 | **Quantitative** | `Scalar`, `Range` | A number / a closed interval `[low, high]` with optional `nominal`; pint-backed units. |
 | | `DataSet` | A unit-coherent collection of `Scalar`/`Range` with interval-aware aggregates. |
 | | `Sample`, `Function` | Input→output observations and an n-D function with interpolation / nearest-neighbor / sectioning. |
@@ -152,6 +153,26 @@ repo = ValueRepository.from_ontology("ontologies/kant.json")
 The committed `ontologies/*.json` files are the source of truth; the expanded
 per-document `dots` store is a regenerable local cache (see
 [`ontologies/README.md`](ontologies/README.md)).
+
+### Managing sources (BibTeX)
+
+A `Reference` can carry a full bibliographic record, and `ReferenceRepository`
+manages sources by citation key so many values can share one keyed source
+instead of duplicating a citation string:
+
+```python
+from valuez import ReferenceRepository, Scalar
+
+refs = ReferenceRepository()
+refs.import_bibtex("sources.bib")                 # or a BibTeX string
+h = Scalar(25.0, unit="W/m^2/K", reference=refs.reference("incropera2007"))
+
+refs.export_bibtex("out.bib")                     # write the library back out
+print(refs.format_bibliography()["incropera2007"])  # formatted citation
+```
+
+BibTeX I/O and formatting use the optional `pybtex` dependency; `valuez` core
+works without it (only these operations require it).
 
 ---
 

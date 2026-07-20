@@ -6,7 +6,8 @@ cover over the functional ``dots`` storage/query/graph layer.
 """
 from __future__ import annotations
 
-from . import reasoning, units
+from . import bibliography, reasoning, units
+from .bibliography import ReferenceRepository
 from .dataset import DataSet
 from .function import Function, Sample
 from .metaphysics import Individual, Instantiation, MetaphysicalEntity, Universal
@@ -66,8 +67,10 @@ __all__ = [
     "Instantiation",
     "Reading",
     "OntologyBuilder",
+    "ReferenceRepository",
     "reasoning",
     "units",
+    "bibliography",
     "pint_available",
     "unit_registry",
     "validate_unit",
