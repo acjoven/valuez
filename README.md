@@ -218,10 +218,11 @@ See [`AGENTS.md`](AGENTS.md) for the authoritative dev/test/run notes.
 
 ---
 
-## Roadmap: levels of authoring automation
+## Roadmap
 
-`valuez` follows a deliberate principle — **automate mechanics aggressively,
-automate content only as reviewable suggestions**:
+Authoring tiers 1–3 follow a deliberate principle — **automate mechanics
+aggressively, automate content only as reviewable suggestions** — while tier 4
+covers interoperability:
 
 1. **Tier 1 — fluent authoring (done).** `Reading`/`OntologyBuilder`: citation
    context, create-or-reuse, eager validation, deterministic ids.
@@ -231,6 +232,11 @@ automate content only as reviewable suggestions**:
    ollama extractor that proposes schema-validated, span-cited candidates for
    human accept/edit/reject, entering the graph only through the Tier-1 API. See
    [`docs/llm_assist.md`](docs/llm_assist.md).
+4. **Tier 4 — interoperability / standards export (design sketch).** Optional
+   export/import to RDF/OWL, JSON-LD, SKOS, W3C PROV, and nanopublications (plus
+   CSL/BIBFRAME for bibliography), so `valuez` maps join the wider
+   structured-knowledge ecosystem. See
+   [`docs/interoperability.md`](docs/interoperability.md).
 
 ---
 
@@ -241,6 +247,6 @@ valuez/        # the library (values, qualitative, semantic, metaphysics,
                #   dataset, function, reasoning, reading, units, repository)
 examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)
-docs/          # design notes (e.g. the Tier-3 LLM assist sketch)
+docs/          # design notes (Tier-3 LLM assist, Tier-4 interoperability)
 tests/         # pytest suite
 ```
