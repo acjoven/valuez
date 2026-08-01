@@ -1,0 +1,7553 @@
+[
+  {
+    "definition": "The biblical patriarch; exemplar of faith in Fear and Trembling.",
+    "id": "kk_abraham",
+    "kind": "individual",
+    "name": "Abraham",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    }
+  },
+  {
+    "definition": "The eternal truth come into being in time; the god-man.",
+    "id": "kk_absoluteparadox",
+    "kind": "universal",
+    "name": "AbsoluteParadox",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Living for immediacy, enjoyment, and possibility.",
+    "id": "kk_aestheticstage",
+    "kind": "universal",
+    "name": "AestheticStage",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "Pseudonymous author of the higher Christian works.",
+    "id": "kk_anticlimacus",
+    "kind": "individual",
+    "name": "AntiClimacus",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    }
+  },
+  {
+    "definition": "Angest: the dizziness of freedom before possibility; the presupposition of sin.",
+    "id": "kk_anxiety",
+    "kind": "universal",
+    "name": "Anxiety",
+    "ontological_status": "psychological"
+  },
+  {
+    "conclusion": "Therefore despair is healed only when the self, in willing to be itself, rests transparently in God.",
+    "id": "kk_arg_despair",
+    "kind": "argument",
+    "label": "Self-And-Despair",
+    "premises": [
+      "The self is a synthesis that relates itself to itself.",
+      "Any misrelation in this self-relating is despair.",
+      "The self did not establish itself but rests in the power that posited it."
+    ],
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "scheme": "dialectical analysis"
+  },
+  {
+    "conclusion": "Therefore faith, not comprehension, is the proper relation to the paradox.",
+    "id": "kk_arg_paradox",
+    "kind": "argument",
+    "label": "Paradox-And-Offense",
+    "premises": [
+      "The absolute paradox is that the eternal God has come into being in time.",
+      "The understanding cannot think this and collides with it.",
+      "This collision issues either in offense or in faith."
+    ],
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "scheme": "existential dilemma"
+  },
+  {
+    "conclusion": "Therefore, for the existing individual, truth is subjectivity.",
+    "id": "kk_arg_subjectivity",
+    "kind": "argument",
+    "label": "Subjectivity-Is-Truth",
+    "premises": [
+      "For an existing person, truth is a matter of how one relates, not merely what is related.",
+      "The highest truth available to an existing individual is an objective uncertainty held fast in inwardness.",
+      "Such appropriation is subjectivity raised to passion."
+    ],
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "scheme": "existential analysis"
+  },
+  {
+    "conclusion": "Therefore faith involves a teleological suspension of the ethical.",
+    "id": "kk_arg_suspension",
+    "kind": "argument",
+    "label": "Teleological-Suspension",
+    "premises": [
+      "The ethical as the universal forbids a father to kill his son.",
+      "Yet Abraham is held justified in his readiness to sacrifice Isaac at God's command.",
+      "This is possible only if the single individual can stand, as an individual, in an absolute relation to the absolute."
+    ],
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "scheme": "faith argument"
+  },
+  {
+    "conclusion": "Therefore speculative philosophy cannot comprehend existence, which must be lived in subjectivity.",
+    "id": "kk_arg_system",
+    "kind": "argument",
+    "label": "Against-The-System",
+    "premises": [
+      "A logical system is possible, but an existential system is not.",
+      "Existence is a continual becoming that abstraction cannot complete.",
+      "The existing thinker is therefore never finished as the system pretends to be."
+    ],
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "scheme": "reductio"
+  },
+  {
+    "definition": "A mode of communication in the authorship.",
+    "id": "kk_authorialmethod",
+    "kind": "universal",
+    "name": "AuthorialMethod",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The established, nominal Christianity Kierkegaard attacks.",
+    "id": "kk_christendom",
+    "kind": "universal",
+    "name": "Christendom",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The religion of the paradox, faith, and the god in time.",
+    "id": "kk_christianity",
+    "kind": "universal",
+    "name": "Christianity",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Concluding Unscientific Postscript (1846), by Johannes Climacus.",
+    "id": "kk_concludingunscientificpostscript",
+    "kind": "individual",
+    "name": "ConcludingUnscientificPostscript",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    }
+  },
+  {
+    "definition": "Pseudonymous author of Repetition.",
+    "id": "kk_constantinconstantius",
+    "kind": "individual",
+    "name": "ConstantinConstantius",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    }
+  },
+  {
+    "definition": "Becoming contemporary with Christ in faith, across history.",
+    "id": "kk_contemporaneity",
+    "kind": "universal",
+    "name": "Contemporaneity",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "The sickness unto death: the self's misrelation to itself.",
+    "id": "kk_despair",
+    "kind": "universal",
+    "name": "Despair",
+    "ontological_status": "psychological"
+  },
+  {
+    "definition": "Mozart's seducer; the immediate-erotic exemplar of the aesthetic.",
+    "id": "kk_donjuan",
+    "kind": "individual",
+    "name": "DonJuan",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    }
+  },
+  {
+    "definition": "A signed, upbuilding address to 'that single individual'.",
+    "id": "kk_edifyingdiscourse",
+    "kind": "universal",
+    "name": "EdifyingDiscourse",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Either/Or (1843), edited by the pseudonym Victor Eremita.",
+    "id": "kk_eitheror",
+    "kind": "individual",
+    "name": "EitherOr",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    }
+  },
+  {
+    "definition": "The timeless; that which the moment touches.",
+    "id": "kk_eternity",
+    "kind": "universal",
+    "name": "Eternity",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Living by choice, commitment, and the universal.",
+    "id": "kk_ethicalstage",
+    "kind": "universal",
+    "name": "EthicalStage",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "A figure embodying a stage or existential type.",
+    "id": "kk_exemplar",
+    "kind": "universal",
+    "name": "Exemplar",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Concrete individual becoming; a task, not a logical category.",
+    "id": "kk_existence",
+    "kind": "universal",
+    "name": "Existence",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "A concept of concrete, subjective existence.",
+    "id": "kk_existentialconcept",
+    "kind": "universal",
+    "name": "ExistentialConcept",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "A type of existing individual defined by a movement of spirit.",
+    "id": "kk_existentialtype",
+    "kind": "universal",
+    "name": "ExistentialType",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The passion that grasps the absurd and rests transparently in God.",
+    "id": "kk_faith",
+    "kind": "universal",
+    "name": "Faith",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Fear and Trembling (1843), by Johannes de silentio.",
+    "id": "kk_fearandtrembling",
+    "kind": "individual",
+    "name": "FearAndTrembling",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    }
+  },
+  {
+    "definition": "The limited, temporal term of the synthesis.",
+    "id": "kk_finitude",
+    "kind": "universal",
+    "name": "Finitude",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Possibility disclosed to the self; 'the dizziness of freedom'.",
+    "id": "kk_freedom",
+    "kind": "universal",
+    "name": "Freedom",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The eternal power in which the self must rest; the object of faith.",
+    "id": "kk_god",
+    "kind": "universal",
+    "name": "God",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "The eternal entering existence: God in time.",
+    "id": "kk_godintime",
+    "kind": "universal",
+    "name": "GodInTime",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "The consciousness of having fallen short before the eternal.",
+    "id": "kk_guilt",
+    "kind": "universal",
+    "name": "Guilt",
+    "ontological_status": "psychological"
+  },
+  {
+    "definition": "The god become an individual human being.",
+    "id": "kk_incarnation",
+    "kind": "universal",
+    "name": "Incarnation",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Communication that requires the reader's own appropriation.",
+    "id": "kk_indirectcommunication",
+    "kind": "universal",
+    "name": "IndirectCommunication",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The movement renouncing the finite that precedes faith.",
+    "id": "kk_infiniteresignation",
+    "kind": "universal",
+    "name": "InfiniteResignation",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The unlimited, imaginative term of the synthesis.",
+    "id": "kk_infinitude",
+    "kind": "universal",
+    "name": "Infinitude",
+    "ontological_status": "abstract"
+  },
+  {
+    "id": "kk_inst_kierkegaard",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "SorenKierkegaard",
+    "target": "Philosopher"
+  },
+  {
+    "id": "kk_inst_kk_abraham",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "Abraham",
+    "target": "Exemplar"
+  },
+  {
+    "id": "kk_inst_kk_anticlimacus",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "AntiClimacus",
+    "target": "Pseudonym"
+  },
+  {
+    "id": "kk_inst_kk_concludingunscientificpostscript",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "ConcludingUnscientificPostscript",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_constantinconstantius",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "ConstantinConstantius",
+    "target": "Pseudonym"
+  },
+  {
+    "id": "kk_inst_kk_donjuan",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "DonJuan",
+    "target": "Exemplar"
+  },
+  {
+    "id": "kk_inst_kk_eitheror",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "EitherOr",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_fearandtrembling",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "FearAndTrembling",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_johannesclimacus",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "JohannesClimacus",
+    "target": "Pseudonym"
+  },
+  {
+    "id": "kk_inst_kk_johannesdesilentio",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "JohannesDeSilentio",
+    "target": "Pseudonym"
+  },
+  {
+    "id": "kk_inst_kk_johannestheseducer",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "JohannesTheSeducer",
+    "target": "Exemplar"
+  },
+  {
+    "id": "kk_inst_kk_judgewilliam",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "JudgeWilliam",
+    "target": "Exemplar"
+  },
+  {
+    "id": "kk_inst_kk_philosophicalfragments",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "PhilosophicalFragments",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_practiceinchristianity",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "PracticeInChristianity",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_repetitionbook",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "RepetitionBook",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_stagesonlifesway",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "StagesOnLifesWay",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_theconceptofanxiety",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "TheConceptOfAnxiety",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_theconceptofirony",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "TheConceptOfIrony",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_thesicknessuntodeath",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "TheSicknessUntoDeath",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "id": "kk_inst_kk_victoreremita",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "VictorEremita",
+    "target": "Pseudonym"
+  },
+  {
+    "id": "kk_inst_kk_vigiliushaufniensis",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "VigiliusHaufniensis",
+    "target": "Pseudonym"
+  },
+  {
+    "id": "kk_inst_kk_worksoflove",
+    "kind": "instantiation",
+    "predicate": "instantiates",
+    "source": "WorksOfLove",
+    "target": "PhilosophicalWork"
+  },
+  {
+    "definition": "Passionate, appropriated interior relation to one's existence.",
+    "id": "kk_inwardness",
+    "kind": "universal",
+    "name": "Inwardness",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "Infinite absolute negativity; a controlled distance from the finite.",
+    "id": "kk_irony",
+    "kind": "universal",
+    "name": "Irony",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Pseudonymous author of the Fragments and the Postscript.",
+    "id": "kk_johannesclimacus",
+    "kind": "individual",
+    "name": "JohannesClimacus",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    }
+  },
+  {
+    "definition": "Pseudonymous author of Fear and Trembling.",
+    "id": "kk_johannesdesilentio",
+    "kind": "individual",
+    "name": "JohannesDeSilentio",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    }
+  },
+  {
+    "definition": "The diarist of 'The Seducer's Diary'; the reflective aesthete.",
+    "id": "kk_johannestheseducer",
+    "kind": "individual",
+    "name": "JohannesTheSeducer",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    }
+  },
+  {
+    "definition": "Assessor Wilhelm; the ethical voice of Either/Or II.",
+    "id": "kk_judgewilliam",
+    "kind": "individual",
+    "name": "JudgeWilliam",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    }
+  },
+  {
+    "definition": "One who, by virtue of the absurd, receives the finite back after resignation.",
+    "id": "kk_knightoffaith",
+    "kind": "universal",
+    "name": "KnightOfFaith",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "One who renounces the finite but does not make the movement of faith.",
+    "id": "kk_knightofinfiniteresignation",
+    "kind": "universal",
+    "name": "KnightOfInfiniteResignation",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "A mode of relating to the neighbor or the beloved.",
+    "id": "kk_love",
+    "kind": "universal",
+    "name": "Love",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Hegelian reconciliation of opposites, rejected in favor of the leap.",
+    "id": "kk_mediation",
+    "kind": "universal",
+    "name": "Mediation",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The given, determined term of the synthesis.",
+    "id": "kk_necessity",
+    "kind": "universal",
+    "name": "Necessity",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Kjerlighed: commanded, non-preferential love of the neighbor.",
+    "id": "kk_neighborlove",
+    "kind": "universal",
+    "name": "NeighborLove",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "The disinterested, third-person standpoint of abstract thought.",
+    "id": "kk_objectivity",
+    "kind": "universal",
+    "name": "Objectivity",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The understanding's collision with the paradox; the alternative to faith.",
+    "id": "kk_offense",
+    "kind": "universal",
+    "name": "Offense",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Hereditary sin; sinfulness entering by a qualitative leap.",
+    "id": "kk_originalsin",
+    "kind": "universal",
+    "name": "OriginalSin",
+    "ontological_status": "theological"
+  },
+  {
+    "id": "kk_p_anxiety",
+    "kind": "proposition",
+    "label": "P-Anxiety",
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "statement": "Anxiety is the dizziness of freedom.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_backwards",
+    "kind": "proposition",
+    "label": "P-Backwards",
+    "reference": {
+      "source": "Kierkegaard, Journals and Papers"
+    },
+    "statement": "Life must be understood backwards but lived forwards.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_crowd",
+    "kind": "proposition",
+    "label": "P-Crowd",
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "statement": "The crowd is untruth.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_despair",
+    "kind": "proposition",
+    "label": "P-Despair",
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "statement": "Despair is the sickness unto death.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_faith_passion",
+    "kind": "proposition",
+    "label": "P-FaithPassion",
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "statement": "Faith is the highest passion in a person.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_leap",
+    "kind": "proposition",
+    "label": "P-Leap",
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "statement": "Faith requires a leap by virtue of the absurd.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_purity",
+    "kind": "proposition",
+    "label": "P-Purity",
+    "reference": {
+      "source": "Kierkegaard, Upbuilding Discourses in Various Spirits (1847)"
+    },
+    "statement": "Purity of heart is to will one thing.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_self",
+    "kind": "proposition",
+    "label": "P-Self",
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "statement": "The self is a relation that relates itself to itself.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_sin_faith",
+    "kind": "proposition",
+    "label": "P-SinFaith",
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "statement": "The opposite of sin is not virtue but faith.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_single_individual",
+    "kind": "proposition",
+    "label": "P-SingleIndividual",
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "statement": "The single individual is higher than the universal.",
+    "truth_value": true
+  },
+  {
+    "id": "kk_p_subjectivity",
+    "kind": "proposition",
+    "label": "P-Subjectivity",
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "statement": "Truth is subjectivity.",
+    "truth_value": true
+  },
+  {
+    "definition": "A claim that offends and exceeds the understanding.",
+    "id": "kk_paradox",
+    "kind": "universal",
+    "name": "Paradox",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "The intensity of inward existence; the culmination of subjectivity.",
+    "id": "kk_passion",
+    "kind": "universal",
+    "name": "Passion",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "One who practices philosophy.",
+    "id": "kk_philosopher",
+    "kind": "universal",
+    "name": "Philosopher",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Philosophical Fragments (1844), by Johannes Climacus.",
+    "id": "kk_philosophicalfragments",
+    "kind": "individual",
+    "name": "PhilosophicalFragments",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    }
+  },
+  {
+    "definition": "A work of philosophy.",
+    "id": "kk_philosophicalwork",
+    "kind": "universal",
+    "name": "PhilosophicalWork",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The open horizon the self must relate to; a term of the synthesis.",
+    "id": "kk_possibility",
+    "kind": "universal",
+    "name": "Possibility",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "Practice in Christianity (1850), by Anti-Climacus.",
+    "id": "kk_practiceinchristianity",
+    "kind": "individual",
+    "name": "PracticeInChristianity",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    }
+  },
+  {
+    "definition": "Elskov: erotic or preferential love based on inclination.",
+    "id": "kk_preferentiallove",
+    "kind": "universal",
+    "name": "PreferentialLove",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "A fictive authorial persona used to present a life-view.",
+    "id": "kk_pseudonym",
+    "kind": "universal",
+    "name": "Pseudonym",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Presenting life-views through distinct authored personae.",
+    "id": "kk_pseudonymity",
+    "kind": "universal",
+    "name": "Pseudonymity",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "A determination of the psyche disclosing spirit.",
+    "id": "kk_psychologicalconcept",
+    "kind": "universal",
+    "name": "PsychologicalConcept",
+    "ontological_status": "psychological"
+  },
+  {
+    "definition": "Abstract thought whose claim to comprehend existence is limited.",
+    "id": "kk_reason",
+    "kind": "universal",
+    "name": "Reason",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The Platonic backward movement recovering the eternal in memory.",
+    "id": "kk_recollection",
+    "kind": "universal",
+    "name": "Recollection",
+    "ontological_status": "abstract"
+  },
+  {
+    "id": "kk_rel_000",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Existence",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_001",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Subjectivity",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_002",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Inwardness",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_003",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Passion",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_004",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "TheSelf",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_005",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Spirit",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_006",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Freedom",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_007",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Possibility",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_008",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "TheSingleIndividual",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_009",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "InfiniteResignation",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_010",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "TheLeap",
+    "target": "ExistentialConcept"
+  },
+  {
+    "id": "kk_rel_011",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Anxiety",
+    "target": "PsychologicalConcept"
+  },
+  {
+    "id": "kk_rel_012",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Despair",
+    "target": "PsychologicalConcept"
+  },
+  {
+    "id": "kk_rel_013",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Guilt",
+    "target": "PsychologicalConcept"
+  },
+  {
+    "id": "kk_rel_014",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "AestheticStage",
+    "target": "StageOfExistence"
+  },
+  {
+    "id": "kk_rel_015",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "EthicalStage",
+    "target": "StageOfExistence"
+  },
+  {
+    "id": "kk_rel_016",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "ReligiousStage",
+    "target": "StageOfExistence"
+  },
+  {
+    "id": "kk_rel_017",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "ReligiousnessA",
+    "target": "ReligiousStage"
+  },
+  {
+    "id": "kk_rel_018",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "ReligiousnessB",
+    "target": "ReligiousStage"
+  },
+  {
+    "id": "kk_rel_019",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Faith",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_020",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Sin",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_021",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "OriginalSin",
+    "target": "Sin"
+  },
+  {
+    "id": "kk_rel_022",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "TheAbsurd",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_023",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Paradox",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_024",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "AbsoluteParadox",
+    "target": "Paradox"
+  },
+  {
+    "id": "kk_rel_025",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Offense",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_026",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Contemporaneity",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_027",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "GodInTime",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_028",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Incarnation",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_029",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "TheMoment",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_030",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "TeleologicalSuspensionOfTheEthical",
+    "target": "TheologicalConcept"
+  },
+  {
+    "id": "kk_rel_031",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "KnightOfFaith",
+    "target": "ExistentialType"
+  },
+  {
+    "id": "kk_rel_032",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "KnightOfInfiniteResignation",
+    "target": "ExistentialType"
+  },
+  {
+    "id": "kk_rel_033",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "IndirectCommunication",
+    "target": "AuthorialMethod"
+  },
+  {
+    "id": "kk_rel_034",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Pseudonymity",
+    "target": "AuthorialMethod"
+  },
+  {
+    "id": "kk_rel_035",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "Irony",
+    "target": "AuthorialMethod"
+  },
+  {
+    "id": "kk_rel_036",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "EdifyingDiscourse",
+    "target": "AuthorialMethod"
+  },
+  {
+    "id": "kk_rel_037",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "NeighborLove",
+    "target": "Love"
+  },
+  {
+    "id": "kk_rel_038",
+    "kind": "relation",
+    "predicate": "is-a",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    },
+    "source": "PreferentialLove",
+    "target": "Love"
+  },
+  {
+    "id": "kk_rel_039",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Possibility",
+    "target": "Synthesis"
+  },
+  {
+    "id": "kk_rel_040",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Necessity",
+    "target": "Synthesis"
+  },
+  {
+    "id": "kk_rel_041",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Finitude",
+    "target": "Synthesis"
+  },
+  {
+    "id": "kk_rel_042",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Infinitude",
+    "target": "Synthesis"
+  },
+  {
+    "id": "kk_rel_043",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Temporality",
+    "target": "Synthesis"
+  },
+  {
+    "id": "kk_rel_044",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Eternity",
+    "target": "Synthesis"
+  },
+  {
+    "id": "kk_rel_045",
+    "kind": "relation",
+    "predicate": "part-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Synthesis",
+    "target": "TheSelf"
+  },
+  {
+    "id": "kk_rel_046",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "Subjectivity",
+    "target": "Objectivity"
+  },
+  {
+    "id": "kk_rel_047",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "Faith",
+    "target": "Reason"
+  },
+  {
+    "id": "kk_rel_048",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "Faith",
+    "target": "Offense"
+  },
+  {
+    "id": "kk_rel_049",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Faith",
+    "target": "Despair"
+  },
+  {
+    "id": "kk_rel_050",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Sin",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_051",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "source": "TheSingleIndividual",
+    "target": "TheCrowd"
+  },
+  {
+    "id": "kk_rel_052",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    },
+    "source": "Repetition",
+    "target": "Recollection"
+  },
+  {
+    "id": "kk_rel_053",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Eternity",
+    "target": "Temporality"
+  },
+  {
+    "id": "kk_rel_054",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Possibility",
+    "target": "Necessity"
+  },
+  {
+    "id": "kk_rel_055",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Freedom",
+    "target": "Necessity"
+  },
+  {
+    "id": "kk_rel_056",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Finitude",
+    "target": "Infinitude"
+  },
+  {
+    "id": "kk_rel_057",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Works of Love (1847)"
+    },
+    "source": "NeighborLove",
+    "target": "PreferentialLove"
+  },
+  {
+    "id": "kk_rel_058",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "InfiniteResignation",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_059",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "AestheticStage",
+    "target": "EthicalStage"
+  },
+  {
+    "id": "kk_rel_060",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "EthicalStage",
+    "target": "ReligiousStage"
+  },
+  {
+    "id": "kk_rel_061",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "Christianity",
+    "target": "Christendom"
+  },
+  {
+    "id": "kk_rel_062",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ReligiousnessA",
+    "target": "ReligiousnessB"
+  },
+  {
+    "id": "kk_rel_063",
+    "kind": "relation",
+    "predicate": "contrasts-with",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "source": "EdifyingDiscourse",
+    "target": "IndirectCommunication"
+  },
+  {
+    "id": "kk_rel_064",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "Faith",
+    "target": "TheLeap"
+  },
+  {
+    "id": "kk_rel_065",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "Faith",
+    "target": "TheAbsurd"
+  },
+  {
+    "id": "kk_rel_066",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "Faith",
+    "target": "InfiniteResignation"
+  },
+  {
+    "id": "kk_rel_067",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ReligiousnessB",
+    "target": "AbsoluteParadox"
+  },
+  {
+    "id": "kk_rel_068",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "ReligiousnessB",
+    "target": "Contemporaneity"
+  },
+  {
+    "id": "kk_rel_069",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ReligiousnessB",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_070",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "Christianity",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_071",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Christianity",
+    "target": "Sin"
+  },
+  {
+    "id": "kk_rel_072",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "TeleologicalSuspensionOfTheEthical",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_073",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "KnightOfFaith",
+    "target": "InfiniteResignation"
+  },
+  {
+    "id": "kk_rel_074",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "Truth",
+    "target": "Inwardness"
+  },
+  {
+    "id": "kk_rel_075",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Despair",
+    "target": "TheSelf"
+  },
+  {
+    "id": "kk_rel_076",
+    "kind": "relation",
+    "predicate": "requires",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "Offense",
+    "target": "AbsoluteParadox"
+  },
+  {
+    "id": "kk_rel_077",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Sin",
+    "target": "Anxiety"
+  },
+  {
+    "id": "kk_rel_078",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Sin",
+    "target": "Freedom"
+  },
+  {
+    "id": "kk_rel_079",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Anxiety",
+    "target": "Possibility"
+  },
+  {
+    "id": "kk_rel_080",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "AbsoluteParadox",
+    "target": "GodInTime"
+  },
+  {
+    "id": "kk_rel_081",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "Contemporaneity",
+    "target": "Incarnation"
+  },
+  {
+    "id": "kk_rel_082",
+    "kind": "relation",
+    "predicate": "presupposes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "Subjectivity",
+    "target": "Passion"
+  },
+  {
+    "id": "kk_rel_083",
+    "kind": "relation",
+    "predicate": "produces",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Freedom",
+    "target": "Anxiety"
+  },
+  {
+    "id": "kk_rel_084",
+    "kind": "relation",
+    "predicate": "produces",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "Possibility",
+    "target": "Anxiety"
+  },
+  {
+    "id": "kk_rel_085",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "Subjectivity",
+    "target": "Truth"
+  },
+  {
+    "id": "kk_rel_086",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Faith",
+    "target": "TheSelf"
+  },
+  {
+    "id": "kk_rel_087",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "God",
+    "target": "TheSelf"
+  },
+  {
+    "id": "kk_rel_088",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "GodInTime",
+    "target": "AbsoluteParadox"
+  },
+  {
+    "id": "kk_rel_089",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "AbsoluteParadox",
+    "target": "Offense"
+  },
+  {
+    "id": "kk_rel_090",
+    "kind": "relation",
+    "predicate": "grounds",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "Despair",
+    "target": "Sin"
+  },
+  {
+    "id": "kk_rel_091",
+    "kind": "relation",
+    "predicate": "enables",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "IndirectCommunication",
+    "target": "Inwardness"
+  },
+  {
+    "id": "kk_rel_092",
+    "kind": "relation",
+    "predicate": "enables",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "TheLeap",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_093",
+    "kind": "relation",
+    "predicate": "is-form-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "source": "Pseudonymity",
+    "target": "IndirectCommunication"
+  },
+  {
+    "id": "kk_rel_094",
+    "kind": "relation",
+    "predicate": "is-form-of",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Concept of Irony (1841)"
+    },
+    "source": "Irony",
+    "target": "IndirectCommunication"
+  },
+  {
+    "id": "kk_rel_095",
+    "kind": "relation",
+    "predicate": "applies-to",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "TeleologicalSuspensionOfTheEthical",
+    "target": "EthicalStage"
+  },
+  {
+    "id": "kk_rel_096",
+    "kind": "relation",
+    "predicate": "synthesizes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSelf",
+    "target": "Possibility"
+  },
+  {
+    "id": "kk_rel_097",
+    "kind": "relation",
+    "predicate": "synthesizes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSelf",
+    "target": "Necessity"
+  },
+  {
+    "id": "kk_rel_098",
+    "kind": "relation",
+    "predicate": "synthesizes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSelf",
+    "target": "Finitude"
+  },
+  {
+    "id": "kk_rel_099",
+    "kind": "relation",
+    "predicate": "synthesizes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSelf",
+    "target": "Infinitude"
+  },
+  {
+    "id": "kk_rel_100",
+    "kind": "relation",
+    "predicate": "synthesizes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSelf",
+    "target": "Temporality"
+  },
+  {
+    "id": "kk_rel_101",
+    "kind": "relation",
+    "predicate": "synthesizes",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSelf",
+    "target": "Eternity"
+  },
+  {
+    "id": "kk_rel_102",
+    "kind": "relation",
+    "predicate": "leads-to",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    },
+    "source": "AestheticStage",
+    "target": "EthicalStage"
+  },
+  {
+    "id": "kk_rel_103",
+    "kind": "relation",
+    "predicate": "leads-to",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    },
+    "source": "EthicalStage",
+    "target": "ReligiousStage"
+  },
+  {
+    "id": "kk_rel_104",
+    "kind": "relation",
+    "predicate": "leads-to",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ReligiousnessA",
+    "target": "ReligiousnessB"
+  },
+  {
+    "id": "kk_rel_105",
+    "kind": "relation",
+    "predicate": "leads-to",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "InfiniteResignation",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_106",
+    "kind": "relation",
+    "predicate": "authored-as",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "VictorEremita"
+  },
+  {
+    "id": "kk_rel_107",
+    "kind": "relation",
+    "predicate": "authored-as",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "JohannesDeSilentio"
+  },
+  {
+    "id": "kk_rel_108",
+    "kind": "relation",
+    "predicate": "authored-as",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "ConstantinConstantius"
+  },
+  {
+    "id": "kk_rel_109",
+    "kind": "relation",
+    "predicate": "authored-as",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "VigiliusHaufniensis"
+  },
+  {
+    "id": "kk_rel_110",
+    "kind": "relation",
+    "predicate": "authored-as",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "JohannesClimacus"
+  },
+  {
+    "id": "kk_rel_111",
+    "kind": "relation",
+    "predicate": "authored-as",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "AntiClimacus"
+  },
+  {
+    "id": "kk_rel_112",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "VictorEremita",
+    "target": "EitherOr"
+  },
+  {
+    "id": "kk_rel_113",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "JohannesDeSilentio",
+    "target": "FearAndTrembling"
+  },
+  {
+    "id": "kk_rel_114",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    },
+    "source": "ConstantinConstantius",
+    "target": "RepetitionBook"
+  },
+  {
+    "id": "kk_rel_115",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "VigiliusHaufniensis",
+    "target": "TheConceptOfAnxiety"
+  },
+  {
+    "id": "kk_rel_116",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "JohannesClimacus",
+    "target": "PhilosophicalFragments"
+  },
+  {
+    "id": "kk_rel_117",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "JohannesClimacus",
+    "target": "ConcludingUnscientificPostscript"
+  },
+  {
+    "id": "kk_rel_118",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "AntiClimacus",
+    "target": "TheSicknessUntoDeath"
+  },
+  {
+    "id": "kk_rel_119",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "AntiClimacus",
+    "target": "PracticeInChristianity"
+  },
+  {
+    "id": "kk_rel_120",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Works of Love (1847)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "WorksOfLove"
+  },
+  {
+    "id": "kk_rel_121",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Concept of Irony (1841)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "TheConceptOfIrony"
+  },
+  {
+    "id": "kk_rel_122",
+    "kind": "relation",
+    "predicate": "wrote",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "StagesOnLifesWay"
+  },
+  {
+    "id": "kk_rel_123",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "FearAndTrembling",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_124",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "FearAndTrembling",
+    "target": "TeleologicalSuspensionOfTheEthical"
+  },
+  {
+    "id": "kk_rel_125",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "FearAndTrembling",
+    "target": "InfiniteResignation"
+  },
+  {
+    "id": "kk_rel_126",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "FearAndTrembling",
+    "target": "KnightOfFaith"
+  },
+  {
+    "id": "kk_rel_127",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "TheConceptOfAnxiety",
+    "target": "Anxiety"
+  },
+  {
+    "id": "kk_rel_128",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "TheConceptOfAnxiety",
+    "target": "Sin"
+  },
+  {
+    "id": "kk_rel_129",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "TheConceptOfAnxiety",
+    "target": "Freedom"
+  },
+  {
+    "id": "kk_rel_130",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    },
+    "source": "TheConceptOfAnxiety",
+    "target": "OriginalSin"
+  },
+  {
+    "id": "kk_rel_131",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSicknessUntoDeath",
+    "target": "Despair"
+  },
+  {
+    "id": "kk_rel_132",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSicknessUntoDeath",
+    "target": "TheSelf"
+  },
+  {
+    "id": "kk_rel_133",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    },
+    "source": "TheSicknessUntoDeath",
+    "target": "Sin"
+  },
+  {
+    "id": "kk_rel_134",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "PhilosophicalFragments",
+    "target": "AbsoluteParadox"
+  },
+  {
+    "id": "kk_rel_135",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "PhilosophicalFragments",
+    "target": "GodInTime"
+  },
+  {
+    "id": "kk_rel_136",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Philosophical Fragments (1844)"
+    },
+    "source": "PhilosophicalFragments",
+    "target": "TheMoment"
+  },
+  {
+    "id": "kk_rel_137",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "Subjectivity"
+  },
+  {
+    "id": "kk_rel_138",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "Truth"
+  },
+  {
+    "id": "kk_rel_139",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "TheLeap"
+  },
+  {
+    "id": "kk_rel_140",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "TheSystem"
+  },
+  {
+    "id": "kk_rel_141",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "ReligiousnessB"
+  },
+  {
+    "id": "kk_rel_142",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "EitherOr",
+    "target": "AestheticStage"
+  },
+  {
+    "id": "kk_rel_143",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "EitherOr",
+    "target": "EthicalStage"
+  },
+  {
+    "id": "kk_rel_144",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Works of Love (1847)"
+    },
+    "source": "WorksOfLove",
+    "target": "NeighborLove"
+  },
+  {
+    "id": "kk_rel_145",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Works of Love (1847)"
+    },
+    "source": "WorksOfLove",
+    "target": "Love"
+  },
+  {
+    "id": "kk_rel_146",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Concept of Irony (1841)"
+    },
+    "source": "TheConceptOfIrony",
+    "target": "Irony"
+  },
+  {
+    "id": "kk_rel_147",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    },
+    "source": "RepetitionBook",
+    "target": "Repetition"
+  },
+  {
+    "id": "kk_rel_148",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    },
+    "source": "RepetitionBook",
+    "target": "Recollection"
+  },
+  {
+    "id": "kk_rel_149",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    },
+    "source": "StagesOnLifesWay",
+    "target": "AestheticStage"
+  },
+  {
+    "id": "kk_rel_150",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    },
+    "source": "StagesOnLifesWay",
+    "target": "EthicalStage"
+  },
+  {
+    "id": "kk_rel_151",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    },
+    "source": "StagesOnLifesWay",
+    "target": "ReligiousStage"
+  },
+  {
+    "id": "kk_rel_152",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "PracticeInChristianity",
+    "target": "Contemporaneity"
+  },
+  {
+    "id": "kk_rel_153",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "PracticeInChristianity",
+    "target": "Offense"
+  },
+  {
+    "id": "kk_rel_154",
+    "kind": "relation",
+    "predicate": "addresses",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "PracticeInChristianity",
+    "target": "Christendom"
+  },
+  {
+    "id": "kk_rel_155",
+    "kind": "relation",
+    "predicate": "critiques",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "TheSystem"
+  },
+  {
+    "id": "kk_rel_156",
+    "kind": "relation",
+    "predicate": "critiques",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes Climacus), Concluding Unscientific Postscript (1846)"
+    },
+    "source": "ConcludingUnscientificPostscript",
+    "target": "Mediation"
+  },
+  {
+    "id": "kk_rel_157",
+    "kind": "relation",
+    "predicate": "critiques",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), Practice in Christianity (1850)"
+    },
+    "source": "PracticeInChristianity",
+    "target": "Christendom"
+  },
+  {
+    "id": "kk_rel_158",
+    "kind": "relation",
+    "predicate": "critiques",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "Christendom"
+  },
+  {
+    "id": "kk_rel_159",
+    "kind": "relation",
+    "predicate": "critiques",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "source": "SorenKierkegaard",
+    "target": "TheSystem"
+  },
+  {
+    "id": "kk_rel_160",
+    "kind": "relation",
+    "predicate": "critiques",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard, The Point of View for My Work as an Author (1859)"
+    },
+    "source": "TheSingleIndividual",
+    "target": "TheCrowd"
+  },
+  {
+    "id": "kk_rel_161",
+    "kind": "relation",
+    "predicate": "exemplifies",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "Abraham",
+    "target": "KnightOfFaith"
+  },
+  {
+    "id": "kk_rel_162",
+    "kind": "relation",
+    "predicate": "exemplifies",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "Abraham",
+    "target": "Faith"
+  },
+  {
+    "id": "kk_rel_163",
+    "kind": "relation",
+    "predicate": "exemplifies",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Johannes de silentio), Fear and Trembling (1843)"
+    },
+    "source": "Abraham",
+    "target": "TeleologicalSuspensionOfTheEthical"
+  },
+  {
+    "id": "kk_rel_164",
+    "kind": "relation",
+    "predicate": "exemplifies",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "DonJuan",
+    "target": "AestheticStage"
+  },
+  {
+    "id": "kk_rel_165",
+    "kind": "relation",
+    "predicate": "exemplifies",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "JohannesTheSeducer",
+    "target": "AestheticStage"
+  },
+  {
+    "id": "kk_rel_166",
+    "kind": "relation",
+    "predicate": "exemplifies",
+    "predicate_vocabulary": {
+      "name": "kierkegaardian_relations",
+      "ordered": false,
+      "reference": {
+        "description": "Allowed relation types.",
+        "source": "Framework convention"
+      },
+      "terms": [
+        "is-a",
+        "part-of",
+        "wrote",
+        "instantiates",
+        "contrasts-with",
+        "requires",
+        "produces",
+        "grounds",
+        "applies-to",
+        "enables",
+        "presupposes",
+        "is-form-of",
+        "addresses",
+        "formulation-of",
+        "authored-as",
+        "critiques",
+        "exemplifies",
+        "synthesizes",
+        "leads-to"
+      ]
+    },
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    },
+    "source": "JudgeWilliam",
+    "target": "EthicalStage"
+  },
+  {
+    "definition": "Immanent religiousness of inward suffering and guilt.",
+    "id": "kk_religiousnessa",
+    "kind": "universal",
+    "name": "ReligiousnessA",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Paradoxical (Christian) religiousness founded on the paradox.",
+    "id": "kk_religiousnessb",
+    "kind": "universal",
+    "name": "ReligiousnessB",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Living before God in faith and inwardness.",
+    "id": "kk_religiousstage",
+    "kind": "universal",
+    "name": "ReligiousStage",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The forward-looking recovery of existence, opposed to recollection.",
+    "id": "kk_repetition",
+    "kind": "universal",
+    "name": "Repetition",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Repetition (1843), by Constantin Constantius (the *work*; cf. the concept).",
+    "id": "kk_repetitionbook",
+    "kind": "individual",
+    "name": "RepetitionBook",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Constantin Constantius), Repetition (1843)"
+    }
+  },
+  {
+    "definition": "Before God, in despair, not willing to be oneself (or willing to be oneself).",
+    "id": "kk_sin",
+    "kind": "universal",
+    "name": "Sin",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Danish philosopher (1813-1855); father of existentialism.",
+    "id": "kk_sorenkierkegaard",
+    "kind": "individual",
+    "name": "SorenKierkegaard",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Stanford Encyclopedia of Philosophy, 'Soren Kierkegaard'"
+    }
+  },
+  {
+    "definition": "The self as the synthesis that posits itself before God.",
+    "id": "kk_spirit",
+    "kind": "universal",
+    "name": "Spirit",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "A sphere of existence: a basic mode of living.",
+    "id": "kk_stageofexistence",
+    "kind": "universal",
+    "name": "StageOfExistence",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "Stages on Life's Way (1845).",
+    "id": "kk_stagesonlifesway",
+    "kind": "individual",
+    "name": "StagesOnLifesWay",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard, Stages on Life's Way (1845)"
+    }
+  },
+  {
+    "definition": "The inward, appropriated relation of a person to truth.",
+    "id": "kk_subjectivity",
+    "kind": "universal",
+    "name": "Subjectivity",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The self as a union of opposed determinations.",
+    "id": "kk_synthesis",
+    "kind": "universal",
+    "name": "Synthesis",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Faith's suspension of the universal for a higher telos.",
+    "id": "kk_teleologicalsuspensionoftheethical",
+    "kind": "universal",
+    "name": "TeleologicalSuspensionOfTheEthical",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "Existence in time and becoming.",
+    "id": "kk_temporality",
+    "kind": "universal",
+    "name": "Temporality",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "That the eternal God has existed in time; the object of faith.",
+    "id": "kk_theabsurd",
+    "kind": "universal",
+    "name": "TheAbsurd",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "The Concept of Anxiety (1844), by Vigilius Haufniensis.",
+    "id": "kk_theconceptofanxiety",
+    "kind": "individual",
+    "name": "TheConceptOfAnxiety",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    }
+  },
+  {
+    "definition": "Kierkegaard's dissertation (1841).",
+    "id": "kk_theconceptofirony",
+    "kind": "individual",
+    "name": "TheConceptOfIrony",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard, The Concept of Irony (1841)"
+    }
+  },
+  {
+    "definition": "The anonymous public; 'the crowd is untruth'.",
+    "id": "kk_thecrowd",
+    "kind": "universal",
+    "name": "TheCrowd",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "The qualitative, unmediated transition into a new sphere or into faith.",
+    "id": "kk_theleap",
+    "kind": "universal",
+    "name": "TheLeap",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "Oieblikket: the instant where time and eternity touch.",
+    "id": "kk_themoment",
+    "kind": "universal",
+    "name": "TheMoment",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "A concept of Christian existence-communication.",
+    "id": "kk_theologicalconcept",
+    "kind": "universal",
+    "name": "TheologicalConcept",
+    "ontological_status": "theological"
+  },
+  {
+    "definition": "A relation that relates itself to itself, grounded in the power that posited it.",
+    "id": "kk_theself",
+    "kind": "universal",
+    "name": "TheSelf",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The Sickness unto Death (1849), by Anti-Climacus.",
+    "id": "kk_thesicknessuntodeath",
+    "kind": "individual",
+    "name": "TheSicknessUntoDeath",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Anti-Climacus), The Sickness unto Death (1849)"
+    }
+  },
+  {
+    "definition": "Den Enkelte: the responsible individual before God.",
+    "id": "kk_thesingleindividual",
+    "kind": "universal",
+    "name": "TheSingleIndividual",
+    "ontological_status": "existential"
+  },
+  {
+    "definition": "The Hegelian speculative system that claims to comprehend existence.",
+    "id": "kk_thesystem",
+    "kind": "universal",
+    "name": "TheSystem",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "That which is essentially related to existence ('truth is subjectivity').",
+    "id": "kk_truth",
+    "kind": "universal",
+    "name": "Truth",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Finite comprehension that founders on the absolute paradox.",
+    "id": "kk_understanding",
+    "kind": "universal",
+    "name": "Understanding",
+    "ontological_status": "abstract"
+  },
+  {
+    "definition": "Pseudonymous editor of Either/Or.",
+    "id": "kk_victoreremita",
+    "kind": "individual",
+    "name": "VictorEremita",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Victor Eremita, ed.), Either/Or (1843)"
+    }
+  },
+  {
+    "definition": "Pseudonymous author of The Concept of Anxiety.",
+    "id": "kk_vigiliushaufniensis",
+    "kind": "individual",
+    "name": "VigiliusHaufniensis",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard (Vigilius Haufniensis), The Concept of Anxiety (1844)"
+    }
+  },
+  {
+    "definition": "Works of Love (1847), signed.",
+    "id": "kk_worksoflove",
+    "kind": "individual",
+    "name": "WorksOfLove",
+    "ontological_status": "historical",
+    "reference": {
+      "source": "Kierkegaard, Works of Love (1847)"
+    }
+  }
+]

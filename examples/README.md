@@ -289,3 +289,51 @@ python examples/kant_ontology.py
 `ontologies/kant.json` is the committed source-of-truth artifact; the rendered
 `kant_ontology.html` / `kant_arguments.html` go to `$VALUEZ_EXAMPLE_OUT`
 (default: a `valuez_kant/` folder in your temp dir).
+
+## `kierkegaard_ontology.py` — the existential philosophy of Søren Kierkegaard
+
+A second large **content** example, built to the exact same shape as
+`kant_ontology.py` so the two can eventually be **merged** into one universe.
+
+- **Particulars** (`Individual`, 22): Kierkegaard, his **pseudonymous personae**
+  (Johannes de silentio, Johannes/Anti-Climacus, Vigilius Haufniensis, ...), his
+  major **works**, and the exemplary **figures** (Abraham, Don Juan, Judge
+  William).
+- **Universals** (`Universal`, ~68): the three **stages of existence**
+  (aesthetic / ethical / religious, plus Religiousness A/B), the **self as
+  synthesis** (possibility/necessity, finitude/infinitude, temporality/eternity),
+  **anxiety** and **despair**, **faith** and the **absolute paradox** (the god in
+  time), subjectivity / truth / inwardness, and indirect communication. Each
+  carries an `ontological_status` (`existential` / `theological` /
+  `psychological` / `abstract`).
+- **Instantiation**: typed `Individual --instantiates--> Universal` (personae are
+  `Pseudonym`s, works are `PhilosophicalWork`s, figures are `Exemplar`s).
+- **Relations** (~167) over a controlled vocabulary that is a **superset of the
+  Kantian one** plus `authored-as`, `critiques`, `exemplifies`, `synthesizes`,
+  and `leads-to` (the stage progression), alongside `is-a`, `part-of` (the self's
+  synthesis), `contrasts-with` (Kierkegaard's dualities), `grounds`, `requires`,
+  `presupposes`, `produces`, `addresses`, and `wrote`.
+- **Propositions** (11 cited theses) and five **Arguments**: the teleological
+  suspension of the ethical, subjectivity-is-truth, the self and despair, the
+  case against the system, and the paradox and offense.
+
+### Built for merging
+
+This graph deliberately **reuses universal names** from `kant_ontology.py` so a
+future *merge* has real overlap to resolve (`MERGE_ANCHORS` in the script):
+`Philosopher` / `PhilosophicalWork` are clean matches, while `Existence`,
+`Freedom`, `Possibility`, `Necessity`, `Reason`, `Understanding`, and `God` are
+genuine **semantic collisions** — the same name with a different definition and
+`ontological_status` in each system. The two files use disjoint id prefixes
+(`kk_` vs `k_`), so a merge is forced to key on **name** and decide how to fold
+colliding concepts.
+
+### Run
+
+```bash
+python examples/kierkegaard_ontology.py
+```
+
+`ontologies/kierkegaard.json` is the committed source-of-truth artifact; the
+rendered `kierkegaard_ontology.html` / `kierkegaard_arguments.html` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_kierkegaard/` folder in your temp dir).

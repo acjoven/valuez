@@ -9,6 +9,20 @@ relations, individuals/universals, scalars, ...), produced by
 ontology (instead of the expanded per-document `dots` store) makes changes small
 and reviewable in git.
 
+## Available maps
+
+| File | Builder | What it maps |
+| --- | --- | --- |
+| `kant.json` | `examples/kant_ontology.py` | Kant's critical philosophy across the three Critiques (ids `k_*`). |
+| `kierkegaard.json` | `examples/kierkegaard_ontology.py` | Kierkegaard's existential authorship (ids `kk_*`). |
+
+`kant.json` and `kierkegaard.json` are intentionally two **independent** graphs
+that overlap by *name* (e.g. `Philosopher`, `PhilosophicalWork`, and the
+semantic collisions `Existence` / `Freedom` / `God` / `Reason`), while their ids
+are disjoint (`k_*` vs `kk_*`). They are the fixtures for a future **merge**
+function that folds multiple exported files into one universe by keying on name
+and resolving collisions.
+
 ## Workflow
 
 Author / update a map, then export the canonical file:
