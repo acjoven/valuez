@@ -13,7 +13,7 @@ kind of content through :class:`valuez.Reading` -- the Tier-1 authoring helper:
   already be declared and the predicate must be in the controlled vocabulary --
   so a typo raises immediately, at the line that introduced it.
 
-It then validates, reasons over the graph, persists through ``dots``, and
+It then validates, reasons over the graph, persists through ``dotz``, and
 renders an interactive graph. Run:  ``python examples/reading_session.py``
 """
 from __future__ import annotations
@@ -157,7 +157,7 @@ def main() -> None:
     print(f"Canonical ontology written: {ontology}")
 
     try:
-        import dots.graph  # noqa: F401
+        import dotz.graph  # noqa: F401
         cwd = Path.cwd()
         try:
             os.chdir(out_dir)

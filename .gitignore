@@ -18,7 +18,7 @@ venv/
 # Local scratch data
 data/_scratch/
 
-# Local expanded dots stores / rehydrated caches.
+# Local expanded dotz stores / rehydrated caches.
 # Canonical ontology maps live in ontologies/*.json (committed); the per-document
 # store that ValueRepository expands them into is regenerable, so keep it local.
 data/

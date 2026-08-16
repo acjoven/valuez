@@ -29,7 +29,7 @@ What this module does:
 
 The result is a :class:`MergeResult` -- the merged documents plus a
 :class:`MergeReport` describing the join points, conflicts, and de-duplication --
-which you can rehydrate to values, persist through ``dots``, or export as a new
+which you can rehydrate to values, persist through ``dotz``, or export as a new
 canonical ontology.
 """
 from __future__ import annotations

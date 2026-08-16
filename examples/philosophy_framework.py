@@ -14,7 +14,7 @@ It shows how the platform models a philosophical framework as a traceable graph:
 4. `support` / `attack` relations between arguments (a Dung-style network).
 
 Everything is ground-truthed via `Reference` (citations to the source texts),
-persisted through `dots`, and rendered as an interactive argument map.
+persisted through `dotz`, and rendered as an interactive argument map.
 
 Run:  python examples/philosophy_framework.py
 """
@@ -134,9 +134,9 @@ def main() -> None:
         print(f"  {r.source} --{r._edge_title()}--> {r.target}   [{r.reference.source}]")
     print()
 
-    # Persistence + query through dots.
+    # Persistence + query through dotz.
     kinds = sorted(set(repo.query("[].kind")))
-    print(f"Persisted {len(repo.query('[]'))} values in dots store {sorted(kinds)}")
+    print(f"Persisted {len(repo.query('[]'))} values in dotz store {sorted(kinds)}")
     grounded = repo.query("[?reference] | length(@)")
     print(f"Ground-truthed (carry a Reference): {grounded} / {len(repo.query('[]'))}")
 
@@ -151,7 +151,7 @@ def main() -> None:
 
 def _render(args, attacks, out_dir: Path):
     try:
-        import dots.graph  # noqa: F401
+        import dotz.graph  # noqa: F401
     except Exception:
         return None
     cwd = Path.cwd()

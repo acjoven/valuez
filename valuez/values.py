@@ -6,14 +6,14 @@ This module defines the smallest traceable building blocks of the platform:
   to the source it was derived from, so data can be *ground-truthed*.
 - :class:`Value` -- an abstract base carrying identity, an optional label/unit
   and an optional :class:`Reference`, plus dict (de)serialization so instances
-  round-trip cleanly through ``dots`` JSON storage.
+  round-trip cleanly through ``dotz`` JSON storage.
 - :class:`Scalar` -- a single quantitative value.
 - :class:`Range` -- a closed quantitative interval ``[low, high]``.
 
-The classes are intentionally free of any ``dots`` import: they are pure domain
+The classes are intentionally free of any ``dotz`` import: they are pure domain
 objects. Persistence and visualization are layered on top (see
 ``valuez.repository``), keeping the domain model testable in isolation while
-still serializing into the shape ``dots`` expects (a JSON object with an ``id``).
+still serializing into the shape ``dotz`` expects (a JSON object with an ``id``).
 """
 from __future__ import annotations
 
@@ -173,7 +173,7 @@ class Value(ABC):
     Concrete subclasses declare a unique ``kind`` discriminator and implement
     :meth:`_payload` (the value-specific fields) and :meth:`_from_payload`
     (reconstruction from a stored dict). Every value has a stable ``id`` so it
-    maps 1:1 onto a ``dots`` storage document.
+    maps 1:1 onto a ``dotz`` storage document.
     """
 
     kind: ClassVar[str] = "value"

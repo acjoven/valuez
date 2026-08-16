@@ -89,7 +89,7 @@ def main() -> None:
 
 def _render(relations, out_dir: Path, filename: str):
     try:
-        import dots.graph  # noqa: F401
+        import dotz.graph  # noqa: F401
     except Exception:
         return None
     cwd = Path.cwd()

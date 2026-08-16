@@ -18,7 +18,7 @@ It shows how the platform models a metaphysics as a traceable graph:
    have no cycles) -- with a deliberately broken mini-ontology to show cycle
    detection at work.
 
-Everything is ground-truthed via `Reference`, persisted through `dots`, and
+Everything is ground-truthed via `Reference`, persisted through `dotz`, and
 rendered as an interactive ontology graph (asserted + inferred edges).
 
 Run:  python examples/metaphysics_framework.py
@@ -159,10 +159,10 @@ def main() -> None:
         print(f"  detected illicit grounding cycle: {' -> '.join(cycle + [cycle[0]])}")
     print()
 
-    # --- Persistence + query through dots ---------------------------------- #
+    # --- Persistence + query through dotz ---------------------------------- #
     kinds = sorted(set(repo.query("[].kind")))
     total = len(repo.query("[]"))
-    print(f"Persisted {total} values in dots store; kinds: {kinds}")
+    print(f"Persisted {total} values in dotz store; kinds: {kinds}")
     grounded = repo.query("[?reference] | length(@)")
     print(f"Ground-truthed (carry a Reference): {grounded} / {total}")
 
@@ -174,7 +174,7 @@ def main() -> None:
 
 def _render(relations, out_dir: Path):
     try:
-        import dots.graph  # noqa: F401
+        import dotz.graph  # noqa: F401
     except Exception:
         return None
     cwd = Path.cwd()

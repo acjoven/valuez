@@ -12,7 +12,7 @@ behavior. ``DataSet`` earns its place by adding four things a list cannot:
    an :meth:`envelope` treat a ``Range`` by its bounds, not a single number.
 3. **Collection-level provenance** -- a ``DataSet`` is itself a
    :class:`~valuez.values.Value` (its own ``id`` / ``label`` / ``reference``)
-   and persists as *one* ``dots`` document, so a named, ground-truthed
+   and persists as *one* ``dotz`` document, so a named, ground-truthed
    compilation stays a single citable unit instead of loose rows.
 4. **List ergonomics anyway** -- it implements the sequence protocol
    (``len`` / iteration / indexing / slicing), so you rarely give anything up.

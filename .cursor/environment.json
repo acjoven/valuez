@@ -1,0 +1,4 @@
+{
+  "install": "bash scripts/setup_env.sh install",
+  "start": "bash scripts/setup_env.sh ensure"
+}

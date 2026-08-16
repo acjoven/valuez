@@ -6,7 +6,7 @@ Canonical, **committed** ontology maps — the source of truth for hand-authored
 Each file here is a single JSON array of serialized `Value` documents (concepts,
 relations, individuals/universals, scalars, ...), produced by
 `ValueRepository.export_ontology(...)`. Keeping one sorted, stable-key file per
-ontology (instead of the expanded per-document `dots` store) makes changes small
+ontology (instead of the expanded per-document `dotz` store) makes changes small
 and reviewable in git.
 
 ## Available maps
@@ -49,7 +49,7 @@ repo.query("[?kind=='relation']")
 ## Conventions
 
 - **Use deterministic, human-readable ids** (e.g. `u_human`, `isa_hm`) when
-  constructing values. The `dots` store defaults to random UUID filenames, which
+  constructing values. The `dotz` store defaults to random UUID filenames, which
   churn on every rebuild; stable ids keep diffs meaningful.
 - **Commit the `ontologies/*.json` files here.** The expanded per-document store,
   generated graph `*.html`, and pyvis `lib/` are regenerable and are gitignored.

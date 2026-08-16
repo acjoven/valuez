@@ -4,14 +4,14 @@ import os
 import tempfile
 from pathlib import Path
 from typing import Iterable
-from dots.storage import JsonStorage
-from dots.query import run_jmespath
-from dots.graph import build_graph_from_docs, visualize_graph
+from dotz.storage import JsonStorage
+from dotz.query import run_jmespath
+from dotz.graph import build_graph_from_docs, visualize_graph
 
 from .values import Value
 
 class ValueRepository:
-    """OOP cover over dots' functional storage/query/graph layer."""
+    """OOP cover over dotz' functional storage/query/graph layer."""
     def __init__(self, data_dir: str | Path | None = None):
         self._store = JsonStorage.create(Path(data_dir) if data_dir else None)
 
@@ -23,7 +23,7 @@ class ValueRepository:
         return self.add_values([value])
 
     def add_values(self, values: Iterable[Value]):
-        """Persist Value objects by serializing them through dots storage."""
+        """Persist Value objects by serializing them through dotz storage."""
         docs = [v.to_dict() for v in values]
         tmp = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8")
         try:
@@ -41,7 +41,7 @@ class ValueRepository:
     def export_ontology(self, path: str | Path) -> Path:
         """Write the whole store to one canonical JSON array (the artifact to commit).
 
-        The ``dots`` store keeps one file per document (often UUID-named), which
+        The ``dotz`` store keeps one file per document (often UUID-named), which
         makes for noisy, hard-to-review git history. This method serializes every
         stored document into a single file, sorted by ``id`` and with sorted keys,
         so repeated exports produce minimal, deterministic diffs. Commit this file

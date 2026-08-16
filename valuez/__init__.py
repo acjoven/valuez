@@ -1,8 +1,8 @@
-"""valuez: a traceable semantic exploration platform built on ``dots``.
+"""valuez: a traceable semantic exploration platform built on ``dotz``.
 
 The public API currently exposes the quantitative value primitives. Storage and
 visualization are provided by :class:`valuez.repository.ValueRepository`, an OOP
-cover over the functional ``dots`` storage/query/graph layer.
+cover over the functional ``dotz`` storage/query/graph layer.
 """
 from __future__ import annotations
 

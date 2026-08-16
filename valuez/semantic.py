@@ -15,9 +15,9 @@ a store of individual values:
   ``support`` / ``attack`` each other and other propositions (Dung-style).
 
 These are :class:`~valuez.values.Value` subclasses, so they persist through
-``dots`` storage like every other value. Because a :class:`Relation` serializes
+``dotz`` storage like every other value. Because a :class:`Relation` serializes
 with ``source`` / ``target`` fields, a collection of relations feeds directly
-into ``dots``' directed-graph builder for visualization -- see
+into ``dotz``' directed-graph builder for visualization -- see
 :func:`build_relation_graph`, :func:`visualize_relations`,
 :func:`build_argument_graph`, and :func:`visualize_arguments`.
 """
@@ -104,7 +104,7 @@ class Relation(Value):
 
     ``source`` and ``target`` may be given as :class:`Concept` instances or plain
     concept names; they are stored as names so a set of relations maps cleanly
-    onto a ``dots`` directed graph.
+    onto a ``dotz`` directed graph.
 
     The ``predicate`` may be constrained to a :class:`~valuez.Vocabulary` for
     rigour, and the edge may carry a ``modality`` (e.g. ``necessary``,
@@ -205,8 +205,8 @@ def build_relation_graph(relations: Iterable[Relation]) -> Any:
 
 
 def visualize_relations(relations: Iterable[Relation], output_html: Union[str, Path]) -> Path:
-    """Render relations to an interactive HTML graph via ``dots`` visualization."""
-    from dots.graph import visualize_graph  # lazy: keeps dots optional at import
+    """Render relations to an interactive HTML graph via ``dotz`` visualization."""
+    from dotz.graph import visualize_graph  # lazy: keeps dotz optional at import
 
     graph = build_relation_graph(relations)
     return visualize_graph(graph, Path(output_html))
@@ -265,7 +265,7 @@ class Argument(Value):
 
     Premises and conclusion may be given as :class:`Proposition` instances or
     plain handles (strings); they are stored as handles so an argument maps onto
-    a ``dots`` graph. ``scheme`` optionally names the argumentation scheme
+    a ``dotz`` graph. ``scheme`` optionally names the argumentation scheme
     (e.g. ``modus-ponens``, ``reductio``).
     """
 
@@ -352,8 +352,8 @@ def visualize_arguments(
     output_html: Union[str, Path],
     relations: Iterable[Relation] = (),
 ) -> Path:
-    """Render an argument map to interactive HTML via ``dots`` visualization."""
-    from dots.graph import visualize_graph  # lazy: keeps dots optional at import
+    """Render an argument map to interactive HTML via ``dotz`` visualization."""
+    from dotz.graph import visualize_graph  # lazy: keeps dotz optional at import
 
     graph = build_argument_graph(arguments, relations)
     return visualize_graph(graph, Path(output_html))
