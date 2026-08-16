@@ -3,7 +3,7 @@
 ## Cursor Cloud specific instructions
 
 `valuez` is a pure-Python **library** (no web server / long-running service) for
-traceable semantic exploration. It is built on the sibling toolkit in `../dots`
+traceable semantic exploration. It is built on the sibling toolkit `dotz`
 (storage / query / graph) and adds a typed value system (`Scalar`/`Range`,
 qualitative primitives, `Concept`/`Relation`, `Individual`/`Universal`,
 `DataSet`/`Function`), a fluent `Reading` authoring session, BibTeX-backed
@@ -19,28 +19,20 @@ binaries directly, e.g. `.venv/bin/python -m pytest`. To rebuild by hand after a
 fresh VM wipes `.venv`, run `bash scripts/setup_env.sh`.
 
 > Cursor Cloud note: this repo-file `.cursor/environment.json` is honored when the
-> environment includes the `valuez` repo. Because `valuez` needs its sibling
-> `dots` checkout, add **both** repos to the environment (they are cloned as
-> siblings, so `../dots` resolves); otherwise set `DOTS_DIR` to the `dots`
-> checkout for `setup_env.sh` to find it.
+> environment includes the `valuez` repo. Because `valuez` imports the sibling
+> `dotz` toolkit, add **both** repos to the environment (they are cloned as
+> siblings, so `../dotz` resolves; a legacy `../dots` clone dir also works);
+> otherwise set `DOTZ_DIR` to the `dotz` checkout for `setup_env.sh` to find it.
 
-### Non-obvious gotcha: `dots` vs `dotz`
+### Dependency: the sibling `dotz` toolkit
 
-`valuez` imports the sibling toolkit as **`dots`** (e.g.
-`from dots.storage import JsonStorage` in `valuez/repository.py`, and
-`import dots.graph` in the ontology examples), but the sibling repo `../dots`
-now **packages it as `dotz`** (the package was renamed `dots` -> `dotz`). With
-nothing bridging them, `valuez.repository` and ~7 test modules fail with
-`ModuleNotFoundError: No module named 'dots'`.
-
-`scripts/setup_env.sh` bridges this by writing a tiny venv-level alias file
-(`zz_dots_to_dotz_compat.pth` in site-packages) that maps `dots` -> `dotz`.
-Because that alias lives in the venv (not tracked in git), it must be recreated
-whenever the venv is rebuilt — which the script handles (and its `ensure` mode
-verifies on each boot). If you ever see the `No module named 'dots'` error,
-re-run `bash scripts/setup_env.sh`. The proper long-term fix is to update
-`valuez`'s imports to `dotz` (or commit a real `dots` shim), but that has not
-been done yet.
+`valuez` imports the sibling toolkit directly as **`dotz`** (e.g.
+`from dotz.storage import JsonStorage` in `valuez/repository.py`, and
+`import dotz.graph` in the ontology examples). `scripts/setup_env.sh` installs it
+editable from the sibling checkout, so `valuez.repository` and the graph-rendering
+examples work out of the box. If you see `ModuleNotFoundError: No module named
+'dotz'`, the sibling repo was not found — re-run `bash scripts/setup_env.sh` (set
+`DOTZ_DIR` if the checkout is not a sibling of this repo).
 
 Also keep `click<8.2`: `typer==0.12.5` (used by the `dotz` CLI extra) is
 incompatible with `click>=8.2`.

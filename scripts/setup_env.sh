@@ -7,10 +7,9 @@
 #   start   -> `bash scripts/setup_env.sh ensure`   (per-boot self-heal)
 #
 # It (re)creates the gitignored virtualenv at .venv with:
-#   - the sibling `dots` toolkit installed editable (it packages as `dotz`),
-#   - valuez's runtime + test dependencies,
-#   - `click<8.2` pinned (typer 0.12.5 is incompatible with click>=8.2), and
-#   - a venv-level `dots` -> `dotz` import alias (see the "gotcha" in AGENTS.md).
+#   - the sibling `dotz` toolkit installed editable (storage / query / graph),
+#   - valuez's runtime + test dependencies, and
+#   - `click<8.2` pinned (typer 0.12.5 is incompatible with click>=8.2).
 #
 # Running it by hand is the fastest way to recover after a fresh VM wipes .venv:
 #   bash scripts/setup_env.sh
@@ -24,9 +23,10 @@ PY="$VENV/bin/python"
 
 log() { printf '[setup_env] %s\n' "$*"; }
 
-# Locate the sibling `dots` repository (packaged as `dotz`). Override with DOTS_DIR.
-find_dots() {
-  local candidates=("${DOTS_DIR:-}" "$ROOT/../dots" "$ROOT/../dotz")
+# Locate the sibling `dotz` repository. Override with DOTZ_DIR; the local checkout
+# dir may be named `dotz` (canonical) or `dots` (legacy clone dir) -- both work.
+find_dotz() {
+  local candidates=("${DOTZ_DIR:-}" "$ROOT/../dotz" "$ROOT/../dots")
   local c
   for c in "${candidates[@]}"; do
     if [[ -n "$c" && -f "$c/pyproject.toml" ]]; then
@@ -37,42 +37,14 @@ find_dots() {
   return 1
 }
 
-# True when the venv exists and can import both valuez and the aliased `dots`.
+# True when the venv exists and can import both valuez and dotz.
 venv_ok() {
   [[ -x "$PY" ]] || return 1
   (cd "$ROOT" && "$PY" - <<'PYEOF' >/dev/null 2>&1
 import valuez            # repo root import (run from ROOT)
-import dots.storage      # the dots -> dotz alias must be active
+import dotz.storage      # the sibling toolkit must be importable
 PYEOF
   )
-}
-
-# Write the venv-level `dots` -> `dotz` alias so `import dots.*` resolves to dotz.
-ensure_alias() {
-  "$PY" - <<'PYEOF'
-import os
-import site
-
-alias = (
-    "import sys, importlib, importlib.util; "
-    "sys.modules.__setitem__('dots', importlib.import_module('dotz')) "
-    "if importlib.util.find_spec('dotz') and importlib.util.find_spec('dots') is None "
-    "else None\n"
-)
-targets = list(site.getsitepackages())
-try:
-    targets.append(site.getusersitepackages())
-except Exception:
-    pass
-for d in targets:
-    try:
-        os.makedirs(d, exist_ok=True)
-        with open(os.path.join(d, "zz_dots_to_dotz_compat.pth"), "w", encoding="utf-8") as f:
-            f.write(alias)
-        break
-    except OSError:
-        continue
-PYEOF
 }
 
 full_setup() {
@@ -82,19 +54,17 @@ full_setup() {
   fi
   log "upgrading pip"
   "$PY" -m pip install -q --upgrade pip
-  if dots_dir="$(find_dots)"; then
-    log "installing sibling dots (as dotz), editable, from $dots_dir"
-    "$PY" -m pip install -q -e "$dots_dir"
+  if dotz_dir="$(find_dotz)"; then
+    log "installing sibling dotz, editable, from $dotz_dir"
+    "$PY" -m pip install -q -e "$dotz_dir"
   else
-    log "WARNING: sibling 'dots' repo not found (checked \$DOTS_DIR, ../dots, ../dotz)."
-    log "         valuez.repository/graph need it; set DOTS_DIR to the dots checkout."
+    log "WARNING: sibling 'dotz' repo not found (checked \$DOTZ_DIR, ../dotz, ../dots)."
+    log "         valuez.repository/graph need it; set DOTZ_DIR to the dotz checkout."
   fi
   log "installing valuez requirements"
   "$PY" -m pip install -q -r "$ROOT/requirements.txt"
   log "pinning click<8.2 (typer 0.12.5 compatibility)"
   "$PY" -m pip install -q "click<8.2"
-  log "writing dots -> dotz venv alias"
-  ensure_alias
 }
 
 MODE="${1:-install}"
@@ -119,6 +89,6 @@ esac
 if venv_ok; then
   log "valuez environment ready: $PY"
 else
-  echo "[setup_env] ERROR: environment verification failed (import valuez / dots.storage)" >&2
+  echo "[setup_env] ERROR: environment verification failed (import valuez / dotz.storage)" >&2
   exit 1
 fi
