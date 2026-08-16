@@ -53,12 +53,12 @@ into a **range** of cooling rates and time constants.
 ### Run
 
 ```bash
-# dots (sibling repo) must be importable, e.g.:  pip install -e ../dots
+# dotz (sibling repo) must be importable, e.g.:  pip install -e ../dotz
 python examples/heat_transfer_cooling.py
 ```
 
 The script prints an engineering report, persists all inputs and derived values
-through `dots` storage, and writes a provenance graph (`provenance.html`) that
+through `dotz` storage, and writes a provenance graph (`provenance.html`) that
 links each value to its source. Output goes to `$VALUEZ_EXAMPLE_OUT`
 (default: a `valuez_heat_transfer/` folder in your temp directory).
 
@@ -99,7 +99,7 @@ Gettier 1963, Clark 1963).
 python examples/philosophy_framework.py
 ```
 
-The script prints the framework, persists all values through `dots`, and writes
+The script prints the framework, persists all values through `dotz`, and writes
 an interactive **argument map** (`argument_map.html`) wiring premises →
 arguments → conclusions plus the attack relations. Output goes to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_philosophy/` folder in your temp dir).
@@ -138,7 +138,7 @@ python examples/metaphysics_framework.py
 ```
 
 The script prints the ontology and the inferred/checked results, persists all
-values through `dots`, and writes an interactive **ontology graph**
+values through `dotz`, and writes an interactive **ontology graph**
 (`ontology_graph.html`) with asserted plus inferred edges. Output goes to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_metaphysics/` folder in your temp dir).
 
@@ -154,7 +154,7 @@ several sources — a mix of `Scalar` and `Range` values in `W/(m²·K)`.
   `envelope()` treat a `Range` by its bounds; the envelope is the overall band
   across all sources.
 - **Collection-level provenance**: the `DataSet` is itself a ground-truthed
-  `Value`, so the whole compilation persists as a **single** `dots` document
+  `Value`, so the whole compilation persists as a **single** `dotz` document
   (one id) instead of loose rows.
 - **List ergonomics**: iterate/index/slice it like a list; `grounded()` and
   `by_kind()` return sub-`DataSet`s.
@@ -184,7 +184,7 @@ with the *conditions* it was measured at, single- or multi-dimensional.
 Each input coordinate and output is a ground-truthed `Scalar`/`Range` (a couple
 of the conversion points are `Range`s to model measurement uncertainty), the
 schema (variable names + per-axis units + output unit) is enforced on every
-sample, and each whole function persists as a **single** `dots` document.
+sample, and each whole function persists as a **single** `dotz` document.
 
 ### Run
 
@@ -277,7 +277,7 @@ three Critiques, built entirely from the semantic + metaphysics primitives.
 
 The script checks **referential integrity** (every edge endpoint is a defined
 node), reasons over the graph (transitive closure of `is-a`; acyclicity of the
-strict orders), persists everything through `dots`, **exports the canonical
+strict orders), persists everything through `dotz`, **exports the canonical
 `ontologies/kant.json`**, and renders an interactive graph.
 
 ### Run

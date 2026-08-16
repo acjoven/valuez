@@ -49,7 +49,7 @@ replacement for the judgment that makes the map trustworthy.
 
 The extractor is isolated in an **optional** module (mirroring how
 `valuez/units.py` degrades gracefully when `pint` is absent, and how the RumbleDB
-path in `dots` is optional): importing `valuez` never requires an LLM, and the
+path in `dotz` is optional): importing `valuez` never requires an LLM, and the
 assist API raises a clear, actionable error if `ollama`/`httpx` or a running
 model is unavailable.
 

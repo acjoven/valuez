@@ -9,8 +9,8 @@ from a single number to a metaphysical universal, can carry a
 [`Reference`](valuez/values.py) back to the source it came from, so the resulting
 model is auditable rather than asserted.
 
-It is built on top of [`dots`](../dots) (a sibling JSON storage / query / graph
-toolkit): domain objects stay pure Python, while `dots` provides persistence and
+It is built on top of [`dotz`](../dotz) (a sibling JSON storage / query / graph
+toolkit): domain objects stay pure Python, while `dotz` provides persistence and
 interactive graph visualization.
 
 ---
@@ -26,7 +26,7 @@ interactive graph visualization.
   (`Individual`, `Universal`, `Instantiation`) primitives share one base class
   and serialize uniformly.
 - **Persistence & visualization for free.** Every value round-trips through
-  `dots` JSON storage and a collection of relations renders straight to an
+  `dotz` JSON storage and a collection of relations renders straight to an
   interactive graph.
 - **Structural reasoning.** Transitive closure, cycle detection, and acyclicity
   checks over any predicate (`is-a`, `part-of`, `grounds`, …).
@@ -38,7 +38,7 @@ interactive graph visualization.
 
 ## Installation
 
-`valuez` targets Python 3.12+. It depends on the sibling `dots` repository, which
+`valuez` targets Python 3.12+. It depends on the sibling `dotz` repository, which
 is installed editable (it is not published to PyPI).
 
 ```bash
@@ -46,7 +46,7 @@ is installed editable (it is not published to PyPI).
 python3 -m venv .venv
 source .venv/bin/activate
 
-pip install -e ../dots            # sibling storage/query/graph toolkit
+pip install -e ../dotz            # sibling storage/query/graph toolkit
 pip install -r requirements.txt   # pint (units) + pytest
 ```
 
@@ -100,7 +100,7 @@ available when you want explicit control — see `examples/kant_ontology.py`.
 
 Every type below subclasses [`Value`](valuez/values.py): it has a stable `id`, an
 optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
-`from_dict()` so it persists through `dots` unchanged.
+`from_dict()` so it persists through `dotz` unchanged.
 
 | Layer | Types | Purpose |
 | --- | --- | --- |
@@ -126,7 +126,7 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 ## Persistence & visualization
 
 [`ValueRepository`](valuez/repository.py) is an OOP cover over the functional
-`dots` storage/query/graph layer:
+`dotz` storage/query/graph layer:
 
 ```python
 from valuez import Scalar, Reference
@@ -151,7 +151,7 @@ repo = ValueRepository.from_ontology("ontologies/kant.json")
 ```
 
 The committed `ontologies/*.json` files are the source of truth; the expanded
-per-document `dots` store is a regenerable local cache (see
+per-document `dotz` store is a regenerable local cache (see
 [`ontologies/README.md`](ontologies/README.md)).
 
 ### Merging ontologies into one universe
