@@ -10,6 +10,7 @@ from . import bibliography, reasoning, units
 from .bibliography import ReferenceRepository
 from .dataset import DataSet
 from .function import Function, Sample
+from .merge import MergeReport, MergeResult, merge_ontologies
 from .metaphysics import Individual, Instantiation, MetaphysicalEntity, Universal
 from .qualitative import (
     Boolean,
@@ -68,6 +69,9 @@ __all__ = [
     "Reading",
     "OntologyBuilder",
     "ReferenceRepository",
+    "merge_ontologies",
+    "MergeResult",
+    "MergeReport",
     "reasoning",
     "units",
     "bibliography",
