@@ -220,23 +220,17 @@ See [`AGENTS.md`](AGENTS.md) for the authoritative dev/test/run notes.
 
 ## Roadmap
 
-Authoring tiers 1–3 follow a deliberate principle — **automate mechanics
-aggressively, automate content only as reviewable suggestions** — while tier 4
-covers interoperability:
+The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
 
-1. **Tier 1 — fluent authoring (done).** `Reading`/`OntologyBuilder`: citation
-   context, create-or-reuse, eager validation, deterministic ids.
-2. **Tier 2 — text-ingestion hooks (planned).** Load a text and turn selected
-   spans into `Reference` locators; bulk import of triple tables.
-3. **Tier 3 — optional local-LLM assist (design sketch).** A *suggestion-only*
-   ollama extractor that proposes schema-validated, span-cited candidates for
-   human accept/edit/reject, entering the graph only through the Tier-1 API. See
-   [`docs/llm_assist.md`](docs/llm_assist.md).
-4. **Tier 4 — interoperability / standards export (design sketch).** Optional
-   export/import to RDF/OWL, JSON-LD, SKOS, W3C PROV, and nanopublications (plus
-   CSL/BIBFRAME for bibliography), so `valuez` maps join the wider
-   structured-knowledge ecosystem. See
-   [`docs/interoperability.md`](docs/interoperability.md).
+- **Authoring automation** — Tier 1 fluent authoring (`done`), Tier 2
+  text-ingestion hooks (`planned`), Tier 3 optional local-LLM assist
+  (`design sketch`), following the principle *automate mechanics aggressively,
+  automate content only as reviewable suggestions*.
+- **Content & knowledge graphs** — Kant ontology (`done`), Kierkegaard
+  (`in progress`), and a near-term **ontology merge** to fold multiple maps into
+  one universe (`planned`).
+- **Interoperability** — Tier 4 standards export/import (RDF/OWL, SKOS, PROV,
+  nanopublications; `design sketch`).
 
 ---
 
@@ -249,4 +243,5 @@ examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)
 docs/          # design notes (Tier-3 LLM assist, Tier-4 interoperability)
 tests/         # pytest suite
+ROADMAP.md     # the living roadmap (source of truth; README links to it)
 ```
