@@ -9,7 +9,7 @@ exactly the case where a plain list falls short and a `DataSet` earns its keep:
 - it computes *interval-aware* aggregates (the envelope spans Range bounds, not
   just point values);
 - it is itself a ground-truthed `Value`, so the whole compilation persists as a
-  single citable `dots` document.
+  single citable `dotz` document.
 
 Run:  python examples/dataset_htc.py
 """

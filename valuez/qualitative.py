@@ -18,7 +18,7 @@ module covers *categorical* data — values drawn from a controlled set of terms
 
 All of these reuse :class:`~valuez.values.Value`'s identity, reference-based
 ground-truthing, ``kind`` registry, and dict (de)serialization, so they persist
-through ``dots`` storage exactly like the numeric values.
+through ``dotz`` storage exactly like the numeric values.
 """
 from __future__ import annotations
 

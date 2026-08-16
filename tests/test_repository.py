@@ -1,4 +1,4 @@
-"""Integration tests: values persisted + queried through the dots layer."""
+"""Integration tests: values persisted + queried through the dotz layer."""
 from valuez import Range, Reference, Scalar
 from valuez.repository import ValueRepository
 

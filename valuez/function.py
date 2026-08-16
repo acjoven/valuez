@@ -14,7 +14,7 @@ Examples
 
 Every coordinate and output is a :class:`~valuez.Scalar` or :class:`~valuez.Range`,
 so individual points stay unit-checked and ground-truthable, and the whole
-function persists as a single ``dots`` document.
+function persists as a single ``dotz`` document.
 
 What a :class:`Function` adds over a list of tuples:
 

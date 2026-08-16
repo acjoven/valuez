@@ -11,7 +11,7 @@ A worked, source-backed engineering example for the valuez platform:
 3. Use the lumped-capacitance model (Newton's law of cooling) to compute how a
    300 C steel part cools in 25 C room air, propagating the *range* of h into a
    range of cooling rates and time constants.
-4. Persist every input and derived value through ``dots`` storage and emit a
+4. Persist every input and derived value through ``dotz`` storage and emit a
    provenance graph linking each value to its source.
 
 Physical model (lumped capacitance, valid when the Biot number Bi < 0.1):
@@ -26,7 +26,7 @@ moderate temperatures; it would add a parallel h_rad on the order of a few
 W/m^2/K near 300 C and speed cooling somewhat).
 
 Run:  python examples/heat_transfer_cooling.py
-(Requires the sibling ``dots`` package importable, e.g. ``pip install -e ../dots``.)
+(Requires the sibling ``dotz`` package importable, e.g. ``pip install -e ../dotz``.)
 """
 from __future__ import annotations
 
@@ -220,9 +220,9 @@ def main() -> None:
         print(f"  Time to reach {target:.0f} degC          : {t_fast:.0f} to {t_slow:.0f} min")
     print()
 
-    # Confirm persistence + query through the dots layer.
+    # Confirm persistence + query through the dotz layer.
     stored = repo.query("[?kind=='range'] | length(@)")
-    print(f"Persisted values in dots store: {len(repo.query('[]'))} docs "
+    print(f"Persisted values in dotz store: {len(repo.query('[]'))} docs "
           f"({stored} ranges) at {out_dir / 'store'}")
 
     # Provenance graph: value label -> its ground-truth source.
@@ -235,7 +235,7 @@ def main() -> None:
 def _build_provenance_graph(repo: ValueRepository, out_dir: Path):
     """Emit a directed graph linking each stored value to its source (optional)."""
     try:
-        from dots.graph import build_graph_from_docs, visualize_graph
+        from dotz.graph import build_graph_from_docs, visualize_graph
     except Exception:
         return None
     edges = []

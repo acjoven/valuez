@@ -11,7 +11,7 @@ the *conditions* it was measured at:
    and `section(...)` to slice conversion vs. temperature at fixed conditions.
 
 Each coordinate/value is a ground-truthed `Scalar`/`Range`, and each whole
-function persists as a single `dots` document.
+function persists as a single `dotz` document.
 
 Run:  python examples/empirical_functions.py
 """

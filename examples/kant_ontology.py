@@ -17,7 +17,7 @@ map Kant's system as a traceable, queryable graph spanning the three Critiques:
   Transcendental Deduction.
 
 It then reasons over the graph (transitive closure of ``is-a``; acyclicity of the
-strict orders), persists everything through ``dots``, exports the canonical
+strict orders), persists everything through ``dotz``, exports the canonical
 ``ontologies/kant.json``, and renders an interactive graph.
 
 Run:  python examples/kant_ontology.py
@@ -695,7 +695,7 @@ def main() -> None:
 
 def _render(relations, out_dir: Path):
     try:
-        import dots.graph  # noqa: F401
+        import dotz.graph  # noqa: F401
     except Exception:
         return None
     cwd = Path.cwd()
@@ -708,7 +708,7 @@ def _render(relations, out_dir: Path):
 
 def _render_arguments(arguments, out_dir: Path):
     try:
-        import dots.graph  # noqa: F401
+        import dotz.graph  # noqa: F401
     except Exception:
         return None
     cwd = Path.cwd()
