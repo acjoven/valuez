@@ -61,8 +61,61 @@ joining common nodes so every edge from either source attaches to the one shared
 node. It resolves collisions by policy (`first` / `last` / `raise`) and reports
 clean matches (`Philosopher`, `PhilosophicalWork`) vs genuine semantic collisions
 (`Existence`, `Freedom`, `God`, `Reason`, ...) that differ in definition and
-`ontological_status` between sources. API in `valuez/merge.py`; worked run in
+`ontological_status` between sources. Now also supports **curated `aliases`**
+(join differently-named nodes like `Soul` = `TheSelf`, rewriting edge endpoints),
+**per-node provenance** (`node_provenance`), and **cross-source bridge** discovery
+(`MergeResult.bridges()`). API in `valuez/merge.py`; worked run in
 `examples/merge_universe.py`; design note: [`docs/merge.md`](docs/merge.md).
+
+---
+
+## Active knowledge — learn, massage ideas, create understanding
+
+The platform is strong at *capture and structure*; this track makes it a place to
+**learn from**, **work new ideas in**, and **derive new understanding**. Items are
+ordered by dependency — each unlocks the next. Two invariants hold throughout:
+derived/suggested items still carry a `Reference`, and meaning-bearing content
+enters the canonical graph only through a human-reviewed path.
+
+### 1. Merge alignment — `in progress`
+Join concepts that mean the same thing, not just spell the same. Curated
+`aliases` (`Soul` = `TheSelf`) shipped with the merge item above. **Next:**
+meaning-based *candidate* alignment (embeddings → suggested `closeMatch`,
+human-approved into `aliases`), overlapping the Tier-4 `owl:sameAs` / SKOS angle.
+Design note: *to be written* (`docs/alignment.md`).
+
+### 2. Graph traversal & path queries — `planned`
+A traversal API over the existing `networkx` graph: neighborhoods, shortest
+paths, topic subgraphs, "how does A relate to B". The foundation the rest of this
+track (and any UI) leans on. Today only exact-name join and JMESPath over flat
+docs exist. Design note: *to be written* (`docs/traversal.md`).
+
+### 3. Concept briefs / `explain(node)` — `planned`
+Assemble a readable page for any node — definition, citations (`bibliography()`),
+immediate relations, supporting arguments — so the graph becomes something you
+can *read* and learn from. Depends on (2).
+
+### 4. Reasoning: inference + tension detection — `planned`
+Generalize `reasoning.py`'s transitive closures into typed forward-chaining rules
+that emit *derived* (provenance-tagged) relations/propositions; add contradiction,
+gap/open-question, and Dung-style argument acceptability detection. This is the
+core that powers "massage ideas" and "create understanding".
+
+### 5. Cross-universe discovery & synthesis — `in progress`
+Turn a merged universe into insight: `MergeResult.bridges()` (the connective
+tissue) shipped; **next:** path-based discovery of *unexpected* connections
+between concepts from different sources (needs (2)), thematic clustering, and
+proposing new bridging concepts. Depends on (2) and (4).
+
+### 6. Learning workflows — `planned`
+Study/recall (flashcards from definitions and propositions with spaced
+repetition) and guided reading paths (topological order over
+`presupposes` / `requires` / `grounds`). Depends on (2)–(3).
+
+### 7. Generative assist (Tier 3) — `design sketch`
+Suggestion-only local-LLM proposals over a subgraph (new relations / propositions
+/ questions) for human accept/edit/reject — the creativity amplifier, gated by the
+review path. Tracked under *Authoring automation* above; sequenced last here.
 
 ---
 
