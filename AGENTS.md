@@ -10,8 +10,19 @@ qualitative primitives, `Concept`/`Relation`, `Individual`/`Universal`,
 `ReferenceRepository`, and committed ontology maps under `ontologies/`. See
 `README.md` for the full API tour and `examples/README.md` for runnable demos.
 
-Dependencies install into a gitignored virtualenv at `.venv`. The startup update
-script (re)creates it; call binaries directly, e.g. `.venv/bin/python -m pytest`.
+Dependencies install into a gitignored virtualenv at `.venv`. The committed
+bootstrap script [`scripts/setup_env.sh`](scripts/setup_env.sh) (re)creates it and
+is wired into [`.cursor/environment.json`](.cursor/environment.json) as both the
+`install` step (full build-time setup) and the `start` step (`ensure` mode, a
+fast per-boot self-heal that rebuilds `.venv` only if it is missing/broken). Call
+binaries directly, e.g. `.venv/bin/python -m pytest`. To rebuild by hand after a
+fresh VM wipes `.venv`, run `bash scripts/setup_env.sh`.
+
+> Cursor Cloud note: this repo-file `.cursor/environment.json` is honored when the
+> environment includes the `valuez` repo. Because `valuez` needs its sibling
+> `dots` checkout, add **both** repos to the environment (they are cloned as
+> siblings, so `../dots` resolves); otherwise set `DOTS_DIR` to the `dots`
+> checkout for `setup_env.sh` to find it.
 
 ### Non-obvious gotcha: `dots` vs `dotz`
 
@@ -22,13 +33,14 @@ now **packages it as `dotz`** (the package was renamed `dots` -> `dotz`). With
 nothing bridging them, `valuez.repository` and ~7 test modules fail with
 `ModuleNotFoundError: No module named 'dots'`.
 
-The startup update script bridges this by writing a tiny venv-level alias file
+`scripts/setup_env.sh` bridges this by writing a tiny venv-level alias file
 (`zz_dots_to_dotz_compat.pth` in site-packages) that maps `dots` -> `dotz`.
 Because that alias lives in the venv (not tracked in git), it must be recreated
-whenever the venv is rebuilt — which the update script handles. If you ever see
-the `No module named 'dots'` error, re-run the update script (or recreate the
-alias). The proper long-term fix is to update `valuez`'s imports to `dotz`
-(or commit a real `dots` shim), but that has not been done yet.
+whenever the venv is rebuilt — which the script handles (and its `ensure` mode
+verifies on each boot). If you ever see the `No module named 'dots'` error,
+re-run `bash scripts/setup_env.sh`. The proper long-term fix is to update
+`valuez`'s imports to `dotz` (or commit a real `dots` shim), but that has not
+been done yet.
 
 Also keep `click<8.2`: `typer==0.12.5` (used by the `dotz` CLI extra) is
 incompatible with `click>=8.2`.
