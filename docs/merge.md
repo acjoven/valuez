@@ -24,9 +24,35 @@ make a merge meaningful.
 
 | Document kind | Identity | Merge behavior |
 | --- | --- | --- |
-| `concept` / `individual` / `universal` | `name` | **Joined.** Same-named nodes collapse into one; a name in >1 source is a *join point*. |
-| `relation` / `instantiation` | `(source, predicate, target, modality, strength)` | Carried over; identical triples de-duplicated (shared provenance reported). |
+| `concept` / `individual` / `universal` | alias-resolved `name` | **Joined.** Same-named (or aliased) nodes collapse into one; a name formed from >1 node is a *join point*. |
+| `relation` / `instantiation` | `(source, predicate, target, modality, strength)` after alias-resolving endpoints | Carried over; identical triples de-duplicated (shared provenance reported). |
 | everything else (`proposition`, `argument`, `scalar`, ...) | `id` | Carried over as-is; a final pass guarantees globally unique ids. |
+
+## Aligning by meaning: aliases
+
+Exact-name matching only catches concepts spelled the same. Two traditions often
+name the same idea differently — Kant's `Soul` (the thinking subject) and
+Kierkegaard's `TheSelf` (a relation that relates itself to itself). The optional
+`aliases` argument declares such equivalences so they join too:
+
+```python
+res = merge_ontologies(
+    ["ontologies/kant.json", "ontologies/kierkegaard.json"],
+    aliases=[["TheSelf", "Soul"]],          # or {"Soul": "TheSelf"}
+)
+```
+
+Each group's first member (or the dict value) is the **canonical** name. Aliased
+nodes fold to that name, and — unlike the pure name-join — **edge endpoints are
+rewritten** to the canonical name, so alias-different subgraphs connect and any
+now-identical edges de-duplicate. `report.aliases_applied` records
+`canonical -> [original names folded]`. Field/`kind` reconciliation still follows
+`on_conflict` (so the canonical node keeps, e.g., the first source's definition).
+
+This is the *curated, human-reviewed* alignment layer. Automatic, meaning-based
+alignment (embeddings / `closeMatch`) is a separate roadmap item; see
+[`interoperability.md`](interoperability.md) for the standards angle
+(`owl:sameAs` / SKOS) and `ROADMAP.md` for sequencing.
 
 ## Reconciling a join point
 
@@ -54,10 +80,13 @@ Two flavors of divergence are recorded on the `MergeReport` either way:
 - `.values()` / `.relations()` / `.named_nodes()` — rehydrated `Value` objects.
 - `.to_repository(data_dir=...)` — persist into a `ValueRepository`.
 - `.export(path)` — write one canonical, deterministic universe JSON.
-- `.report` — a `MergeReport` with `join_points`, `node_sources` (every named
-  node → contributing source labels; length 1 = exclusive, ≥2 = join),
-  `field_conflicts`, `type_conflicts`, edge de-duplication counts,
-  `id_collisions`, `dangling_edges`, and a `summary()` / `to_dict()`.
+- `.report` — a `MergeReport` with `join_points`, `aliases_applied`,
+  `node_sources` (every canonical name → contributing source labels; length 1 =
+  exclusive, ≥2 = join), `bridge_edges`, `field_conflicts`, `type_conflicts`,
+  edge de-duplication counts, `id_collisions`, `dangling_edges`, and a
+  `summary()` / `to_dict()`.
+- `.bridges()` — the edges incident to a join point: the **connective tissue**
+  the merge created (what stitches the once-separate graphs together).
 - `.graph()` — relation graph over the merged universe.
 - `.discover(...)` — exclusive-to-exclusive paths that exist only because
   the maps were joined; see [`discovery.md`](discovery.md).
@@ -87,13 +116,14 @@ edges.
 
 ## Scope and future work
 
-- **Name is the only key.** There is no fuzzy matching or synonym resolution:
-  `TheSelf` (Kierkegaard) and `Soul` (Kant) are near-synonyms but merge only if a
-  future alias/`sameAs` layer maps them. That belongs with the Tier-4
-  interoperability work (`owl:sameAs` / SKOS `exactMatch`); see
-  [`interoperability.md`](interoperability.md).
-- **Provenance** currently lives in the `MergeReport`, not stamped onto each
-  merged document (so the exported universe stays cleanly round-trippable). A
-  future option could annotate each node/edge with its contributing sources.
+- **Matching is exact name or curated alias.** There is still no *automatic*
+  fuzzy/synonym resolution: `aliases` must be declared by hand. Meaning-based
+  candidate alignment (embeddings → suggested `closeMatch`, human-approved into
+  `aliases`) is the next expansion; see `ROADMAP.md` and the standards angle in
+  [`interoperability.md`](interoperability.md) (`owl:sameAs` / SKOS).
+- **Provenance** lives in the `MergeReport` (`node_sources`), not stamped onto
+  each merged document, so the exported universe stays cleanly round-trippable. A
+  future option could annotate each node/edge inline with its contributing
+  sources.
 - **N-way merges** work today (pass more than two sources); conflict reporting is
   pairwise-agnostic (it lists every contributor per name).

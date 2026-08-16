@@ -61,7 +61,10 @@ joining common nodes so every edge from either source attaches to the one shared
 node. It resolves collisions by policy (`first` / `last` / `raise`) and reports
 clean matches (`Philosopher`, `PhilosophicalWork`) vs genuine semantic collisions
 (`Existence`, `Freedom`, `God`, `Reason`, ...) that differ in definition and
-`ontological_status` between sources. API in `valuez/merge.py`; worked run in
+`ontological_status` between sources. Now also supports **curated `aliases`**
+(join differently-named nodes like `Soul` = `TheSelf`, rewriting edge endpoints),
+**per-node provenance** (`node_sources`), and the **cross-source bridges**
+(`MergeResult.bridges()`). API in `valuez/merge.py`; worked run in
 `examples/merge_universe.py`; design note: [`docs/merge.md`](docs/merge.md).
 
 ---
@@ -74,12 +77,18 @@ ordered by dependency — each unlocks the next. Two invariants hold throughout:
 derived/suggested items still carry a `Reference`, and meaning-bearing content
 enters the canonical graph only through a human-reviewed path.
 
-### 1. Merge alignment — `planned`
-Join concepts that mean the same thing, not just spell the same. Curated
-`aliases` (`Soul` = `TheSelf`) and meaning-based *candidate* alignment
-(embeddings → suggested `closeMatch`, human-approved into `aliases`), overlapping
-the Tier-4 `owl:sameAs` / SKOS angle. Design note: *to be written*
-(`docs/alignment.md`).
+### 1. Merge alignment — `in progress`
+Join concepts that mean the same thing, not just spell the same.
+
+**Shipped (this slice):** curated `aliases` on `merge_ontologies`
+(`[["TheSelf", "Soul"]]` or `{"Soul": "TheSelf"}`) fold differently-named nodes
+to one canonical name and rewrite edge endpoints, so alias-different subgraphs
+join too; the report lists `aliases_applied`. Design:
+[`docs/merge.md`](docs/merge.md). Worked run: `examples/merge_universe.py`.
+
+**Next:** meaning-based *candidate* alignment (embeddings → suggested
+`closeMatch`, human-approved into `aliases`), overlapping the Tier-4
+`owl:sameAs` / SKOS angle. Design note: *to be written* (`docs/alignment.md`).
 
 ### 2. Graph traversal & path queries — `in progress`
 A traversal API over the existing `networkx` graph: neighborhoods, shortest
@@ -131,7 +140,9 @@ clustering, and proposing new bridging concepts. Depends on (2) and (4).
 **This slice:** exclusive-to-exclusive shortest paths that only exist because
 a merge joined the maps (`valuez.discover` / `MergeResult.discover`). A
 crossing is an undirected walk from a node exclusive to source A to a node
-exclusive to source B that passes through at least one join point. Design:
+exclusive to source B that passes through at least one join point; joins
+include alias-made ones (item 1). `MergeResult.bridges()` lists the edges
+incident to a join point — the seam the crossings run through. Design:
 [`docs/discovery.md`](docs/discovery.md). Worked run:
 `examples/discovery_demo.py`.
 
