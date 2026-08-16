@@ -8,29 +8,39 @@ independently -- e.g. ``ontologies/kant.json`` and ``ontologies/kierkegaard.json
 files; it should **identify those points of overlap and join the common nodes**,
 so the two graphs become one connected universe.
 
-The join key is a node's **name**. This works because edges
+The default join key is a node's **name**. This works because edges
 (:class:`~valuez.Relation` / :class:`~valuez.Instantiation`) reference their
 endpoints *by name*: once two same-named nodes collapse into one, every edge
 from either source automatically attaches to that single node, wiring the two
-subgraphs together through the shared concept -- no edge rewriting required.
+subgraphs together through the shared concept.
+
+Exact-name matching only catches concepts that happen to be *spelled* the same.
+Two traditions often name the same idea differently -- Kant's ``Soul`` (the
+thinking subject) and Kierkegaard's ``TheSelf`` (a relation that relates itself
+to itself). The optional ``aliases`` argument declares such equivalences: the
+named nodes are folded to one **canonical** name, and edge endpoints are
+rewritten to match, so alias-different subgraphs join too. (Automatic,
+meaning-based alignment -- e.g. via embeddings -- is future work; ``aliases`` is
+the curated, human-reviewed layer that principle asks for.)
 
 What this module does:
 
 - **Named nodes** (``concept`` / ``individual`` / ``universal``) are grouped by
-  ``name``. A name seen in more than one source is a **join point**; its
-  contributors are reconciled into one node (see ``on_conflict``), recording any
-  genuine divergence (a different ``definition`` / ``ontological_status``, or --
-  a *type* conflict -- a different ``kind``).
-- **Edges** (``relation`` / ``instantiation``) are carried over and, by default,
-  de-duplicated: an identical triple asserted by both sources collapses to one
-  edge (its shared provenance is reported).
+  their (alias-resolved) ``name``. A name formed from more than one node is a
+  **join point**; its contributors are reconciled into one node (see
+  ``on_conflict``), recording any genuine divergence (a different ``definition``
+  / ``ontological_status``, or -- a *type* conflict -- a different ``kind``).
+- **Edges** (``relation`` / ``instantiation``) have their endpoints alias-
+  resolved and are then, by default, de-duplicated: an identical triple asserted
+  by both sources collapses to one edge (its shared provenance is reported).
 - **Everything else** (propositions, arguments, scalars, ...) is carried over,
   with a final pass guaranteeing globally unique ids.
 
 The result is a :class:`MergeResult` -- the merged documents plus a
-:class:`MergeReport` describing the join points, conflicts, and de-duplication --
-which you can rehydrate to values, persist through ``dotz``, or export as a new
-canonical ontology.
+:class:`MergeReport` describing the join points, applied aliases, per-node
+provenance, conflicts, de-duplication, and the **cross-source bridges** the merge
+created -- which you can rehydrate to values, persist through ``dotz``, or export
+as a new canonical ontology.
 """
 from __future__ import annotations
 
@@ -90,6 +100,60 @@ def _edge_key(doc: Dict[str, Any]) -> Tuple[Any, ...]:
     )
 
 
+AliasSpec = Union[Dict[str, str], Iterable[Iterable[str]]]
+
+
+def _build_alias_map(aliases: Optional[AliasSpec]) -> Dict[str, str]:
+    """Normalize ``aliases`` into an ``{name: canonical}`` map.
+
+    Accepts either a ``{alias: canonical}`` dict or an iterable of *groups* of
+    equivalent names (the first name in each group is the canonical one).
+    """
+    if not aliases:
+        return {}
+    mapping: Dict[str, str] = {}
+
+    def _add(name: str, canonical: str) -> None:
+        if not isinstance(name, str) or not name or not isinstance(canonical, str) or not canonical:
+            raise ValueError("alias names must be non-empty strings")
+        if name in mapping and mapping[name] != canonical:
+            raise ValueError(
+                f"alias {name!r} maps to conflicting canonicals "
+                f"{mapping[name]!r} and {canonical!r}"
+            )
+        mapping[name] = canonical
+
+    if isinstance(aliases, dict):
+        for name, canonical in aliases.items():
+            _add(name, canonical)
+    else:
+        for group in aliases:
+            members = list(group)
+            if not members:
+                continue
+            canonical = members[0]
+            for name in members:
+                _add(name, canonical)
+    return mapping
+
+
+def _canonicalizer(mapping: Dict[str, str]):
+    """Return ``canon(name)`` resolving alias chains (and detecting cycles)."""
+    def canon(name: Optional[str]) -> Optional[str]:
+        if name is None:
+            return None
+        seen = set()
+        cur = name
+        while cur in mapping and mapping[cur] != cur:
+            if cur in seen:
+                raise ValueError(f"alias cycle involving {name!r}")
+            seen.add(cur)
+            cur = mapping[cur]
+        return cur
+
+    return canon
+
+
 class MergeReport:
     """A human- and machine-readable account of what a merge did."""
 
@@ -102,8 +166,14 @@ class MergeReport:
         self.edges_in: int = 0
         self.edges_out: int = 0
         self.edges_deduped: int = 0
-        # join points: name -> list of contributing source labels (len >= 2)
+        # join points: canonical name -> contributing source labels (>1 node joined)
         self.join_points: Dict[str, List[str]] = {}
+        # canonical name -> the distinct original names folded via aliases
+        self.aliases_applied: Dict[str, List[str]] = {}
+        # every merged node's canonical name -> the sources that contributed it
+        self.node_provenance: Dict[str, List[str]] = {}
+        # edges incident to a join point -- the connective tissue of the merge
+        self.bridge_edges: int = 0
         # edges asserted identically by >1 source: edge triple -> labels
         self.shared_edges: List[Tuple[Tuple[Any, ...], List[str]]] = []
         # name -> {label: kind} where kinds disagree
@@ -131,11 +201,24 @@ class MergeReport:
                 flag = "  [TYPE CONFLICT]"
             elif name in self.field_conflicts:
                 flag = "  [differs: " + ", ".join(sorted(self.field_conflicts[name])) + "]"
+            if name in self.aliases_applied:
+                flag += "  [alias: " + " = ".join(self.aliases_applied[name]) + "]"
             lines.append(f"    {name}  <- {', '.join(self.join_points[name])}{flag}")
+        if self.aliases_applied:
+            lines.append(
+                f"Aliases applied (joined by declared equivalence): "
+                f"{len(self.aliases_applied)}"
+            )
+            for canonical in sorted(self.aliases_applied):
+                folded = " = ".join(self.aliases_applied[canonical])
+                lines.append(f"    {canonical}  <= {folded}")
         lines.append(
             f"Edges: {self.edges_in} in -> {self.edges_out} out "
             f"({self.edges_deduped} duplicate(s) collapsed, "
             f"{len(self.shared_edges)} asserted by multiple sources)"
+        )
+        lines.append(
+            f"Cross-source bridges (edges incident to a join point): {self.bridge_edges}"
         )
         if self.type_conflicts:
             lines.append(f"Type conflicts: {len(self.type_conflicts)}")
@@ -166,7 +249,9 @@ class MergeReport:
                 "shared": len(self.shared_edges),
             },
             "join_points": {k: list(v) for k, v in self.join_points.items()},
-            "type_conflicts": {k: dict(v) for k, v in self.type_conflicts.items()},
+            "aliases_applied": {k: list(v) for k, v in self.aliases_applied.items()},
+            "node_provenance": {k: list(v) for k, v in self.node_provenance.items()},
+            "bridge_edges": self.bridge_edges,
             "field_conflicts": {
                 k: {f: dict(vs) for f, vs in fields.items()}
                 for k, fields in self.field_conflicts.items()
@@ -194,6 +279,21 @@ class MergeResult:
     def named_nodes(self) -> List[Value]:
         """The merged named nodes (concepts / individuals / universals)."""
         return [Value.from_dict(d) for d in self.documents if d.get("kind") in NAME_NODE_KINDS]
+
+    def bridges(self) -> List[Value]:
+        """Edges incident to a join point -- the connective tissue of the merge.
+
+        These are the edges that, because they now touch a node contributed by
+        more than one source, stitch the once-separate graphs together. They are
+        the first thing to look at to see what merging two universes *revealed*.
+        """
+        joins = set(self.report.join_points)
+        return [
+            Value.from_dict(d)
+            for d in self.documents
+            if d.get("kind") in EDGE_KINDS
+            and (d.get("source") in joins or d.get("target") in joins)
+        ]
 
     def to_repository(self, data_dir: Optional[Union[str, Path]] = None) -> Any:
         """Persist the merged universe into a new :class:`ValueRepository`."""
@@ -267,6 +367,7 @@ def merge_ontologies(
     labels: Optional[Sequence[str]] = None,
     on_conflict: str = "first",
     dedupe_edges: bool = True,
+    aliases: Optional[AliasSpec] = None,
 ) -> MergeResult:
     """Merge several ontologies into one universe, joining common nodes by name.
 
@@ -283,6 +384,11 @@ def merge_ontologies(
 
     ``dedupe_edges`` (default ``True``) collapses identical edges asserted by
     more than one source into a single edge.
+
+    ``aliases`` declares curated cross-name equivalences so differently-named
+    nodes join too (e.g. ``[["TheSelf", "Soul"]]`` or ``{"Soul": "TheSelf"}``).
+    Aliased names are folded to a single **canonical** name (the first in a
+    group, or the dict value) and edge endpoints are rewritten to match.
     """
     if on_conflict not in _CONFLICT_POLICIES:
         raise ValueError(f"on_conflict must be one of {_CONFLICT_POLICIES}")
@@ -290,6 +396,7 @@ def merge_ontologies(
     if labels is not None and len(labels) != len(sources):
         raise ValueError("labels must match the number of sources")
 
+    canon = _canonicalizer(_build_alias_map(aliases))
     report = MergeReport()
 
     # Pass 1: load + partition every source's documents.
@@ -311,10 +418,11 @@ def merge_ontologies(
         for doc in docs:
             kind = doc.get("kind")
             if kind in NAME_NODE_KINDS:
-                key = doc.get("name")
-                if key is None:
+                name = doc.get("name")
+                if name is None:
                     other_docs.append((label, doc))
                     continue
+                key = canon(name)  # alias-resolved identity
                 if key not in named:
                     named[key] = []
                     named_order.append(key)
@@ -324,29 +432,42 @@ def merge_ontologies(
             else:
                 other_docs.append((label, doc))
 
-    # Pass 2: reconcile named nodes (join the overlaps).
+    # Pass 2: reconcile named nodes (join the overlaps; canonicalize aliased names).
     merged_nodes: List[Dict[str, Any]] = []
-    for name in named_order:
-        contributors = named[name]
+    for canonical in named_order:
+        contributors = named[canonical]
+        originals = sorted({doc.get("name") for _, doc in contributors})
         if len(contributors) == 1:
-            merged_nodes.append(copy.deepcopy(contributors[0][1]))
+            base = copy.deepcopy(contributors[0][1])
         else:
-            merged_nodes.append(_merge_named_node(name, contributors, on_conflict, report))
+            base = _merge_named_node(canonical, contributors, on_conflict, report)
+        base["name"] = canonical
+        if originals != [canonical]:
+            report.aliases_applied[canonical] = originals
+        report.node_provenance[canonical] = sorted({lbl for lbl, _ in contributors})
+        merged_nodes.append(base)
     node_names = {d.get("name") for d in merged_nodes}
     report.named_nodes_out = len(merged_nodes)
 
-    # Pass 3: carry over edges, de-duplicating identical triples.
+    # Pass 3: alias-resolve edge endpoints, then de-duplicate identical triples.
     report.edges_in = len(edge_docs)
+    rewritten: List[Tuple[str, Dict[str, Any]]] = []
+    for label, doc in edge_docs:
+        rd = copy.deepcopy(doc)
+        rd["source"] = canon(rd.get("source"))
+        rd["target"] = canon(rd.get("target"))
+        rewritten.append((label, rd))
+
     merged_edges: List[Dict[str, Any]] = []
     if dedupe_edges:
         seen: Dict[Tuple[Any, ...], Dict[str, Any]] = {}
         provenance: Dict[Tuple[Any, ...], List[str]] = {}
-        for label, doc in edge_docs:
+        for label, doc in rewritten:
             key = _edge_key(doc)
             if key not in seen:
-                seen[key] = copy.deepcopy(doc)
+                seen[key] = doc
                 provenance[key] = [label]
-                merged_edges.append(seen[key])
+                merged_edges.append(doc)
             else:
                 report.edges_deduped += 1
                 if label not in provenance[key]:
@@ -355,7 +476,7 @@ def merge_ontologies(
             (key, labs) for key, labs in provenance.items() if len(labs) > 1
         ]
     else:
-        merged_edges = [copy.deepcopy(doc) for _, doc in edge_docs]
+        merged_edges = [doc for _, doc in rewritten]
     report.edges_out = len(merged_edges)
 
     # Report edges whose endpoints are not (any longer) present as nodes.
@@ -363,6 +484,13 @@ def merge_ontologies(
         for endpoint in (doc.get("source"), doc.get("target")):
             if endpoint is not None and endpoint not in node_names:
                 report.dangling_edges.append((str(doc.get("id")), str(endpoint)))
+
+    # Count the cross-source bridges: edges incident to a join point.
+    joins = set(report.join_points)
+    report.bridge_edges = sum(
+        1 for doc in merged_edges
+        if doc.get("source") in joins or doc.get("target") in joins
+    )
 
     # Pass 4: assemble, then guarantee globally unique ids.
     assembled = merged_nodes + merged_edges + [copy.deepcopy(doc) for _, doc in other_docs]
