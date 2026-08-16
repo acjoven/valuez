@@ -337,3 +337,30 @@ python examples/kierkegaard_ontology.py
 `ontologies/kierkegaard.json` is the committed source-of-truth artifact; the
 rendered `kierkegaard_ontology.html` / `kierkegaard_arguments.html` go to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_kierkegaard/` folder in your temp dir).
+
+## `merge_universe.py` — join two ontologies into one universe
+
+The payoff of the two content examples above: `valuez.merge_ontologies` folds
+`kant.json` and `kierkegaard.json` into a single connected graph by **joining
+their common nodes by name**. Because edges reference endpoints by name, once the
+two `Freedom` nodes collapse into one, every Kant edge and every Kierkegaard edge
+attaches to that single node — the two graphs are stitched together at the seam.
+
+The script prints a **merge report** (the nine join points; which are clean
+matches like `Philosopher` / `PhilosophicalWork` and which are genuine semantic
+collisions like `Existence` / `Freedom` / `God`), shows how each shared node now
+carries edges from *both* sources, exports the merged `universe.json`, and renders
+two graphs: the whole universe and a legible **seam** slice of just the edges
+incident to the join points.
+
+### Run
+
+```bash
+python examples/merge_universe.py
+```
+
+`universe.json`, `universe.html`, and `universe_seam.html` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_merge/` folder in your temp dir). The
+merged universe is *derived* (regenerable from the two committed maps), so it is
+not itself committed. See [`../docs/merge.md`](../docs/merge.md) for the join
+semantics, conflict policies, and the `MergeReport` fields.

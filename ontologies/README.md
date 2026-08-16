@@ -19,9 +19,12 @@ and reviewable in git.
 `kant.json` and `kierkegaard.json` are intentionally two **independent** graphs
 that overlap by *name* (e.g. `Philosopher`, `PhilosophicalWork`, and the
 semantic collisions `Existence` / `Freedom` / `God` / `Reason`), while their ids
-are disjoint (`k_*` vs `kk_*`). They are the fixtures for a future **merge**
-function that folds multiple exported files into one universe by keying on name
-and resolving collisions.
+are disjoint (`k_*` vs `kk_*`). They are the fixtures for the **merge** function
+(`valuez.merge_ontologies`), which folds multiple exported files into one universe
+by keying on name and resolving collisions — see
+[`../docs/merge.md`](../docs/merge.md) and `examples/merge_universe.py`. The
+merged `universe.json` is *derived* (regenerable from these two maps), so it is
+intentionally **not** committed here.
 
 ## Workflow
 

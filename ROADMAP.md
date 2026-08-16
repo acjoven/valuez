@@ -48,20 +48,21 @@ Tier-1 API. Design: [`docs/llm_assist.md`](docs/llm_assist.md).
 Curated ontology of Kant's critical philosophy across the three Critiques.
 Builder `examples/kant_ontology.py`; canonical `ontologies/kant.json`.
 
-### Kierkegaard ontology — `in progress`
+### Kierkegaard ontology — `done`
 Companion ontology of Kierkegaard's existential authorship, deliberately sharing
 node **names** with the Kant map (`MERGE_ANCHORS`) as fixtures for the merge
 below. Builder `examples/kierkegaard_ontology.py`; canonical
-`ontologies/kierkegaard.json`. Complete and in review; flip to `done` when it
-merges.
+`ontologies/kierkegaard.json`.
 
-### Ontology merge — fold many files into one universe — `planned`
-**Near-term focus.** A merge function that imports multiple exported maps (e.g.
-`kant.json` + `kierkegaard.json`) into a single graph by keying on concept
-**name**, with a policy for resolving collisions — clean matches (`Philosopher`,
-`PhilosophicalWork`) vs genuine semantic collisions (`Existence`, `Freedom`,
-`God`, `Reason`, ...) that differ in definition and `ontological_status` between
-sources. Design note: *to be written* (`docs/merge.md`). Tracking: *TBD*.
+### Ontology merge — fold many files into one universe — `done`
+`valuez.merge_ontologies` imports multiple exported maps (e.g. `kant.json` +
+`kierkegaard.json`) into a single connected graph by keying on concept **name**,
+joining common nodes so every edge from either source attaches to the one shared
+node. It resolves collisions by policy (`first` / `last` / `raise`) and reports
+clean matches (`Philosopher`, `PhilosophicalWork`) vs genuine semantic collisions
+(`Existence`, `Freedom`, `God`, `Reason`, ...) that differ in definition and
+`ontological_status` between sources. API in `valuez/merge.py`; worked run in
+`examples/merge_universe.py`; design note: [`docs/merge.md`](docs/merge.md).
 
 ---
 

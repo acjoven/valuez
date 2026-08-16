@@ -154,6 +154,24 @@ The committed `ontologies/*.json` files are the source of truth; the expanded
 per-document `dots` store is a regenerable local cache (see
 [`ontologies/README.md`](ontologies/README.md)).
 
+### Merging ontologies into one universe
+
+Fold several maps into a single connected graph. Because edges reference their
+endpoints **by name**, `merge_ontologies` joins same-named nodes so every edge
+from either source attaches to the one shared node — the graphs stitch together
+at the concepts they have in common:
+
+```python
+from valuez import merge_ontologies
+
+res = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+print(res.report.summary())        # join points, semantic collisions, edge dedup
+res.export("ontologies/universe.json")   # optional: a derived, regenerable map
+```
+
+Conflicting definitions are resolved by policy (`first` / `last` / `raise`) and
+reported. See [`docs/merge.md`](docs/merge.md) and `examples/merge_universe.py`.
+
 ### Managing sources (BibTeX)
 
 A `Reference` can carry a full bibliographic record, and `ReferenceRepository`
@@ -192,8 +210,11 @@ Runnable, source-backed examples live in [`examples/`](examples/README.md):
 
 - **`reading_session.py`** — build a first-Critique ontology via the fluent
   `Reading` API (the ergonomic entry point).
-- **`kant_ontology.py`** — a large curated ontology of Kant's critical philosophy
-  (~134 concepts, ~242 relations) using the lower-level API.
+- **`kant_ontology.py`** / **`kierkegaard_ontology.py`** — two large curated
+  ontologies (Kant's critical philosophy and Kierkegaard's existential
+  authorship) built to the same shape so they can be merged.
+- **`merge_universe.py`** — join those two maps into one universe with
+  `merge_ontologies`, reporting the shared nodes that stitch the graphs together.
 - **`heat_transfer_cooling.py`** — a worked engineering problem: source-backed
   heat-transfer coefficients driving a lumped-capacitance cooling calculation.
 - **`dataset_htc.py`** / **`empirical_functions.py`** — `DataSet` and
@@ -226,9 +247,10 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   text-ingestion hooks (`planned`), Tier 3 optional local-LLM assist
   (`design sketch`), following the principle *automate mechanics aggressively,
   automate content only as reviewable suggestions*.
-- **Content & knowledge graphs** — Kant ontology (`done`), Kierkegaard
-  (`in progress`), and a near-term **ontology merge** to fold multiple maps into
-  one universe (`planned`).
+- **Content & knowledge graphs** — Kant and Kierkegaard ontologies (`done`), and
+  an **ontology merge** that folds multiple maps into one universe by joining
+  common nodes (`done`; `valuez.merge_ontologies`, see
+  [`docs/merge.md`](docs/merge.md)).
 - **Interoperability** — Tier 4 standards export/import (RDF/OWL, SKOS, PROV,
   nanopublications; `design sketch`).
 
