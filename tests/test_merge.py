@@ -211,6 +211,100 @@ def test_report_summary_and_dict():
     assert set(d["join_points"]) == set(res.report.join_points)
 
 
+# --------------------------------------------------------------------------- #
+# Alias / sameAs joining (curated cross-name equivalence)                      #
+# --------------------------------------------------------------------------- #
+def test_alias_joins_differently_named_nodes():
+    a = [Universal("Soul", definition="thinking subject", id="a_soul"),
+         Universal("Anxiety", id="a_anx"),
+         Relation("Anxiety", "reveals", "Soul", id="a_rel")]
+    b = [Universal("TheSelf", definition="relates to itself", id="b_self"),
+         Universal("Despair", id="b_dsp"),
+         Relation("Despair", "afflicts", "TheSelf", id="b_rel")]
+    res = merge_ontologies([a, b], labels=["A", "B"], aliases=[["TheSelf", "Soul"]])
+    # one canonical node named "TheSelf"; "Soul" is gone
+    selves = [d for d in res.documents if d.get("name") in ("Soul", "TheSelf")]
+    assert [d["name"] for d in selves] == ["TheSelf"]
+    # edges from both sources now point at the canonical node
+    targets = {d["target"] for d in res.documents if d.get("kind") == "relation"}
+    assert targets == {"TheSelf"}
+    assert res.report.aliases_applied == {"TheSelf": ["Soul", "TheSelf"]}
+    assert "TheSelf" in res.report.join_points
+    assert res.report.dangling_edges == []
+
+
+def test_alias_dict_form_and_lone_rename():
+    # a single source, alias-renamed even without another source to join
+    a = [Universal("Soul", id="a_soul"),
+         Universal("Anxiety", id="a_anx"),
+         Relation("Anxiety", "reveals", "Soul", id="a_rel")]
+    res = merge_ontologies([a], aliases={"Soul": "TheSelf"})
+    node = [d for d in res.documents if d.get("kind") == "universal"]
+    assert {d["name"] for d in node} == {"TheSelf", "Anxiety"}
+    edge = [d for d in res.documents if d.get("kind") == "relation"][0]
+    assert edge["target"] == "TheSelf"
+    assert res.report.aliases_applied == {"TheSelf": ["Soul"]}
+    assert res.report.dangling_edges == []
+
+
+def test_alias_dedupes_edges_across_names():
+    a = [Universal("P", id="a_p"), Universal("Soul", id="a_soul"),
+         Relation("P", "is-a", "Soul", id="a_rel")]
+    b = [Universal("TheSelf", id="b_self"),
+         Relation("P", "is-a", "TheSelf", id="b_rel")]
+    res = merge_ontologies([a, b], aliases=[["TheSelf", "Soul"]])
+    rels = [d for d in res.documents if d.get("kind") == "relation"]
+    assert len(rels) == 1  # "P is-a Soul" and "P is-a TheSelf" collapse
+    assert rels[0]["target"] == "TheSelf"
+    assert res.report.edges_deduped == 1
+    assert len(res.report.shared_edges) == 1
+
+
+def test_alias_conflicting_map_raises():
+    with pytest.raises(ValueError):
+        merge_ontologies([[Universal("B", id="b")]], aliases=[["A", "B"], ["C", "B"]])
+
+
+def test_node_provenance_tracks_contributors():
+    a = [Universal("Shared", id="a_s"), Universal("OnlyA", id="a_o")]
+    b = [Universal("Shared", id="b_s")]
+    res = merge_ontologies([a, b], labels=["A", "B"])
+    assert res.report.node_provenance["Shared"] == ["A", "B"]
+    assert res.report.node_provenance["OnlyA"] == ["A"]
+
+
+def test_bridges_helper_matches_report_count():
+    res = merge_ontologies([ONTOLOGIES / "kant.json", ONTOLOGIES / "kierkegaard.json"])
+    assert len(res.bridges()) == res.report.bridge_edges
+    assert res.report.bridge_edges > 0
+    joins = set(res.report.join_points)
+    for edge in res.bridges():
+        assert edge.source in joins or edge.target in joins
+
+
+def test_real_merge_alias_soul_theself_adds_one_join():
+    base = merge_ontologies([ONTOLOGIES / "kant.json", ONTOLOGIES / "kierkegaard.json"])
+    aligned = merge_ontologies(
+        [ONTOLOGIES / "kant.json", ONTOLOGIES / "kierkegaard.json"],
+        aliases=[["TheSelf", "Soul"]],
+    )
+    assert aligned.report.join_point_count == base.report.join_point_count + 1
+    assert aligned.report.aliases_applied == {"TheSelf": ["Soul", "TheSelf"]}
+    selves = [d for d in aligned.documents if d.get("name") in ("Soul", "TheSelf")]
+    assert [d["name"] for d in selves] == ["TheSelf"]  # one canonical node
+    assert aligned.report.node_provenance["TheSelf"] == ["kant", "kierkegaard"]
+    assert aligned.report.dangling_edges == []
+
+
+def test_report_dict_has_new_fields():
+    res = merge_ontologies([ONTOLOGIES / "kant.json", ONTOLOGIES / "kierkegaard.json"],
+                           aliases=[["TheSelf", "Soul"]])
+    d = res.report.to_dict()
+    assert d["bridge_edges"] == res.report.bridge_edges
+    assert d["aliases_applied"] == {"TheSelf": ["Soul", "TheSelf"]}
+    assert "node_provenance" in d and d["node_provenance"]["TheSelf"] == ["kant", "kierkegaard"]
+
+
 def test_example_runs(tmp_path, monkeypatch):
     monkeypatch.setenv("VALUEZ_EXAMPLE_OUT", str(tmp_path))
     merge = _load_example("merge_universe")
