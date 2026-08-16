@@ -6,7 +6,7 @@ cover over the functional ``dotz`` storage/query/graph layer.
 """
 from __future__ import annotations
 
-from . import bibliography, reasoning, units
+from . import bibliography, reasoning, traversal, units
 from .bibliography import ReferenceRepository
 from .dataset import DataSet
 from .function import Function, Sample
@@ -22,6 +22,7 @@ from .qualitative import (
     Vocabulary,
 )
 from .reading import OntologyBuilder, Reading
+from .traversal import Graph
 from .semantic import (
     Argument,
     Concept,
@@ -68,11 +69,13 @@ __all__ = [
     "Instantiation",
     "Reading",
     "OntologyBuilder",
+    "Graph",
     "ReferenceRepository",
     "merge_ontologies",
     "MergeResult",
     "MergeReport",
     "reasoning",
+    "traversal",
     "units",
     "bibliography",
     "pint_available",

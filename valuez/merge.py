@@ -195,6 +195,12 @@ class MergeResult:
         """The merged named nodes (concepts / individuals / universals)."""
         return [Value.from_dict(d) for d in self.documents if d.get("kind") in NAME_NODE_KINDS]
 
+    def graph(self) -> Any:
+        """Relation graph over the merged universe, for neighborhood / path queries."""
+        from .traversal import Graph
+
+        return Graph.from_documents(self.documents)
+
     def to_repository(self, data_dir: Optional[Union[str, Path]] = None) -> Any:
         """Persist the merged universe into a new :class:`ValueRepository`."""
         from .repository import ValueRepository

@@ -80,6 +80,16 @@ class ValueRepository:
     def query(self, expr: str):
         return run_jmespath(expr, self._store.load_all())
 
+    def values(self):
+        """Rehydrate every stored document as a :class:`~valuez.values.Value`."""
+        return [Value.from_dict(doc) for doc in self._store.load_all()]
+
+    def graph(self):
+        """Relation graph over stored documents, for neighborhood / path queries."""
+        from .traversal import Graph
+
+        return Graph.from_documents(self._store.load_all())
+
     def bibliography(self, **kwargs):
         """Collect the sources cited by all stored documents into a ReferenceRepository.
 

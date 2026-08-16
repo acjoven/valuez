@@ -503,6 +503,12 @@ class Reading:
 
         return reasoning.infer_transitive(self._relations, predicate)
 
+    def graph(self) -> Any:
+        """Relation graph over this session, for neighborhood / path queries."""
+        from .traversal import Graph
+
+        return Graph.from_values(self.values())
+
     # ------------------------------------------------------------------ #
     # Persistence & visualization                                        #
     # ------------------------------------------------------------------ #
