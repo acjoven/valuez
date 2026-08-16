@@ -30,6 +30,8 @@ interactive graph visualization.
   interactive graph.
 - **Structural reasoning.** Transitive closure, cycle detection, and acyclicity
   checks over any predicate (`is-a`, `part-of`, `grounds`, …).
+- **Graph traversal.** Neighborhoods, shortest paths, topic subgraphs, and
+  "how does A relate to B" over the relation graph (`valuez.Graph`).
 - **Ergonomic authoring.** The [`Reading`](valuez/reading.py) session lets you
   build an ontology *as you read* — cite a passage once, reuse concepts by name,
   and get eager validation at the point of entry.
@@ -118,6 +120,7 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 | **Metaphysics** | `Individual`, `Universal` | A particular / a kind, each with an optional `ontological_status`. |
 | | `Instantiation` | A typed `Individual --instantiates--> Universal` edge. |
 | **Reasoning** | `valuez.reasoning` | Transitive closure, inferred edges, cycle detection, acyclicity over any predicate. |
+| **Traversal** | `valuez.Graph` | Neighborhoods, shortest paths, topic subgraphs, "how does A relate to B". |
 | **Authoring** | `Reading` / `OntologyBuilder` | Fluent, validating session for building ontologies as you read. |
 | **Units** | `valuez.units` | pint integration; validates unit strings, optional `Quantity` conversion (degrades gracefully without pint). |
 
@@ -138,6 +141,7 @@ repo.add_value(Scalar(304.0, unit="W/m/K", label="k_ss",
 
 repo.query("[?kind=='scalar'].label")          # JMESPath over stored docs
 repo.to_graph_html("graph.html")               # interactive visualization
+repo.graph().how("Space", "Intuition")         # walk the relation graph
 ```
 
 ### Canonical ontology files
@@ -171,6 +175,23 @@ res.export("ontologies/universe.json")   # optional: a derived, regenerable map
 
 Conflicting definitions are resolved by policy (`first` / `last` / `raise`) and
 reported. See [`docs/merge.md`](docs/merge.md) and `examples/merge_universe.py`.
+
+### Walking the graph
+
+Once a map is stored, `valuez.Graph` answers neighborhood / path / topic
+questions over concept **name** (the same identity edges already use):
+
+```python
+from valuez import Graph
+
+g = Graph.from_ontology("ontologies/kant.json")
+print(g.how("Space", "Intuition"))          # Space -is-form-of-> Intuition
+print(g.neighborhood("Freedom", hops=1).nodes)
+g.topic("Freedom", hops=1).visualize("freedom.html")
+```
+
+`Reading.graph()`, `ValueRepository.graph()`, and `MergeResult.graph()` return
+the same object. See [`docs/traversal.md`](docs/traversal.md).
 
 ### Managing sources (BibTeX)
 
@@ -215,6 +236,8 @@ Runnable, source-backed examples live in [`examples/`](examples/README.md):
   authorship) built to the same shape so they can be merged.
 - **`merge_universe.py`** — join those two maps into one universe with
   `merge_ontologies`, reporting the shared nodes that stitch the graphs together.
+- **`traversal_demo.py`** — walk a stored map: neighborhoods, "how does A
+  relate to B", topic subgraphs (`valuez.Graph`).
 - **`heat_transfer_cooling.py`** — a worked engineering problem: source-backed
   heat-transfer coefficients driving a lumped-capacitance cooling calculation.
 - **`dataset_htc.py`** / **`empirical_functions.py`** — `DataSet` and
@@ -251,6 +274,9 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   an **ontology merge** that folds multiple maps into one universe by joining
   common nodes (`done`; `valuez.merge_ontologies`, see
   [`docs/merge.md`](docs/merge.md)).
+- **Active knowledge** — graph traversal (`in progress`; `valuez.Graph`, see
+  [`docs/traversal.md`](docs/traversal.md)), then concept briefs, richer
+  reasoning, and cross-universe discovery.
 - **Interoperability** — Tier 4 standards export/import (RDF/OWL, SKOS, PROV,
   nanopublications; `design sketch`).
 
@@ -260,10 +286,10 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
 
 ```
 valuez/        # the library (values, qualitative, semantic, metaphysics,
-               #   dataset, function, reasoning, reading, units, repository)
+               #   dataset, function, reasoning, traversal, reading, units, repository)
 examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)
-docs/          # design notes (Tier-3 LLM assist, Tier-4 interoperability)
+docs/          # design notes (traversal, Tier-3 LLM assist, Tier-4 interoperability)
 tests/         # pytest suite
 ROADMAP.md     # the living roadmap (source of truth; README links to it)
 ```

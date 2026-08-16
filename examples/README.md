@@ -364,3 +364,25 @@ python examples/merge_universe.py
 merged universe is *derived* (regenerable from the two committed maps), so it is
 not itself committed. See [`../docs/merge.md`](../docs/merge.md) for the join
 semantics, conflict policies, and the `MergeReport` fields.
+
+## `traversal_demo.py` — walk a stored map
+
+The first *exploration* slice: `valuez.Graph` over a relation graph you already
+have. It asks the questions the rest of the active-knowledge track leans on:
+
+- **neighborhood** — what sits next to this node?
+- **`how(A, B)`** — how does A relate to B? (undirected shortest path, reverse
+  arrows rendered when the walk runs against an asserted edge)
+- **topic subgraph** — the induced k-hop vicinity of one or more seeds
+
+It runs those queries against a tiny `Reading` session and against
+`ontologies/kant.json`, then writes `freedom_topic.html`.
+
+### Run
+
+```bash
+python examples/traversal_demo.py
+```
+
+Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_traversal/` folder in
+your temp dir). See [`../docs/traversal.md`](../docs/traversal.md).
