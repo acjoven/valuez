@@ -212,6 +212,26 @@ def test_how_with_predicate_filter():
     )
 
 
+def test_shortest_paths_from_batches_undirected_bfs():
+    g = _graph()
+    from_cell = g.shortest_paths_from("Cell")
+    assert "Cell" not in from_cell
+    assert from_cell["Organism"].describe() == (
+        "Cell -part-of-> Tissue -part-of-> Organ -part-of-> Organism"
+    )
+    assert from_cell["LivingThing"].length == 4  # Cell..Organism -is-a-> LivingThing
+    # Isolated is disconnected; a node with no edges reaches nobody.
+    assert g.shortest_paths_from("Isolated") == {}
+    # Directed: Organism cannot walk back to Cell.
+    assert "Cell" not in g.shortest_paths_from("Organism", directed=True)
+    assert g.shortest_paths_from("Organism", directed=False)["Cell"].length == 3
+    # cutoff caps hop count (Tissue is 1 hop from Cell; Organ is 2).
+    capped = g.shortest_paths_from("Cell", cutoff=1)
+    assert set(capped) == {"Tissue"}
+    with pytest.raises(ValueError, match="cutoff"):
+        g.shortest_paths_from("Cell", cutoff=-1)
+
+
 def test_paths_returns_shortest_first_and_respects_limit():
     # Two routes A -> C: A-B-C (2 hops) and A-C (1 hop).
     rels = [

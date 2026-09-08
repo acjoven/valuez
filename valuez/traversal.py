@@ -478,6 +478,37 @@ class Graph:
             return None
         return self._rehydrate_path(node_path, predset)
 
+    def shortest_paths_from(
+        self,
+        source: ConceptRef,
+        *,
+        cutoff: Optional[int] = None,
+        directed: bool = False,
+        predicates: PredicateSpec = None,
+    ) -> Dict[str, Path]:
+        """Shortest path from ``source`` to every reachable node.
+
+        Undirected by default (same as :meth:`how`). ``cutoff`` caps hop count.
+        The source itself is omitted. Used by cross-universe discovery to batch
+        BFS instead of running one :meth:`shortest_path` per pair.
+        """
+        if cutoff is not None and (not isinstance(cutoff, int) or isinstance(cutoff, bool) or cutoff < 0):
+            raise ValueError("cutoff must be a non-negative integer or None")
+        src = self._require(source, "source")
+        predset = _predicate_set(predicates)
+        import networkx as nx
+
+        graph = self._nx_view(directed=directed, predicates=predset)
+        kwargs: Dict[str, Any] = {}
+        if cutoff is not None:
+            kwargs["cutoff"] = cutoff
+        raw = nx.single_source_shortest_path(graph, src, **kwargs)
+        return {
+            target: self._rehydrate_path(nodes, predset)
+            for target, nodes in raw.items()
+            if target != src
+        }
+
     def how(
         self,
         source: ConceptRef,
