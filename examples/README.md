@@ -386,3 +386,24 @@ python examples/traversal_demo.py
 
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_traversal/` folder in
 your temp dir). See [`../docs/traversal.md`](../docs/traversal.md).
+
+## `analysis_demo.py` — infer, flag tensions, list gaps
+
+`analyze()` generalizes the one-predicate helpers in `valuez.reasoning` into a
+single pass: typed forward-chaining (transitivity, symmetry of `contrasts-with`,
+instantiation inheritance), tensions (cycles, predicate clashes, conflicting
+truth-values), gaps (dangling / undefined / open questions / ...), and Dung
+grounded status of arguments. Derived edges are returned, not inserted, each
+with a `Reference` naming the rule and the asserted ids it rested on.
+
+The script runs a mereology, the Gettier argument map, an illicit
+cycle+clash fragment, and `ontologies/kant.json`.
+
+### Run
+
+```bash
+python examples/analysis_demo.py
+```
+
+`analysis_kant.json` goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_analysis/`
+folder in your temp dir). See [`../docs/analysis.md`](../docs/analysis.md).

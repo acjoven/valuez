@@ -99,11 +99,25 @@ Assemble a readable page for any node — definition, citations (`bibliography()
 immediate relations, supporting arguments — so the graph becomes something you
 can *read* and learn from. Depends on (2).
 
-### 4. Reasoning: inference + tension detection — `planned`
+### 4. Reasoning: inference + tension detection — `in progress`
 Generalize `reasoning.py`'s transitive closures into typed forward-chaining rules
 that emit *derived* (provenance-tagged) relations/propositions; add contradiction,
-gap/open-question, and Dung-style argument acceptability detection. This is the
-core that powers "massage ideas" and "create understanding".
+gap/open-question, and Dung-style argument acceptability detection.
+
+**Shipped (this slice):** `valuez.analyze` — transitivity of the strict-order
+predicates, symmetry of `contrasts-with` / `contradicts`, instantiation
+inheritance along `is-a`; tensions (cycles, predicate clashes, conflicting
+truth-values); gaps (dangling / isolated / undefined / ungrounded / open
+questions / missing premises); Dung *grounded* status under `attacks`. Derived
+edges are returned, not inserted, each with a `Reference` naming the rule and
+the asserted ids it rested on. Design: [`docs/analysis.md`](docs/analysis.md).
+Worked run: `examples/analysis_demo.py`. `.analyze()` on `Reading`,
+`ValueRepository`, and `MergeResult`. The primitive helpers in
+`valuez.reasoning` are unchanged.
+
+**Next:** derived propositions; user-authored rules; preferred/stable Dung
+semantics and bipolar `supports`; writing approved derivations back through the
+review path.
 
 ### 5. Cross-universe discovery & synthesis — `planned`
 Turn a merged universe into insight: path-based discovery of *unexpected*
