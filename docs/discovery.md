@@ -34,7 +34,9 @@ exclusive node of source B such that:
 - it is at most `cutoff` hops (default 3)
 - it has **at least two hops** (a 1-hop exclusive–exclusive edge is not a
   merge artifact — it is a dangling endpoint that the other source happened
-  to satisfy)
+  to satisfy). If that 1-hop edge is the *shortest* path, the longer route
+  through a join is not reported either: a crossing is the shortest path,
+  not every path that happens to visit a join.
 - at least one **interior** node is a join point (`via`)
 
 Both directions are collected (A→B and B→A) so `between("kant", "kierkegaard")`

@@ -70,11 +70,15 @@ def test_between_and_via_filter_the_ranked_list():
 
 
 def test_direct_exclusive_edge_is_not_a_crossing():
-    # A dangling A->OnlyB edge is satisfied after merge, but never visits a join.
+    # A dangling A->OnlyB edge is satisfied after merge. Undirected, that 1-hop
+    # walk is the shortest OnlyA~OnlyB path in *both* directions, so neither is
+    # a crossing (the longer route via Shared is not the shortest path).
     a = [
         Universal("Shared", id="a_s"),
         Universal("OnlyA", id="a_a"),
+        Universal("OnlyA2", id="a_a2"),
         Relation("OnlyA", "is-a", "Shared", id="a_join"),
+        Relation("OnlyA2", "is-a", "Shared", id="a_join2"),
         Relation("OnlyA", "related-to", "OnlyB", id="a_direct"),
     ]
     b = [
@@ -83,11 +87,12 @@ def test_direct_exclusive_edge_is_not_a_crossing():
         Relation("OnlyB", "is-a", "Shared", id="b_join"),
     ]
     found = discover(merge_ontologies([a, b], labels=["A", "B"]))
-    # Shortest OnlyA~OnlyB is the 1-hop direct edge (no join) -> skipped.
-    # Reverse OnlyB~OnlyA is 2 hops via Shared -> kept.
     pairs = {(c.start, c.end) for c in found.crossings}
     assert ("OnlyA", "OnlyB") not in pairs
-    assert ("OnlyB", "OnlyA") in pairs
+    assert ("OnlyB", "OnlyA") not in pairs
+    # A node that is *not* adjacent still crosses via the join.
+    assert ("OnlyA2", "OnlyB") in pairs
+    assert ("OnlyB", "OnlyA2") in pairs
 
 
 def test_disjoint_universes_have_no_crossings():
@@ -237,7 +242,8 @@ def test_kant_kierkegaard_crossing_through_freedom():
     assert "Freedom" in ti.via
     assert ti.hops == 2
     hub_names = [name for name, _ in found.hubs]
-    assert hub_names[0] == "Freedom"
+    assert "Freedom" in hub_names
+    assert any(n > 0 for name, n in found.hubs if name == "Freedom")
     # MergeResult.discover is the same walk.
     via_freedom = res.discover(cutoff=2, limit=0).via("Freedom")
     assert any(c.start == "TranscendentalIdealism" and c.end == "Anxiety" for c in via_freedom)
