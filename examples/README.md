@@ -386,3 +386,24 @@ python examples/traversal_demo.py
 
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_traversal/` folder in
 your temp dir). See [`../docs/traversal.md`](../docs/traversal.md).
+
+## `concept_brief.py` — read a node
+
+`explain(node)` assembles a readable page for one concept: definition and
+status, every incident relation with its citation, the claims and arguments
+that bear on it (attached by asserted edge, or by a labelled whole-word
+*mention*), and the sources behind all of it, grouped.
+
+The script briefs `Freedom` twice — in Kant's map alone, and in the merged
+Kant + Kierkegaard universe, where one page now draws on both authors' edges
+and sources — and writes each as Markdown (plus the universe brief as JSON).
+
+### Run
+
+```bash
+python examples/concept_brief.py
+```
+
+`freedom_kant.md`, `freedom_universe.md`, and `freedom_universe.json` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_briefs/` folder in your temp dir).
+See [`../docs/briefs.md`](../docs/briefs.md).

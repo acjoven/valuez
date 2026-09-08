@@ -201,6 +201,12 @@ class MergeResult:
 
         return Graph.from_documents(self.documents)
 
+    def explain(self, name: str, **kwargs: Any) -> Any:
+        """A readable :class:`~valuez.briefs.Brief` for one node of the merged universe."""
+        from .briefs import explain
+
+        return explain(self.documents, name, **kwargs)
+
     def to_repository(self, data_dir: Optional[Union[str, Path]] = None) -> Any:
         """Persist the merged universe into a new :class:`ValueRepository`."""
         from .repository import ValueRepository

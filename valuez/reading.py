@@ -509,6 +509,12 @@ class Reading:
 
         return Graph.from_values(self.values())
 
+    def explain(self, name: ConceptRef, **kwargs: Any) -> Any:
+        """A readable :class:`~valuez.briefs.Brief` for one declared concept."""
+        from .briefs import explain
+
+        return explain(self.values(), name, **kwargs)
+
     # ------------------------------------------------------------------ #
     # Persistence & visualization                                        #
     # ------------------------------------------------------------------ #

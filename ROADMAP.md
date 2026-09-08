@@ -94,10 +94,14 @@ track (and any UI) leans on.
 
 **Next:** weighted paths (by `strength`), argument-map traversal.
 
-### 3. Concept briefs / `explain(node)` — `planned`
-Assemble a readable page for any node — definition, citations (`bibliography()`),
-immediate relations, supporting arguments — so the graph becomes something you
-can *read* and learn from. Depends on (2).
+### 3. Concept briefs / `explain(node)` — `done`
+Assemble a readable page for any node — definition, citations, immediate
+relations, supporting arguments — so the graph becomes something you can *read*
+and learn from. `valuez.explain(values, name)` returns a `Brief` (Markdown /
+dict), with `.explain()` on `Reading`, `ValueRepository`, and `MergeResult`.
+Claims and arguments attach by asserted edge or, labelled as such, by whole-word
+*mention* of the concept name. Design: [`docs/briefs.md`](docs/briefs.md).
+Worked run: `examples/concept_brief.py`.
 
 ### 4. Reasoning: inference + tension detection — `planned`
 Generalize `reasoning.py`'s transitive closures into typed forward-chaining rules
