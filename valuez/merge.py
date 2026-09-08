@@ -201,6 +201,12 @@ class MergeResult:
 
         return Graph.from_documents(self.documents)
 
+    def analyze(self, **kwargs: Any) -> Any:
+        """Inference + tension detection over the merged universe. See :func:`valuez.analyze`."""
+        from .analysis import analyze
+
+        return analyze(self.documents, **kwargs)
+
     def to_repository(self, data_dir: Optional[Union[str, Path]] = None) -> Any:
         """Persist the merged universe into a new :class:`ValueRepository`."""
         from .repository import ValueRepository

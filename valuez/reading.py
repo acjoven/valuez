@@ -509,6 +509,12 @@ class Reading:
 
         return Graph.from_values(self.values())
 
+    def analyze(self, **kwargs: Any) -> Any:
+        """Inference + tension detection over this session. See :func:`valuez.analyze`."""
+        from .analysis import analyze
+
+        return analyze(self.values(), **kwargs)
+
     # ------------------------------------------------------------------ #
     # Persistence & visualization                                        #
     # ------------------------------------------------------------------ #

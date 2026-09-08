@@ -90,6 +90,12 @@ class ValueRepository:
 
         return Graph.from_documents(self._store.load_all())
 
+    def analyze(self, **kwargs):
+        """Inference + tension detection over stored documents. See :func:`valuez.analyze`."""
+        from .analysis import analyze
+
+        return analyze(self._store.load_all(), **kwargs)
+
     def bibliography(self, **kwargs):
         """Collect the sources cited by all stored documents into a ReferenceRepository.
 
