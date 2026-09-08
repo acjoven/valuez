@@ -39,6 +39,7 @@ g.neighbors("Freedom")                    # adjacent names
 g.neighborhood("Freedom", hops=2)         # k-hop vicinity + induced edges
 g.how("Space", "Intuition")               # shortest connecting path (undirected)
 g.shortest_path("Human", "LivingThing")   # directed by default
+g.shortest_paths_from("Freedom")          # one BFS: shortest path to every reachable node
 g.paths("A", "B", cutoff=4, limit=10)     # simple paths, shortest first
 g.topic("Freedom", hops=1)                # induced subgraph around one or more seeds
 g.topic(["Freedom", "God"], hops=1)
@@ -94,8 +95,9 @@ Left for later items on the same track:
 - Concept briefs / `explain(node)` (needs this graph, plus bibliography).
 - Typed forward-chaining inference and tension detection (`reasoning.py`
   stays the structural-order helper it is).
-- Path-based *unexpected* cross-universe discovery (needs merge bridges + this).
 - Weighted paths (e.g. by `strength`), argument-map traversal, clustering.
+
+Path-based cross-universe discovery now lives in [`discovery.md`](discovery.md).
 
 ## Example
 

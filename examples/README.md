@@ -386,3 +386,23 @@ python examples/traversal_demo.py
 
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_traversal/` folder in
 your temp dir). See [`../docs/traversal.md`](../docs/traversal.md).
+
+## `discovery_demo.py` — unexpected paths across a merged universe
+
+The payoff of merge + traversal: `valuez.discover` finds shortest paths from a
+concept that lived in *only one* source to a concept that lived *only in the
+other*, passing through a join point the merge created. Those walks do not
+exist in either ontology alone.
+
+It merges `kant.json` + `kierkegaard.json`, prints the ranked crossings
+(cutoff 2 hops), highlights `TranscendentalIdealism ~ Freedom ~ Anxiety`,
+and writes `crossings.json` plus an HTML subgraph of the shortest paths.
+
+### Run
+
+```bash
+python examples/discovery_demo.py
+```
+
+Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_discovery/` folder in
+your temp dir). See [`../docs/discovery.md`](../docs/discovery.md).

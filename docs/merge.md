@@ -54,9 +54,13 @@ Two flavors of divergence are recorded on the `MergeReport` either way:
 - `.values()` / `.relations()` / `.named_nodes()` — rehydrated `Value` objects.
 - `.to_repository(data_dir=...)` — persist into a `ValueRepository`.
 - `.export(path)` — write one canonical, deterministic universe JSON.
-- `.report` — a `MergeReport` with `join_points`, `field_conflicts`,
-  `type_conflicts`, edge de-duplication counts, `id_collisions`,
-  `dangling_edges`, and a `summary()` / `to_dict()`.
+- `.report` — a `MergeReport` with `join_points`, `node_sources` (every named
+  node → contributing source labels; length 1 = exclusive, ≥2 = join),
+  `field_conflicts`, `type_conflicts`, edge de-duplication counts,
+  `id_collisions`, `dangling_edges`, and a `summary()` / `to_dict()`.
+- `.graph()` — relation graph over the merged universe.
+- `.discover(...)` — exclusive-to-exclusive paths that exist only because
+  the maps were joined; see [`discovery.md`](discovery.md).
 
 ```python
 from valuez import merge_ontologies

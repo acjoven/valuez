@@ -105,10 +105,20 @@ that emit *derived* (provenance-tagged) relations/propositions; add contradictio
 gap/open-question, and Dung-style argument acceptability detection. This is the
 core that powers "massage ideas" and "create understanding".
 
-### 5. Cross-universe discovery & synthesis — `planned`
+### 5. Cross-universe discovery & synthesis — `in progress`
 Turn a merged universe into insight: path-based discovery of *unexpected*
 connections between concepts from different sources (needs (2)), thematic
 clustering, and proposing new bridging concepts. Depends on (2) and (4).
+
+**This slice:** exclusive-to-exclusive shortest paths that only exist because
+a merge joined the maps (`valuez.discover` / `MergeResult.discover`). A
+crossing is an undirected walk from a node exclusive to source A to a node
+exclusive to source B that passes through at least one join point. Design:
+[`docs/discovery.md`](docs/discovery.md). Worked run:
+`examples/discovery_demo.py`.
+
+**Next:** thematic clustering of exclusive neighborhoods; proposing new
+bridging concepts (synthesis; needs (4) to score candidates).
 
 ### 6. Learning workflows — `planned`
 Study/recall (flashcards from definitions and propositions with spaced
