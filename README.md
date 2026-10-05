@@ -29,7 +29,8 @@ interactive graph visualization.
   `dotz` JSON storage and a collection of relations renders straight to an
   interactive graph.
 - **Structural reasoning.** Transitive closure, cycle detection, and acyclicity
-  checks over any predicate (`is-a`, `part-of`, `grounds`, …).
+  checks over any predicate (`is-a`, `part-of`, `grounds`, …); `analyze()` runs
+  those as typed rules and adds clashes, gaps, and Dung argument status.
 - **Graph traversal.** Neighborhoods, shortest paths, topic subgraphs, and
   "how does A relate to B" over the relation graph (`valuez.Graph`).
 - **Readable briefs.** `explain(node)` assembles one node's definition,
@@ -121,7 +122,7 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 | | `Proposition`, `Argument` | A reified truth-apt claim / premises→conclusion (Dung-style support/attack). |
 | **Metaphysics** | `Individual`, `Universal` | A particular / a kind, each with an optional `ontological_status`. |
 | | `Instantiation` | A typed `Individual --instantiates--> Universal` edge. |
-| **Reasoning** | `valuez.reasoning` | Transitive closure, inferred edges, cycle detection, acyclicity over any predicate. |
+| **Reasoning** | `valuez.reasoning` / `analyze` | Transitive closure and cycles; typed inference, tensions, gaps, Dung grounded status. |
 | **Traversal** | `valuez.Graph` | Neighborhoods, shortest paths, topic subgraphs, "how does A relate to B". |
 | **Briefs** | `valuez.explain` / `Brief` | A readable page per node: definition, relations, claims, arguments, sources. |
 | **Authoring** | `Reading` / `OntologyBuilder` | Fluent, validating session for building ontologies as you read. |
@@ -196,6 +197,22 @@ g.topic("Freedom", hops=1).visualize("freedom.html")
 `Reading.graph()`, `ValueRepository.graph()`, and `MergeResult.graph()` return
 the same object. See [`docs/traversal.md`](docs/traversal.md).
 
+### Inference and tensions
+
+`analyze()` runs the structural-order helpers as typed rules and reports what
+they find -- derived edges (returned, not inserted), illicit cycles and
+predicate clashes, unfinished gaps, and Dung grounded status of arguments:
+
+```python
+from valuez import analyze
+
+report = analyze(book.values())            # or repo.analyze() / merge_result.analyze()
+print(report.summary())
+for edge in report.relations:              # inferred, provenance-tagged
+    print(edge.source, edge.predicate, edge.target)
+```
+
+See [`docs/analysis.md`](docs/analysis.md).
 ### Reading a node
 
 `explain(node)` turns one node into a page — definition, every incident relation
@@ -257,6 +274,8 @@ Runnable, source-backed examples live in [`examples/`](examples/README.md):
   `merge_ontologies`, reporting the shared nodes that stitch the graphs together.
 - **`traversal_demo.py`** — walk a stored map: neighborhoods, "how does A
   relate to B", topic subgraphs (`valuez.Graph`).
+- **`analysis_demo.py`** — infer, flag tensions, list gaps, score arguments
+  (`valuez.analyze`).
 - **`concept_brief.py`** — read a node: `explain("Freedom")` on Kant alone and
   on the merged Kant + Kierkegaard universe, written as Markdown.
 - **`heat_transfer_cooling.py`** — a worked engineering problem: source-backed
@@ -296,6 +315,9 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   common nodes (`done`; `valuez.merge_ontologies`, see
   [`docs/merge.md`](docs/merge.md)).
 - **Active knowledge** — graph traversal (`in progress`; `valuez.Graph`, see
+  [`docs/traversal.md`](docs/traversal.md)), concept briefs (`planned`), and
+  inference + tension detection (`in progress`; `valuez.analyze`, see
+  [`docs/analysis.md`](docs/analysis.md)).
   [`docs/traversal.md`](docs/traversal.md)) and concept briefs (`done`;
   `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), then richer
   reasoning and cross-universe discovery.
@@ -308,6 +330,10 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
 
 ```
 valuez/        # the library (values, qualitative, semantic, metaphysics,
+               #   dataset, function, reasoning, analysis, traversal, reading, units, repository)
+examples/      # runnable, source-backed worked examples
+ontologies/    # canonical single-file ontology exports (committed source of truth)
+docs/          # design notes (traversal, analysis, merge, Tier-3 LLM assist, Tier-4 interop)
                #   dataset, function, reasoning, traversal, briefs, reading, units, repository)
 examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)

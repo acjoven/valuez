@@ -201,6 +201,11 @@ class MergeResult:
 
         return Graph.from_documents(self.documents)
 
+    def analyze(self, **kwargs: Any) -> Any:
+        """Inference + tension detection over the merged universe. See :func:`valuez.analyze`."""
+        from .analysis import analyze
+
+        return analyze(self.documents, **kwargs)
     def explain(self, name: str, **kwargs: Any) -> Any:
         """A readable :class:`~valuez.briefs.Brief` for one node of the merged universe."""
         from .briefs import explain

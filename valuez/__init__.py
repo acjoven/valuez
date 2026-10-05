@@ -6,6 +6,8 @@ cover over the functional ``dotz`` storage/query/graph layer.
 """
 from __future__ import annotations
 
+from . import analysis, bibliography, reasoning, traversal, units
+from .analysis import Analysis, analyze
 from . import bibliography, briefs, reasoning, traversal, units
 from .bibliography import ReferenceRepository
 from .briefs import Brief, explain
@@ -71,6 +73,8 @@ __all__ = [
     "Reading",
     "OntologyBuilder",
     "Graph",
+    "analyze",
+    "Analysis",
     "Brief",
     "explain",
     "ReferenceRepository",
@@ -78,6 +82,7 @@ __all__ = [
     "MergeResult",
     "MergeReport",
     "reasoning",
+    "analysis",
     "traversal",
     "briefs",
     "units",
