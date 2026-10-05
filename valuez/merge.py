@@ -205,6 +205,18 @@ class MergeResult:
 
         return Graph.from_documents(self.documents)
 
+    def explain(self, name: str, **kwargs: Any) -> Any:
+        """A readable :class:`~valuez.briefs.Brief` for one node of the merged universe."""
+        from .briefs import explain
+
+        return explain(self.documents, name, **kwargs)
+
+    def analyze(self, **kwargs: Any) -> Any:
+        """Inference + tension detection over the merged universe. See :func:`valuez.analyze`."""
+        from .analysis import analyze
+
+        return analyze(self.documents, **kwargs)
+
     def discover(self, **kwargs: Any) -> Any:
         """Cross-source paths that exist only because this universe was joined.
 

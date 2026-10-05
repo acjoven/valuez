@@ -29,9 +29,12 @@ interactive graph visualization.
   `dotz` JSON storage and a collection of relations renders straight to an
   interactive graph.
 - **Structural reasoning.** Transitive closure, cycle detection, and acyclicity
-  checks over any predicate (`is-a`, `part-of`, `grounds`, …).
+  checks over any predicate (`is-a`, `part-of`, `grounds`, …); `analyze()` runs
+  those as typed rules and adds clashes, gaps, and Dung argument status.
 - **Graph traversal.** Neighborhoods, shortest paths, topic subgraphs, and
   "how does A relate to B" over the relation graph (`valuez.Graph`).
+- **Readable briefs.** `explain(node)` assembles one node's definition,
+  relations, claims, arguments, and sources into a Markdown page.
 - **Ergonomic authoring.** The [`Reading`](valuez/reading.py) session lets you
   build an ontology *as you read* — cite a passage once, reuse concepts by name,
   and get eager validation at the point of entry.
@@ -119,8 +122,9 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 | | `Proposition`, `Argument` | A reified truth-apt claim / premises→conclusion (Dung-style support/attack). |
 | **Metaphysics** | `Individual`, `Universal` | A particular / a kind, each with an optional `ontological_status`. |
 | | `Instantiation` | A typed `Individual --instantiates--> Universal` edge. |
-| **Reasoning** | `valuez.reasoning` | Transitive closure, inferred edges, cycle detection, acyclicity over any predicate. |
+| **Reasoning** | `valuez.reasoning` / `analyze` | Transitive closure and cycles; typed inference, tensions, gaps, Dung grounded status. |
 | **Traversal** | `valuez.Graph` | Neighborhoods, shortest paths, topic subgraphs, "how does A relate to B". |
+| **Briefs** | `valuez.explain` / `Brief` | A readable page per node: definition, relations, claims, arguments, sources. |
 | **Authoring** | `Reading` / `OntologyBuilder` | Fluent, validating session for building ontologies as you read. |
 | **Units** | `valuez.units` | pint integration; validates unit strings, optional `Quantity` conversion (degrades gracefully without pint). |
 
@@ -193,6 +197,39 @@ g.topic("Freedom", hops=1).visualize("freedom.html")
 `Reading.graph()`, `ValueRepository.graph()`, and `MergeResult.graph()` return
 the same object. See [`docs/traversal.md`](docs/traversal.md).
 
+### Reading a node
+
+`explain(node)` turns one node into a page — definition, every incident relation
+with its citation, the claims and arguments that bear on it, and the sources
+behind all of that:
+
+```python
+from valuez import explain, merge_ontologies
+
+universe = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+print(universe.explain("Freedom").to_markdown())   # Kant and Kierkegaard on one page
+```
+
+`Reading.explain()` and `ValueRepository.explain()` do the same for a session or
+a store. See [`docs/briefs.md`](docs/briefs.md).
+
+### Inference and tensions
+
+`analyze()` runs the structural-order helpers as typed rules and reports what
+they find -- derived edges (returned, not inserted), illicit cycles and
+predicate clashes, unfinished gaps, and Dung grounded status of arguments:
+
+```python
+from valuez import analyze
+
+report = analyze(book.values())            # or repo.analyze() / merge_result.analyze()
+print(report.summary())
+for edge in report.relations:              # inferred, provenance-tagged
+    print(edge.source, edge.predicate, edge.target)
+```
+
+See [`docs/analysis.md`](docs/analysis.md).
+
 ### Cross-universe discovery
 
 After a merge, `discover` finds shortest paths from a concept that lived in
@@ -256,6 +293,10 @@ Runnable, source-backed examples live in [`examples/`](examples/README.md):
   `merge_ontologies`, reporting the shared nodes that stitch the graphs together.
 - **`traversal_demo.py`** — walk a stored map: neighborhoods, "how does A
   relate to B", topic subgraphs (`valuez.Graph`).
+- **`concept_brief.py`** — read a node: `explain("Freedom")` on Kant alone and
+  on the merged Kant + Kierkegaard universe, written as Markdown.
+- **`analysis_demo.py`** — infer, flag tensions, list gaps, score arguments
+  (`valuez.analyze`).
 - **`discovery_demo.py`** — unexpected paths created by that merge: Kant-only
   concepts now a short walk from Kierkegaard-only concepts (`valuez.discover`).
 - **`heat_transfer_cooling.py`** — a worked engineering problem: source-backed
@@ -295,9 +336,11 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   common nodes (`done`; `valuez.merge_ontologies`, see
   [`docs/merge.md`](docs/merge.md)).
 - **Active knowledge** — graph traversal (`in progress`; `valuez.Graph`, see
-  [`docs/traversal.md`](docs/traversal.md)), cross-universe discovery
-  (`in progress`; `valuez.discover`, see [`docs/discovery.md`](docs/discovery.md)),
-  then concept briefs and richer reasoning.
+  [`docs/traversal.md`](docs/traversal.md)), concept briefs (`done`;
+  `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), inference +
+  tension detection (`in progress`; `valuez.analyze`, see
+  [`docs/analysis.md`](docs/analysis.md)), and cross-universe discovery
+  (`in progress`; `valuez.discover`, see [`docs/discovery.md`](docs/discovery.md)).
 - **Interoperability** — Tier 4 standards export/import (RDF/OWL, SKOS, PROV,
   nanopublications; `design sketch`).
 
@@ -307,10 +350,12 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
 
 ```
 valuez/        # the library (values, qualitative, semantic, metaphysics,
-               #   dataset, function, reasoning, traversal, discovery, reading, units, repository)
+               #   dataset, function, reasoning, analysis, traversal, briefs,
+               #   discovery, reading, units, repository)
 examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)
-docs/          # design notes (traversal, discovery, merge, Tier-3 LLM, Tier-4 interoperability)
+docs/          # design notes (traversal, briefs, analysis, discovery, merge,
+               #   Tier-3 LLM assist, Tier-4 interop)
 tests/         # pytest suite
 ROADMAP.md     # the living roadmap (source of truth; README links to it)
 ```
