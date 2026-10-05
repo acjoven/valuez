@@ -174,11 +174,15 @@ def discover(
             "valuez.merge to record per-node provenance"
         )
 
-    joins = set(report.join_points)
+    # Joins come from node_sources, not join_points: an alias fold within a
+    # single source is a join point but still exclusive to that source.
+    joins = set()
     exclusive: Dict[str, List[str]] = {src: [] for src in report.sources}
     for name, labels in report.node_sources.items():
         if len(labels) == 1:
             exclusive[labels[0]].append(name)
+        else:
+            joins.add(name)
     for src in exclusive:
         exclusive[src].sort()
 
