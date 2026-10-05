@@ -345,7 +345,8 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   an **ontology merge** that folds multiple maps into one universe by joining
   common nodes (`done`; `valuez.merge_ontologies`, see
   [`docs/merge.md`](docs/merge.md)).
-- **Active knowledge** — graph traversal (`in progress`; `valuez.Graph`, see
+- **Active knowledge** — merge alignment (`in progress`; curated `aliases` on
+  `merge_ontologies`), graph traversal (`in progress`; `valuez.Graph`, see
   [`docs/traversal.md`](docs/traversal.md)), concept briefs (`done`;
   `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), inference +
   tension detection (`in progress`; `valuez.analyze`, see
