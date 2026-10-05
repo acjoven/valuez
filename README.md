@@ -197,6 +197,22 @@ g.topic("Freedom", hops=1).visualize("freedom.html")
 `Reading.graph()`, `ValueRepository.graph()`, and `MergeResult.graph()` return
 the same object. See [`docs/traversal.md`](docs/traversal.md).
 
+### Reading a node
+
+`explain(node)` turns one node into a page — definition, every incident relation
+with its citation, the claims and arguments that bear on it, and the sources
+behind all of that:
+
+```python
+from valuez import explain, merge_ontologies
+
+universe = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+print(universe.explain("Freedom").to_markdown())   # Kant and Kierkegaard on one page
+```
+
+`Reading.explain()` and `ValueRepository.explain()` do the same for a session or
+a store. See [`docs/briefs.md`](docs/briefs.md).
+
 ### Inference and tensions
 
 `analyze()` runs the structural-order helpers as typed rules and reports what
@@ -213,21 +229,24 @@ for edge in report.relations:              # inferred, provenance-tagged
 ```
 
 See [`docs/analysis.md`](docs/analysis.md).
-### Reading a node
 
-`explain(node)` turns one node into a page — definition, every incident relation
-with its citation, the claims and arguments that bear on it, and the sources
-behind all of that:
+### Cross-universe discovery
+
+After a merge, `discover` finds shortest paths from a concept that lived in
+only one source to a concept that lived only in another — walks that do not
+exist in either ontology alone, because they pass through a join point the
+merge created:
 
 ```python
-from valuez import explain, merge_ontologies
+from valuez import discover, merge_ontologies
 
-universe = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
-print(universe.explain("Freedom").to_markdown())   # Kant and Kierkegaard on one page
+res = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+found = res.discover(cutoff=2)
+print(found.summary())
+# TranscendentalIdealism [kant] ~ Freedom ~ Anxiety [kierkegaard]
 ```
 
-`Reading.explain()` and `ValueRepository.explain()` do the same for a session or
-a store. See [`docs/briefs.md`](docs/briefs.md).
+See [`docs/discovery.md`](docs/discovery.md) and `examples/discovery_demo.py`.
 
 ### Managing sources (BibTeX)
 
@@ -274,10 +293,12 @@ Runnable, source-backed examples live in [`examples/`](examples/README.md):
   `merge_ontologies`, reporting the shared nodes that stitch the graphs together.
 - **`traversal_demo.py`** — walk a stored map: neighborhoods, "how does A
   relate to B", topic subgraphs (`valuez.Graph`).
-- **`analysis_demo.py`** — infer, flag tensions, list gaps, score arguments
-  (`valuez.analyze`).
 - **`concept_brief.py`** — read a node: `explain("Freedom")` on Kant alone and
   on the merged Kant + Kierkegaard universe, written as Markdown.
+- **`analysis_demo.py`** — infer, flag tensions, list gaps, score arguments
+  (`valuez.analyze`).
+- **`discovery_demo.py`** — unexpected paths created by that merge: Kant-only
+  concepts now a short walk from Kierkegaard-only concepts (`valuez.discover`).
 - **`heat_transfer_cooling.py`** — a worked engineering problem: source-backed
   heat-transfer coefficients driving a lumped-capacitance cooling calculation.
 - **`dataset_htc.py`** / **`empirical_functions.py`** — `DataSet` and
@@ -315,12 +336,11 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   common nodes (`done`; `valuez.merge_ontologies`, see
   [`docs/merge.md`](docs/merge.md)).
 - **Active knowledge** — graph traversal (`in progress`; `valuez.Graph`, see
-  [`docs/traversal.md`](docs/traversal.md)), concept briefs (`planned`), and
-  inference + tension detection (`in progress`; `valuez.analyze`, see
-  [`docs/analysis.md`](docs/analysis.md)).
-  [`docs/traversal.md`](docs/traversal.md)) and concept briefs (`done`;
-  `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), then richer
-  reasoning and cross-universe discovery.
+  [`docs/traversal.md`](docs/traversal.md)), concept briefs (`done`;
+  `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), inference +
+  tension detection (`in progress`; `valuez.analyze`, see
+  [`docs/analysis.md`](docs/analysis.md)), and cross-universe discovery
+  (`in progress`; `valuez.discover`, see [`docs/discovery.md`](docs/discovery.md)).
 - **Interoperability** — Tier 4 standards export/import (RDF/OWL, SKOS, PROV,
   nanopublications; `design sketch`).
 
@@ -330,14 +350,12 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
 
 ```
 valuez/        # the library (values, qualitative, semantic, metaphysics,
-               #   dataset, function, reasoning, analysis, traversal, reading, units, repository)
+               #   dataset, function, reasoning, analysis, traversal, briefs,
+               #   discovery, reading, units, repository)
 examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)
-docs/          # design notes (traversal, analysis, merge, Tier-3 LLM assist, Tier-4 interop)
-               #   dataset, function, reasoning, traversal, briefs, reading, units, repository)
-examples/      # runnable, source-backed worked examples
-ontologies/    # canonical single-file ontology exports (committed source of truth)
-docs/          # design notes (traversal, briefs, merge, Tier-3 LLM assist, Tier-4 interop)
+docs/          # design notes (traversal, briefs, analysis, discovery, merge,
+               #   Tier-3 LLM assist, Tier-4 interop)
 tests/         # pytest suite
 ROADMAP.md     # the living roadmap (source of truth; README links to it)
 ```

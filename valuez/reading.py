@@ -514,6 +514,7 @@ class Reading:
         from .analysis import analyze
 
         return analyze(self.values(), **kwargs)
+
     def explain(self, name: ConceptRef, **kwargs: Any) -> Any:
         """A readable :class:`~valuez.briefs.Brief` for one declared concept."""
         from .briefs import explain

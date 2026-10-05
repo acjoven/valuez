@@ -28,9 +28,10 @@ What this module does:
   with a final pass guaranteeing globally unique ids.
 
 The result is a :class:`MergeResult` -- the merged documents plus a
-:class:`MergeReport` describing the join points, conflicts, and de-duplication --
-which you can rehydrate to values, persist through ``dotz``, or export as a new
-canonical ontology.
+:class:`MergeReport` describing the join points, per-node source labels,
+conflicts, and de-duplication -- which you can rehydrate to values, persist
+through ``dotz``, export as a new canonical ontology, walk with ``.graph()``,
+or mine for cross-source paths with ``.discover()``.
 """
 from __future__ import annotations
 
@@ -112,6 +113,8 @@ class MergeReport:
         self.field_conflicts: Dict[str, Dict[str, Dict[str, Any]]] = {}
         self.id_collisions: List[Tuple[str, str]] = []
         self.dangling_edges: List[Tuple[str, str]] = []
+        # name -> contributing source labels (len 1 = exclusive, >=2 = join)
+        self.node_sources: Dict[str, List[str]] = {}
 
     @property
     def join_point_count(self) -> int:
@@ -173,6 +176,7 @@ class MergeReport:
             },
             "id_collisions": [list(t) for t in self.id_collisions],
             "dangling_edges": [list(t) for t in self.dangling_edges],
+            "node_sources": {k: list(v) for k, v in self.node_sources.items()},
         }
 
 
@@ -201,16 +205,26 @@ class MergeResult:
 
         return Graph.from_documents(self.documents)
 
-    def analyze(self, **kwargs: Any) -> Any:
-        """Inference + tension detection over the merged universe. See :func:`valuez.analyze`."""
-        from .analysis import analyze
-
-        return analyze(self.documents, **kwargs)
     def explain(self, name: str, **kwargs: Any) -> Any:
         """A readable :class:`~valuez.briefs.Brief` for one node of the merged universe."""
         from .briefs import explain
 
         return explain(self.documents, name, **kwargs)
+
+    def analyze(self, **kwargs: Any) -> Any:
+        """Inference + tension detection over the merged universe. See :func:`valuez.analyze`."""
+        from .analysis import analyze
+
+        return analyze(self.documents, **kwargs)
+
+    def discover(self, **kwargs: Any) -> Any:
+        """Cross-source paths that exist only because this universe was joined.
+
+        See :func:`valuez.discover`.
+        """
+        from .discovery import discover
+
+        return discover(self, **kwargs)
 
     def to_repository(self, data_dir: Optional[Union[str, Path]] = None) -> Any:
         """Persist the merged universe into a new :class:`ValueRepository`."""
@@ -345,6 +359,11 @@ def merge_ontologies(
     merged_nodes: List[Dict[str, Any]] = []
     for name in named_order:
         contributors = named[name]
+        labels: List[str] = []
+        for lab, _ in contributors:
+            if lab not in labels:
+                labels.append(lab)
+        report.node_sources[name] = labels
         if len(contributors) == 1:
             merged_nodes.append(copy.deepcopy(contributors[0][1]))
         else:

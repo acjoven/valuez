@@ -387,17 +387,6 @@ python examples/traversal_demo.py
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_traversal/` folder in
 your temp dir). See [`../docs/traversal.md`](../docs/traversal.md).
 
-## `analysis_demo.py` — infer, flag tensions, list gaps
-
-`analyze()` generalizes the one-predicate helpers in `valuez.reasoning` into a
-single pass: typed forward-chaining (transitivity, symmetry of `contrasts-with`,
-instantiation inheritance), tensions (cycles, predicate clashes, conflicting
-truth-values), gaps (dangling / undefined / open questions / ...), and Dung
-grounded status of arguments. Derived edges are returned, not inserted, each
-with a `Reference` naming the rule and the asserted ids it rested on.
-
-The script runs a mereology, the Gettier argument map, an illicit
-cycle+clash fragment, and `ontologies/kant.json`.
 ## `concept_brief.py` — read a node
 
 `explain(node)` assembles a readable page for one concept: definition and
@@ -412,14 +401,50 @@ and sources — and writes each as Markdown (plus the universe brief as JSON).
 ### Run
 
 ```bash
-python examples/analysis_demo.py
-```
-
-`analysis_kant.json` goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_analysis/`
-folder in your temp dir). See [`../docs/analysis.md`](../docs/analysis.md).
 python examples/concept_brief.py
 ```
 
 `freedom_kant.md`, `freedom_universe.md`, and `freedom_universe.json` go to
 `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_briefs/` folder in your temp dir).
 See [`../docs/briefs.md`](../docs/briefs.md).
+
+## `analysis_demo.py` — infer, flag tensions, list gaps
+
+`analyze()` generalizes the one-predicate helpers in `valuez.reasoning` into a
+single pass: typed forward-chaining (transitivity, symmetry of `contrasts-with`,
+instantiation inheritance), tensions (cycles, predicate clashes, conflicting
+truth-values), gaps (dangling / undefined / open questions / ...), and Dung
+grounded status of arguments. Derived edges are returned, not inserted, each
+with a `Reference` naming the rule and the asserted ids it rested on.
+
+The script runs a mereology, the Gettier argument map, an illicit
+cycle+clash fragment, and `ontologies/kant.json`.
+
+### Run
+
+```bash
+python examples/analysis_demo.py
+```
+
+`analysis_kant.json` goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_analysis/`
+folder in your temp dir). See [`../docs/analysis.md`](../docs/analysis.md).
+
+## `discovery_demo.py` — unexpected paths across a merged universe
+
+The payoff of merge + traversal: `valuez.discover` finds shortest paths from a
+concept that lived in *only one* source to a concept that lived *only in the
+other*, passing through a join point the merge created. Those walks do not
+exist in either ontology alone.
+
+It merges `kant.json` + `kierkegaard.json`, prints the ranked crossings
+(cutoff 2 hops), highlights `TranscendentalIdealism ~ Freedom ~ Anxiety`,
+and writes `crossings.json` plus an HTML subgraph of the shortest paths.
+
+### Run
+
+```bash
+python examples/discovery_demo.py
+```
+
+Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_discovery/` folder in
+your temp dir). See [`../docs/discovery.md`](../docs/discovery.md).

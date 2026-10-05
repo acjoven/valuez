@@ -49,6 +49,9 @@ def test_common_node_is_joined_and_bridges_both_graphs():
                 if d.get("kind") == "relation" and d.get("target") == "Shared"]
     assert {d["id"] for d in incident} == {"a_rel", "b_rel"}
     assert res.report.join_points == {"Shared": ["A", "B"]}
+    assert res.report.node_sources["Shared"] == ["A", "B"]
+    assert res.report.node_sources["OnlyA"] == ["A"]
+    assert res.report.node_sources["OnlyB"] == ["B"]
 
 
 def test_no_dangling_endpoints_after_merge():
@@ -209,6 +212,10 @@ def test_report_summary_and_dict():
     d = res.report.to_dict()
     assert d["edges"]["out"] == res.report.edges_out
     assert set(d["join_points"]) == set(res.report.join_points)
+    assert set(d["node_sources"]) == {n.name for n in res.named_nodes()}
+    assert d["node_sources"]["Freedom"] == ["kant", "kierkegaard"]
+    assert d["node_sources"]["Anxiety"] == ["kierkegaard"]
+    assert d["node_sources"]["TranscendentalIdealism"] == ["kant"]
 
 
 def test_example_runs(tmp_path, monkeypatch):

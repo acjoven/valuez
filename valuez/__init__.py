@@ -6,11 +6,11 @@ cover over the functional ``dotz`` storage/query/graph layer.
 """
 from __future__ import annotations
 
-from . import analysis, bibliography, reasoning, traversal, units
+from . import analysis, bibliography, briefs, discovery, reasoning, traversal, units
 from .analysis import Analysis, analyze
-from . import bibliography, briefs, reasoning, traversal, units
 from .bibliography import ReferenceRepository
 from .briefs import Brief, explain
+from .discovery import Crossing, Discovery, discover
 from .dataset import DataSet
 from .function import Function, Sample
 from .merge import MergeReport, MergeResult, merge_ontologies
@@ -77,6 +77,9 @@ __all__ = [
     "Analysis",
     "Brief",
     "explain",
+    "discover",
+    "Discovery",
+    "Crossing",
     "ReferenceRepository",
     "merge_ontologies",
     "MergeResult",
@@ -85,6 +88,7 @@ __all__ = [
     "analysis",
     "traversal",
     "briefs",
+    "discovery",
     "units",
     "bibliography",
     "pint_available",
