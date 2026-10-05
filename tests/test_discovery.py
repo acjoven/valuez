@@ -259,3 +259,50 @@ def test_kant_kierkegaard_wrapper_and_summary():
     text = found.summary()
     assert "kant" in text and "kierkegaard" in text
     assert "Freedom" in text
+
+
+# --------------------------------------------------------------------------- #
+# Aliases feed discovery                                                      #
+# --------------------------------------------------------------------------- #
+def test_alias_creates_a_join_that_discovery_crosses():
+    a = [Universal("Soul", id="a_soul"), Universal("Anxiety", id="a_anx"),
+         Relation("Anxiety", "reveals", "Soul", id="a_rel")]
+    b = [Universal("TheSelf", id="b_self"), Universal("Despair", id="b_dsp"),
+         Relation("Despair", "afflicts", "TheSelf", id="b_rel")]
+    plain = discover(merge_ontologies([a, b], labels=["A", "B"]))
+    assert plain.total == 0
+    aligned = discover(
+        merge_ontologies([a, b], labels=["A", "B"], aliases=[["TheSelf", "Soul"]])
+    )
+    assert aligned.join_points == ("TheSelf",)
+    pairs = {(c.start, c.end) for c in aligned.crossings}
+    assert pairs == {("Anxiety", "Despair"), ("Despair", "Anxiety")}
+
+
+def test_alias_fold_within_one_source_is_not_a_cross_source_join():
+    # Soul and TheSelf both live in A; folding them is a join point in the merge
+    # report but stays exclusive to A, so it cannot carry a crossing.
+    a = [Universal("Soul", id="a_soul"), Universal("TheSelf", id="a_self"),
+         Universal("Anxiety", id="a_anx"),
+         Relation("Anxiety", "reveals", "Soul", id="a_rel")]
+    b = [Universal("Despair", id="b_dsp"),
+         Relation("Despair", "afflicts", "TheSelf", id="b_rel")]
+    res = merge_ontologies([a, b], labels=["A", "B"], aliases=[["TheSelf", "Soul"]])
+    assert "TheSelf" in res.report.join_points
+    assert res.report.node_sources["TheSelf"] == ["A"]
+    found = discover(res)
+    assert found.join_points == ()
+    assert "TheSelf" in found.exclusive["A"]
+    assert found.total == 0
+
+
+def test_kant_kierkegaard_alias_adds_crossings_through_theself():
+    sources = [ONTOLOGIES / "kant.json", ONTOLOGIES / "kierkegaard.json"]
+    base = discover(sources, cutoff=2, limit=0)
+    aligned = discover(
+        merge_ontologies(sources, aliases=[["TheSelf", "Soul"]]), cutoff=2, limit=0
+    )
+    assert "TheSelf" not in base.join_points
+    assert "TheSelf" in aligned.join_points
+    assert aligned.via("TheSelf")
+    assert aligned.total > base.total

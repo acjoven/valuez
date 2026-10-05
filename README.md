@@ -178,7 +178,17 @@ res.export("ontologies/universe.json")   # optional: a derived, regenerable map
 ```
 
 Conflicting definitions are resolved by policy (`first` / `last` / `raise`) and
-reported. See [`docs/merge.md`](docs/merge.md) and `examples/merge_universe.py`.
+reported. Concepts the two traditions name differently join through curated
+aliases, and `bridges()` lists the edges that now cross the seam:
+
+```python
+aligned = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"],
+                           aliases=[["TheSelf", "Soul"]])   # or {"Soul": "TheSelf"}
+aligned.report.aliases_applied       # {"TheSelf": ["Soul", "TheSelf"]}
+aligned.bridges()                    # edges incident to a join point
+```
+
+See [`docs/merge.md`](docs/merge.md) and `examples/merge_universe.py`.
 
 ### Walking the graph
 
@@ -335,7 +345,8 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   an **ontology merge** that folds multiple maps into one universe by joining
   common nodes (`done`; `valuez.merge_ontologies`, see
   [`docs/merge.md`](docs/merge.md)).
-- **Active knowledge** — graph traversal (`in progress`; `valuez.Graph`, see
+- **Active knowledge** — merge alignment (`in progress`; curated `aliases` on
+  `merge_ontologies`), graph traversal (`in progress`; `valuez.Graph`, see
   [`docs/traversal.md`](docs/traversal.md)), concept briefs (`done`;
   `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), inference +
   tension detection (`in progress`; `valuez.analyze`, see

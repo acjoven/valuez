@@ -76,14 +76,39 @@ def main() -> None:
 
     # A legible "seam": only the edges incident to the join points -- this is the
     # connective tissue created by the merge.
+    seam = result.bridges()
     joins = set(result.report.join_points)
-    seam = [
-        v for v in result.relations()
-        if v.source in joins or v.target in joins
-    ]
     seam_path = _render(seam, out_dir, "universe_seam.html")
     if seam_path:
         print(f"Seam graph ({len(seam)} edges through {len(joins)} join points): {seam_path}")
+    print(line)
+
+    # Exact-name matching misses concepts the two traditions name differently.
+    # A curated *alias* joins them: Kant's "Soul" (the thinking subject) and
+    # Kierkegaard's "TheSelf" (a relation that relates itself to itself) are the
+    # two systems' concept of the self. Declaring them equivalent folds them into
+    # one node and rewires every edge from both sides onto it.
+    print("Aligning by meaning with a curated alias (Soul = TheSelf):")
+    aligned = merge_ontologies(
+        [ONTOLOGIES / "kant.json", ONTOLOGIES / "kierkegaard.json"],
+        on_conflict="first",
+        aliases=[["TheSelf", "Soul"]],
+    )
+    added = aligned.report.join_point_count - result.report.join_point_count
+    kant, kier = _edges_touching(
+        [d for d in aligned.documents], "TheSelf"
+    )
+    print(f"  join points {result.report.join_point_count} -> "
+          f"{aligned.report.join_point_count} (+{added} via alias)")
+    print(f"  canonical 'TheSelf' now carries {len(kant)} Kant + {len(kier)} "
+          f"Kierkegaard edge(s); sources = "
+          f"{aligned.report.node_sources.get('TheSelf')}")
+    print(f"  cross-source bridges {result.report.bridge_edges} -> "
+          f"{aligned.report.bridge_edges}")
+    via_self = aligned.discover(cutoff=2, limit=0).via("TheSelf")
+    print(f"  discovery: {len(via_self)} new crossing(s) through TheSelf, e.g.")
+    for crossing in via_self[:3]:
+        print(f"    {crossing.path.describe()}")
     print(line)
 
 
