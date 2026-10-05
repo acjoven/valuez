@@ -8,7 +8,9 @@ from __future__ import annotations
 
 from . import analysis, bibliography, reasoning, traversal, units
 from .analysis import Analysis, analyze
+from . import bibliography, briefs, reasoning, traversal, units
 from .bibliography import ReferenceRepository
+from .briefs import Brief, explain
 from .dataset import DataSet
 from .function import Function, Sample
 from .merge import MergeReport, MergeResult, merge_ontologies
@@ -73,6 +75,8 @@ __all__ = [
     "Graph",
     "analyze",
     "Analysis",
+    "Brief",
+    "explain",
     "ReferenceRepository",
     "merge_ontologies",
     "MergeResult",
@@ -80,6 +84,7 @@ __all__ = [
     "reasoning",
     "analysis",
     "traversal",
+    "briefs",
     "units",
     "bibliography",
     "pint_available",

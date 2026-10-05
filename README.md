@@ -33,6 +33,8 @@ interactive graph visualization.
   those as typed rules and adds clashes, gaps, and Dung argument status.
 - **Graph traversal.** Neighborhoods, shortest paths, topic subgraphs, and
   "how does A relate to B" over the relation graph (`valuez.Graph`).
+- **Readable briefs.** `explain(node)` assembles one node's definition,
+  relations, claims, arguments, and sources into a Markdown page.
 - **Ergonomic authoring.** The [`Reading`](valuez/reading.py) session lets you
   build an ontology *as you read* — cite a passage once, reuse concepts by name,
   and get eager validation at the point of entry.
@@ -122,6 +124,7 @@ optional `label` and `Reference`, a `kind` discriminator, and `to_dict()` /
 | | `Instantiation` | A typed `Individual --instantiates--> Universal` edge. |
 | **Reasoning** | `valuez.reasoning` / `analyze` | Transitive closure and cycles; typed inference, tensions, gaps, Dung grounded status. |
 | **Traversal** | `valuez.Graph` | Neighborhoods, shortest paths, topic subgraphs, "how does A relate to B". |
+| **Briefs** | `valuez.explain` / `Brief` | A readable page per node: definition, relations, claims, arguments, sources. |
 | **Authoring** | `Reading` / `OntologyBuilder` | Fluent, validating session for building ontologies as you read. |
 | **Units** | `valuez.units` | pint integration; validates unit strings, optional `Quantity` conversion (degrades gracefully without pint). |
 
@@ -210,6 +213,21 @@ for edge in report.relations:              # inferred, provenance-tagged
 ```
 
 See [`docs/analysis.md`](docs/analysis.md).
+### Reading a node
+
+`explain(node)` turns one node into a page — definition, every incident relation
+with its citation, the claims and arguments that bear on it, and the sources
+behind all of that:
+
+```python
+from valuez import explain, merge_ontologies
+
+universe = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+print(universe.explain("Freedom").to_markdown())   # Kant and Kierkegaard on one page
+```
+
+`Reading.explain()` and `ValueRepository.explain()` do the same for a session or
+a store. See [`docs/briefs.md`](docs/briefs.md).
 
 ### Managing sources (BibTeX)
 
@@ -258,6 +276,8 @@ Runnable, source-backed examples live in [`examples/`](examples/README.md):
   relate to B", topic subgraphs (`valuez.Graph`).
 - **`analysis_demo.py`** — infer, flag tensions, list gaps, score arguments
   (`valuez.analyze`).
+- **`concept_brief.py`** — read a node: `explain("Freedom")` on Kant alone and
+  on the merged Kant + Kierkegaard universe, written as Markdown.
 - **`heat_transfer_cooling.py`** — a worked engineering problem: source-backed
   heat-transfer coefficients driving a lumped-capacitance cooling calculation.
 - **`dataset_htc.py`** / **`empirical_functions.py`** — `DataSet` and
@@ -298,6 +318,9 @@ The full, living roadmap lives in [`ROADMAP.md`](ROADMAP.md). In brief:
   [`docs/traversal.md`](docs/traversal.md)), concept briefs (`planned`), and
   inference + tension detection (`in progress`; `valuez.analyze`, see
   [`docs/analysis.md`](docs/analysis.md)).
+  [`docs/traversal.md`](docs/traversal.md)) and concept briefs (`done`;
+  `valuez.explain`, see [`docs/briefs.md`](docs/briefs.md)), then richer
+  reasoning and cross-universe discovery.
 - **Interoperability** — Tier 4 standards export/import (RDF/OWL, SKOS, PROV,
   nanopublications; `design sketch`).
 
@@ -311,6 +334,10 @@ valuez/        # the library (values, qualitative, semantic, metaphysics,
 examples/      # runnable, source-backed worked examples
 ontologies/    # canonical single-file ontology exports (committed source of truth)
 docs/          # design notes (traversal, analysis, merge, Tier-3 LLM assist, Tier-4 interop)
+               #   dataset, function, reasoning, traversal, briefs, reading, units, repository)
+examples/      # runnable, source-backed worked examples
+ontologies/    # canonical single-file ontology exports (committed source of truth)
+docs/          # design notes (traversal, briefs, merge, Tier-3 LLM assist, Tier-4 interop)
 tests/         # pytest suite
 ROADMAP.md     # the living roadmap (source of truth; README links to it)
 ```

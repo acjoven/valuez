@@ -95,6 +95,11 @@ class ValueRepository:
         from .analysis import analyze
 
         return analyze(self._store.load_all(), **kwargs)
+    def explain(self, name, **kwargs):
+        """A readable :class:`~valuez.briefs.Brief` for one stored concept."""
+        from .briefs import explain
+
+        return explain(self._store.load_all(), name, **kwargs)
 
     def bibliography(self, **kwargs):
         """Collect the sources cited by all stored documents into a ReferenceRepository.

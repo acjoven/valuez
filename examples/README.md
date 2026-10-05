@@ -398,6 +398,16 @@ with a `Reference` naming the rule and the asserted ids it rested on.
 
 The script runs a mereology, the Gettier argument map, an illicit
 cycle+clash fragment, and `ontologies/kant.json`.
+## `concept_brief.py` — read a node
+
+`explain(node)` assembles a readable page for one concept: definition and
+status, every incident relation with its citation, the claims and arguments
+that bear on it (attached by asserted edge, or by a labelled whole-word
+*mention*), and the sources behind all of it, grouped.
+
+The script briefs `Freedom` twice — in Kant's map alone, and in the merged
+Kant + Kierkegaard universe, where one page now draws on both authors' edges
+and sources — and writes each as Markdown (plus the universe brief as JSON).
 
 ### Run
 
@@ -407,3 +417,9 @@ python examples/analysis_demo.py
 
 `analysis_kant.json` goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_analysis/`
 folder in your temp dir). See [`../docs/analysis.md`](../docs/analysis.md).
+python examples/concept_brief.py
+```
+
+`freedom_kant.md`, `freedom_universe.md`, and `freedom_universe.json` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_briefs/` folder in your temp dir).
+See [`../docs/briefs.md`](../docs/briefs.md).
