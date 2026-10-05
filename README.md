@@ -178,7 +178,17 @@ res.export("ontologies/universe.json")   # optional: a derived, regenerable map
 ```
 
 Conflicting definitions are resolved by policy (`first` / `last` / `raise`) and
-reported. See [`docs/merge.md`](docs/merge.md) and `examples/merge_universe.py`.
+reported. Concepts the two traditions name differently join through curated
+aliases, and `bridges()` lists the edges that now cross the seam:
+
+```python
+aligned = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"],
+                           aliases=[["TheSelf", "Soul"]])   # or {"Soul": "TheSelf"}
+aligned.report.aliases_applied       # {"TheSelf": ["Soul", "TheSelf"]}
+aligned.bridges()                    # edges incident to a join point
+```
+
+See [`docs/merge.md`](docs/merge.md) and `examples/merge_universe.py`.
 
 ### Walking the graph
 

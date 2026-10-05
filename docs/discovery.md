@@ -24,8 +24,12 @@ That walk is a *crossing*. Crossings are the connections neither author drew.
 ## What counts as a crossing
 
 A node is **exclusive** to a source when `MergeReport.node_sources[name]`
-has length 1, and a **join point** when it has length ≥ 2 (the same set as
-`report.join_points`).
+has length 1, and a **join point** when it has length ≥ 2. Keys are the
+alias-resolved names, so a curated alias (`aliases=[["TheSelf", "Soul"]]`)
+creates a new join point and new crossings through it. This is almost always
+the same set as `report.join_points`; the exception is an alias that folds two
+names from the *same* source, which `join_points` lists but discovery treats as
+still exclusive to that source.
 
 A crossing is a shortest path from an exclusive node of source A to an
 exclusive node of source B such that:
@@ -91,8 +95,9 @@ raise from `discover()` so you re-merge.
 
 - Thematic clustering of exclusive neighborhoods.
 - Proposing **new** bridging concepts (a later synthesis step).
-- Fuzzy alignment of near-synonyms (`TheSelf` / `Soul`) — that is merge
-  alignment, item 1.
+- Automatic alignment of near-synonyms. Curated `aliases` on
+  `merge_ontologies` already feed discovery; meaning-based candidate alignment
+  is the next slice of merge alignment, item 1.
 - Writing crossings into the canonical ontology. They are a report, like
   derived analysis edges: reviewable, not auto-committed.
 - Depending on `analyze()` / concept briefs. Path-based discovery needs
