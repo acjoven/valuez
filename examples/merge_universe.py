@@ -101,10 +101,14 @@ def main() -> None:
     print(f"  join points {result.report.join_point_count} -> "
           f"{aligned.report.join_point_count} (+{added} via alias)")
     print(f"  canonical 'TheSelf' now carries {len(kant)} Kant + {len(kier)} "
-          f"Kierkegaard edge(s); provenance = "
-          f"{aligned.report.node_provenance.get('TheSelf')}")
+          f"Kierkegaard edge(s); sources = "
+          f"{aligned.report.node_sources.get('TheSelf')}")
     print(f"  cross-source bridges {result.report.bridge_edges} -> "
           f"{aligned.report.bridge_edges}")
+    via_self = aligned.discover(cutoff=2, limit=0).via("TheSelf")
+    print(f"  discovery: {len(via_self)} new crossing(s) through TheSelf, e.g.")
+    for crossing in via_self[:3]:
+        print(f"    {crossing.path.describe()}")
     print(line)
 
 

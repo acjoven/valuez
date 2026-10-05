@@ -272,12 +272,13 @@ def test_alias_conflicting_map_raises():
         merge_ontologies([[Universal("B", id="b")]], aliases=[["A", "B"], ["C", "B"]])
 
 
-def test_node_provenance_tracks_contributors():
-    a = [Universal("Shared", id="a_s"), Universal("OnlyA", id="a_o")]
-    b = [Universal("Shared", id="b_s")]
-    res = merge_ontologies([a, b], labels=["A", "B"])
-    assert res.report.node_provenance["Shared"] == ["A", "B"]
-    assert res.report.node_provenance["OnlyA"] == ["A"]
+def test_node_sources_are_keyed_by_canonical_name():
+    a = [Universal("Soul", id="a_soul"), Universal("OnlyA", id="a_o")]
+    b = [Universal("TheSelf", id="b_self")]
+    res = merge_ontologies([a, b], labels=["A", "B"], aliases=[["TheSelf", "Soul"]])
+    assert res.report.node_sources["TheSelf"] == ["A", "B"]
+    assert "Soul" not in res.report.node_sources
+    assert res.report.node_sources["OnlyA"] == ["A"]
 
 
 def test_bridges_helper_matches_report_count():
@@ -299,7 +300,7 @@ def test_real_merge_alias_soul_theself_adds_one_join():
     assert aligned.report.aliases_applied == {"TheSelf": ["Soul", "TheSelf"]}
     selves = [d for d in aligned.documents if d.get("name") in ("Soul", "TheSelf")]
     assert [d["name"] for d in selves] == ["TheSelf"]  # one canonical node
-    assert aligned.report.node_provenance["TheSelf"] == ["kant", "kierkegaard"]
+    assert aligned.report.node_sources["TheSelf"] == ["kant", "kierkegaard"]
     assert aligned.report.dangling_edges == []
 
 
@@ -309,7 +310,9 @@ def test_report_dict_has_new_fields():
     d = res.report.to_dict()
     assert d["bridge_edges"] == res.report.bridge_edges
     assert d["aliases_applied"] == {"TheSelf": ["Soul", "TheSelf"]}
-    assert "node_provenance" in d and d["node_provenance"]["TheSelf"] == ["kant", "kierkegaard"]
+    assert d["node_sources"]["TheSelf"] == ["kant", "kierkegaard"]
+    assert "node_provenance" not in d
+    assert "type_conflicts" in d
 
 
 def test_example_runs(tmp_path, monkeypatch):
