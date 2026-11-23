@@ -15,9 +15,11 @@ Dependencies install into a gitignored virtualenv at `.venv`. The committed
 bootstrap script [`scripts/setup_env.sh`](scripts/setup_env.sh) (re)creates it and
 is wired into [`.cursor/environment.json`](.cursor/environment.json) as both the
 `install` step (full build-time setup) and the `start` step (`ensure` mode, a
-fast per-boot self-heal that rebuilds `.venv` only if it is missing/broken). Call
-binaries directly, e.g. `.venv/bin/python -m pytest`. To rebuild by hand after a
-fresh VM wipes `.venv`, run `bash scripts/setup_env.sh`.
+fast per-boot self-heal that rebuilds `.venv` only if it is missing/broken). It
+installs the sibling `dotz` editable, then `valuez` itself editable with the
+`dev` extras from [`pyproject.toml`](pyproject.toml). Call binaries directly,
+e.g. `.venv/bin/python -m pytest`. To rebuild by hand after a fresh VM wipes
+`.venv`, run `bash scripts/setup_env.sh`.
 
 > Cursor Cloud note: this repo-file `.cursor/environment.json` is honored when the
 > environment includes the `valuez` repo. Because `valuez` imports the sibling

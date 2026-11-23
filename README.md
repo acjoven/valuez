@@ -29,15 +29,16 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 pip install "dotz @ git+https://github.com/acjoven/dotz.git"   # storage/query/graph toolkit
-pip install -r requirements.txt                                # pint, pybtex, pytest
+pip install -e ".[dev]"                                        # valuez + pint, pybtex, pytest
 
 python -m pytest                  # check the install
 python examples/quickstart.py     # run a first example
 ```
 
-`valuez` is not packaged yet: run Python from the repo root so `import valuez`
-resolves (the scripts under `examples/` add the repo root to `sys.path`
-themselves, so they run from anywhere).
+`pip install -e ".[dev]"` installs `valuez` editable from [`pyproject.toml`](pyproject.toml),
+so `import valuez` works from any directory. The `dev` extra pulls in the test
+runner and the optional BibTeX backend; a leaner install is
+`pip install -e .` (runtime only) or `pip install -e ".[bib]"`.
 
 To work on `dotz` and `valuez` together, clone `dotz` next to `valuez` and
 install it editable instead (`pip install -e ../dotz`).
@@ -206,5 +207,6 @@ ontologies/    # canonical single-file ontology exports (committed source of tru
 docs/          # the tour, plus design notes (traversal, briefs, analysis,
                #   discovery, merge, Tier-3 LLM assist, Tier-4 interop)
 tests/         # pytest suite
+pyproject.toml # package metadata and installable dependencies
 ROADMAP.md     # the living roadmap (source of truth; README links to it)
 ```

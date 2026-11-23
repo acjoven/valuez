@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "valuez"
+version = "0.1.0"
+description = "A traceable semantic exploration platform for building ground-truthed abstract concepts."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+authors = [{ name = "Andrew C Young" }]
+dependencies = [
+    # Storage / query / graph come from the sibling toolkit `dotz`, which is
+    # not on PyPI yet. Install it before or alongside this package:
+    #   pip install "dotz @ git+https://github.com/acjoven/dotz.git"
+    # or, when developing both, editable from a checkout next to this repo:
+    #   pip install -e ../dotz
+    "pint==0.25.3",
+]
+
+[project.optional-dependencies]
+# BibTeX-backed source management (valuez.bibliography / ReferenceRepository).
+# The library degrades gracefully without it -- only BibTeX import/export/format
+# require it.
+bib = [
+    "pybtex==0.26.1",
+]
+# Test tooling plus the optional bibliography backend the suite exercises.
+dev = [
+    "pybtex==0.26.1",
+    "pytest==8.3.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/acjoven/valuez"
+Repository = "https://github.com/acjoven/valuez"
+Issues = "https://github.com/acjoven/valuez/issues"
+
+[tool.setuptools]
+packages = ["valuez"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

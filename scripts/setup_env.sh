@@ -8,7 +8,8 @@
 #
 # It (re)creates the gitignored virtualenv at .venv with:
 #   - the sibling `dotz` toolkit installed editable (storage / query / graph),
-#   - valuez's runtime + test dependencies, and
+#   - valuez itself installed editable with the `dev` extras (pint, pybtex,
+#     pytest; see pyproject.toml), and
 #   - `click<8.2` pinned (typer 0.12.5 is incompatible with click>=8.2).
 #
 # Running it by hand is the fastest way to recover after a fresh VM wipes .venv:
@@ -61,8 +62,8 @@ full_setup() {
     log "WARNING: sibling 'dotz' repo not found (checked \$DOTZ_DIR, ../dotz, ../dots)."
     log "         valuez.repository/graph need it; set DOTZ_DIR to the dotz checkout."
   fi
-  log "installing valuez requirements"
-  "$PY" -m pip install -q -r "$ROOT/requirements.txt"
+  log "installing valuez editable with the dev extras"
+  (cd "$ROOT" && "$PY" -m pip install -q -e ".[dev]")
   log "pinning click<8.2 (typer 0.12.5 compatibility)"
   "$PY" -m pip install -q "click<8.2"
 }
