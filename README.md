@@ -9,9 +9,11 @@ from a single number to a metaphysical universal, can carry a
 [`Reference`](valuez/values.py) back to the source it came from, so the resulting
 model is auditable rather than asserted.
 
-It is built on top of [`dotz`](../dotz) (a sibling JSON storage / query / graph
-toolkit): domain objects stay pure Python, while `dotz` provides persistence and
-interactive graph visualization.
+It is built on top of [`dotz`](https://github.com/acjoven/dotz) (a companion
+JSON storage / query / graph toolkit): domain objects stay pure Python, while
+`dotz` provides persistence and interactive graph visualization.
+
+License: [MIT](LICENSE)
 
 ---
 
@@ -43,22 +45,31 @@ interactive graph visualization.
 
 ## Installation
 
-`valuez` targets Python 3.12+. It depends on the sibling `dotz` repository, which
-is installed editable (it is not published to PyPI).
+`valuez` targets Python 3.12+. Neither `valuez` nor its one non-PyPI dependency,
+[`dotz`](https://github.com/acjoven/dotz), is published to PyPI yet, so install
+from a clone:
 
 ```bash
-# from the valuez repo root
+git clone https://github.com/acjoven/valuez.git
+cd valuez
 python3 -m venv .venv
 source .venv/bin/activate
 
-pip install -e ../dotz            # sibling storage/query/graph toolkit
-pip install -r requirements.txt   # pint (units) + pytest
+pip install "dotz @ git+https://github.com/acjoven/dotz.git"   # storage/query/graph toolkit
+pip install -r requirements.txt                                # pint, pybtex, pytest
+
+python -m pytest                       # check the install
+python examples/reading_session.py     # run a first example
 ```
 
-`valuez` itself is a plain package on the import path; the examples add the repo
-root to `sys.path`, or you can `pip install -e .`-style by running from the root.
-See [`AGENTS.md`](AGENTS.md) for environment notes and the exact test/lint
-commands.
+`valuez` is not packaged yet: run Python from the repo root so `import valuez`
+resolves (the scripts under `examples/` add the repo root to `sys.path`
+themselves, so they run from anywhere).
+
+To work on `dotz` and `valuez` together, clone `dotz` next to `valuez` and
+install it editable instead (`pip install -e ../dotz`).
+[`scripts/setup_env.sh`](scripts/setup_env.sh) automates that layout; see
+[`AGENTS.md`](AGENTS.md) for environment notes and the exact test/lint commands.
 
 ---
 

@@ -1,8 +1,10 @@
 # valuez runtime dependencies.
 #
-# `dotz` (storage/query/graph) is a sibling repository; install it editable, e.g.
+# `dotz` (storage/query/graph) is intentionally not listed here because it is not
+# published to PyPI. Install it from GitHub:
+#   pip install "dotz @ git+https://github.com/acjoven/dotz.git"
+# or, when developing both, editable from a checkout next to this repo:
 #   pip install -e ../dotz
-# It is intentionally not listed here because it is not published to PyPI.
 
 pint==0.25.3
 

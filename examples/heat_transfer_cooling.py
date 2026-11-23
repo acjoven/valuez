@@ -26,7 +26,7 @@ moderate temperatures; it would add a parallel h_rad on the order of a few
 W/m^2/K near 300 C and speed cooling somewhat).
 
 Run:  python examples/heat_transfer_cooling.py
-(Requires the sibling ``dotz`` package importable, e.g. ``pip install -e ../dotz``.)
+(Requires the ``dotz`` package; see "Installation" in the top-level README.)
 """
 from __future__ import annotations
 
