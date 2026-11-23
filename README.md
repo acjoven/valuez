@@ -83,6 +83,7 @@ print(book.graph().how("FreeConvection", "Radiation"))
 # FreeConvection -is-a-> Convection -is-a-> HeatTransfer <-is-a- Radiation
 
 book.render("heat_transfer.html")                  # interactive graph
+book.export("heat_transfer.json")                  # the whole map as one diff-friendly JSON file
 ```
 
 Three things happened without extra typing. Everything created inside a
@@ -91,10 +92,10 @@ would have returned the same node. And a relation to an undeclared concept, or
 with a predicate outside the vocabulary, would have raised on the line that
 introduced it.
 
-[`examples/quickstart.py`](examples/quickstart.py) is this snippet as a script,
-plus an export to one diff-friendly JSON file. The lower-level API (constructing
-`Concept` / `Relation` objects directly) is there when you want explicit
-control; `examples/philosophy_framework.py` uses it.
+[`examples/quickstart.py`](examples/quickstart.py) is this snippet as a script.
+The lower-level API (constructing `Concept` / `Relation` objects directly) is
+there when you want explicit control; `examples/philosophy_framework.py` uses
+it.
 
 ---
 
@@ -126,7 +127,7 @@ management, each with code.
 
 ## Examples
 
-Start with these five; each is self-contained and needs nothing beyond the
+Start with these six; each is self-contained and needs nothing beyond the
 install:
 
 1. [`quickstart.py`](examples/quickstart.py) — the snippet above.
@@ -139,6 +140,10 @@ install:
    particulars, typed instantiation, inferred edges, and cycle detection.
 5. [`bibliography_demo.py`](examples/bibliography_demo.py) — one BibTeX library
    shared across many values.
+6. [`merge_demo.py`](examples/merge_demo.py) — two small maps of the same gas,
+   one from thermodynamics and one from kinetic theory, joined at the four
+   names they share. It shows where their definitions disagree and which paths
+   exist only after the join.
 
 The rest, one feature each, are described in
 [`examples/README.md`](examples/README.md).
@@ -147,12 +152,13 @@ The rest, one feature each, are described in
 
 ## Worked corpora: two large maps
 
-[`ontologies/`](ontologies/README.md) holds two curated maps, one of Kant's
-critical philosophy and one of Kierkegaard's authorship, each a few hundred
-nodes and edges. They give the merge, traversal, brief, and discovery features
-something realistically large to work on: two dense systems that use the same
-words (`Freedom`, `Reason`, `Existence`) in different senses, which is the hard
-case when joining maps.
+Besides the two small maps `merge_demo.py` builds,
+[`ontologies/`](ontologies/README.md) holds two large curated ones, one of
+Kant's critical philosophy and one of Kierkegaard's authorship, each a few
+hundred nodes and edges. They give the merge, traversal, brief, and discovery
+features something realistically large to work on: two dense systems that use
+the same words (`Freedom`, `Reason`, `Existence`) in different senses, which is
+the hard case when joining maps.
 
 They are test material, not a canon:
 
