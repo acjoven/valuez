@@ -32,6 +32,7 @@ LLM tier that feeds candidates into this same session, see
 """
 from __future__ import annotations
 
+import json
 import re
 from contextlib import contextmanager
 from pathlib import Path
@@ -525,7 +526,12 @@ class Reading:
     # Persistence & visualization                                        #
     # ------------------------------------------------------------------ #
     def to_repository(self, data_dir: Optional[Union[str, Path]] = None) -> Any:
-        """Persist everything into a fresh :class:`ValueRepository` and return it."""
+        """Persist everything into a :class:`ValueRepository` and return it.
+
+        The store lives at ``data_dir``; without one it is the shared ``dotz``
+        default (``$DOTZ_DATA_DIR``, else ``./data``). Documents already in that
+        directory stay there, so the repository can hold more than this session.
+        """
         from .repository import ValueRepository
 
         repo = ValueRepository(data_dir=data_dir)
@@ -543,8 +549,30 @@ class Reading:
         return ReferenceRepository.from_values(self.values(), **kwargs)
 
     def export(self, path: Union[str, Path], data_dir: Optional[Union[str, Path]] = None) -> Path:
-        """Write the canonical single-file ontology JSON (the artifact to commit)."""
-        return self.to_repository(data_dir=data_dir).export_ontology(path)
+        """Write this session as one canonical ontology JSON file (the artifact to commit).
+
+        The file holds exactly this session's values, in the format
+        :meth:`ValueRepository.export_ontology` writes (sorted by ``id``, sorted
+        keys). Pass ``data_dir`` to also persist the expanded per-document store
+        there; whatever that directory already holds is never copied into the
+        file. To export a whole store instead, call
+        ``to_repository(data_dir).export_ontology(path)``.
+        """
+        if data_dir is not None:
+            self.to_repository(data_dir=data_dir)
+        # JSON round-trip and last-one-wins on a repeated id, as the store does.
+        by_id: Dict[str, Any] = {}
+        for value in self.values():
+            doc = json.loads(json.dumps(value.to_dict(), ensure_ascii=False))
+            by_id[str(doc["id"])] = doc
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps([by_id[key] for key in sorted(by_id)],
+                       ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        return path
 
     def render(
         self,
