@@ -22,6 +22,9 @@ try:  # pint is the intended dependency, but stay usable without it.
     import pint  # type: ignore
 
     _UREG: Optional["pint.UnitRegistry"] = pint.UnitRegistry()
+    # Currency is not in pint's default registry. USD is the one named unit
+    # valuez adds; mega/kilo prefixes (MUSD, kUSD) then work as usual.
+    _UREG.define("USD = [currency]")
     _PINT_ERROR: Optional[Exception] = None
 except Exception as exc:  # pragma: no cover - only hit when pint is absent
     pint = None  # type: ignore
