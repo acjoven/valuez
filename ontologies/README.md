@@ -36,6 +36,11 @@ resolving collisions.
 See [`../docs/merge.md`](../docs/merge.md). A merged universe is *derived*
 (regenerable from its sources), so it is intentionally **not** committed here.
 
+The two large maps are test material, not a canon. Including an author is not
+an endorsement of their views, and leaving one out is not a judgment. Each map
+describes what its cited texts say, not what `valuez` holds to be true. Maps of
+other traditions and fields are welcome.
+
 ## Workflow
 
 Author / update a map, then export the canonical file:
