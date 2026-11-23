@@ -261,6 +261,41 @@ python examples/bibliography_demo.py
 Writes `sources.bib` to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_bibliography/`
 folder in your temp dir).
 
+## `merge_demo.py` — merge two small maps of the same gas
+
+The smallest complete merge. The script builds two maps from two chapters of
+the *Feynman Lectures on Physics*, Vol. I, and joins them by name:
+
+- **thermodynamics** (chapter 44, 12 concepts) describes a gas without saying
+  what it is made of: heat, work, engines, entropy.
+- **kinetic theory** (chapter 39, 9 concepts) starts from molecules in motion.
+
+Four names appear in both. `Volume` means the same thing in each.
+`Temperature`, `Pressure`, and `InternalEnergy` do not: thermodynamics defines
+temperature by the heat a reversible engine absorbs, kinetic theory as a
+measure of mean molecular kinetic energy.
+
+The script prints the **merge report**, both definitions of each clashing name
+(the first source's is kept), and the six **crossings**: two-hop paths from a
+thermodynamics-only concept to a kinetic-theory-only one, such as
+`ReversibleEngine -defines-> Temperature -measures-> MeanKineticEnergy`. Neither
+map contains that path. It then adds one curated alias (`IdealGas` =
+`PerfectGas`, the chapters' two names for one thing) and shows the extra join.
+
+### Run
+
+```bash
+python examples/merge_demo.py
+```
+
+`ontologies/thermodynamics.json` and `ontologies/kinetic_theory.json` are the
+committed maps, and the script rewrites them. `gas_universe.json` and
+`gas_universe.html` go to `$VALUEZ_EXAMPLE_OUT` (default: a
+`valuez_merge_demo/` folder in your temp dir). See
+[`../docs/merge.md`](../docs/merge.md) and
+[`../docs/discovery.md`](../docs/discovery.md). `merge_universe.py` and
+`discovery_demo.py` run the same steps over two much larger maps.
+
 ## `kant_ontology.py` — the critical philosophy of Immanuel Kant
 
 A larger **content** example: a curated ontology of Kant's system spanning the

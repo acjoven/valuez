@@ -10,22 +10,26 @@ This module does not write anything into the canonical graph.
 
 ## Why
 
-`merge_ontologies` stitches two maps at shared names (`Freedom`, `God`,
-...). The merge report lists those join points. It does not tell you what
-became *newly close*:
+`merge_ontologies` stitches two maps at shared names. The merge report lists
+those join points. It does not tell you what became *newly close*.
 
-- Kant's `TranscendentalIdealism` never mentioned Kierkegaard's `Anxiety`.
-- After the join, both attach to `Freedom`.
-- The 2-hop walk `TranscendentalIdealism -grounds-> Freedom -produces-> Anxiety`
+Take the two small gas maps under `ontologies/` (see [`merge.md`](merge.md)):
+`thermodynamics.json` describes a gas without mentioning molecules, and
+`kinetic_theory.json` starts from them. They share `Temperature`.
+
+- The thermodynamics map's `ReversibleEngine` never mentions the kinetic-theory
+  map's `MeanKineticEnergy`.
+- After the join, both attach to `Temperature`.
+- The 2-hop walk `ReversibleEngine -defines-> Temperature -measures-> MeanKineticEnergy`
   exists only in the merged universe.
 
-That walk is a *crossing*. Crossings are the connections neither author drew.
+That walk is a *crossing*. Crossings are the connections neither map drew.
 
 ## What counts as a crossing
 
 A node is **exclusive** to a source when `MergeReport.node_sources[name]`
 has length 1, and a **join point** when it has length ≥ 2. Keys are the
-alias-resolved names, so a curated alias (`aliases=[["TheSelf", "Soul"]]`)
+alias-resolved names, so a curated alias (`aliases=[["IdealGas", "PerfectGas"]]`)
 creates a new join point and new crossings through it. This is almost always
 the same set as `report.join_points`; the exception is an alias that folds two
 names from the *same* source, which `join_points` lists but discovery treats as
@@ -43,29 +47,30 @@ exclusive node of source B such that:
   not every path that happens to visit a join.
 - at least one **interior** node is a join point (`via`)
 
-Both directions are collected (A→B and B→A) so `between("kant", "kierkegaard")`
-and the reverse both work. Isolated exclusive nodes never start a crossing.
+Both directions are collected (A→B and B→A) so
+`between("thermodynamics", "kinetic_theory")` and the reverse both work.
+Isolated exclusive nodes never start a crossing.
 
 ## API
 
 ```python
 from valuez import discover, merge_ontologies
 
-res = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
-found = res.discover(cutoff=2, limit=24)   # or discover(res, ...)
-print(found.summary())
+res = merge_ontologies(["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"])
+found = res.discover(cutoff=2)             # or discover(res, ...)
+print(found.summary())                     # 12 crossings: 6 in each direction
 
-found.between("kant", "kierkegaard")       # one direction
-found.via("Freedom")                       # crossings that pass through Freedom
+found.between("thermodynamics", "kinetic_theory")   # one direction (6)
+found.via("Temperature")                   # crossings that pass through Temperature (4)
 found.hubs                                 # join points ranked by crossing count
-found.exclusive["kant"]                    # names that lived only in Kant
+found.exclusive["thermodynamics"]          # names that lived only in that map
 ```
 
 `discover()` also accepts anything `merge_ontologies` accepts (file paths,
 repos, value iterables), so you can skip the explicit merge:
 
 ```python
-found = discover(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+found = discover(["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"])
 ```
 
 | Parameter | Default | Meaning |
@@ -83,8 +88,8 @@ Each `Crossing` holds the `Path` (asserted edges, so provenance rides along),
 `describe()` renders:
 
 ```
-TranscendentalIdealism [kant] ~ Freedom ~ Anxiety [kierkegaard]  (2 hop(s))
-  TranscendentalIdealism -grounds-> Freedom -produces-> Anxiety
+ReversibleEngine [thermodynamics] ~ Temperature ~ MeanKineticEnergy [kinetic_theory]  (2 hop(s))
+  ReversibleEngine -defines-> Temperature -measures-> MeanKineticEnergy
 ```
 
 `MergeReport.node_sources` is filled by every merge (exclusive names as well
@@ -105,6 +110,10 @@ raise from `discover()` so you re-merge.
 
 ## Example
 
-`examples/discovery_demo.py` merges the committed Kant and Kierkegaard maps,
-prints the ranked crossings at `cutoff=2` (`limit=0` keeps all), and writes
-`crossings.json` plus an HTML subgraph of the shortest ones.
+`examples/merge_demo.py` builds the two small gas maps, merges them, and lists
+the six crossings from the thermodynamics map into the kinetic-theory map.
+
+`examples/discovery_demo.py` does the same at scale: it merges the committed
+Kant and Kierkegaard maps, prints the ranked crossings at `cutoff=2` (`limit=0`
+keeps all), and writes `crossings.json` plus an HTML subgraph of the shortest
+ones.

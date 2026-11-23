@@ -1,0 +1,320 @@
+[
+  {
+    "definition": "Heat absorbed divided by the temperature it is absorbed at.",
+    "id": "td_entropy",
+    "kind": "concept",
+    "name": "Entropy",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "Conservation of energy: heat in plus work done on a system is the rise in its energy.",
+    "id": "td_firstlaw",
+    "kind": "concept",
+    "name": "FirstLaw",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "Energy put into a system other than by doing work on it.",
+    "id": "td_heat",
+    "kind": "concept",
+    "name": "Heat",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "A device that takes in heat, does work, and delivers heat at a lower temperature.",
+    "id": "td_heatengine",
+    "kind": "concept",
+    "name": "HeatEngine",
+    "reference": {
+      "locator": "44-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The energy of a system; it rises by the heat put in plus the work done on it.",
+    "id": "td_internalenergy",
+    "kind": "concept",
+    "name": "InternalEnergy",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The one substance whose laws are known, used to work out a reversible engine.",
+    "id": "td_perfectgas",
+    "kind": "concept",
+    "name": "PerfectGas",
+    "reference": {
+      "locator": "44-4",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "A property of the gas that falls as it expands at a fixed temperature.",
+    "id": "td_pressure",
+    "kind": "concept",
+    "name": "Pressure",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "id": "td_prop_0000",
+    "kind": "proposition",
+    "label": "P-Reversible",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "statement": "No engine can do more work than a reversible one.",
+    "truth_value": true
+  },
+  {
+    "id": "td_rel_0000",
+    "kind": "relation",
+    "predicate": "changes",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Heat",
+    "target": "InternalEnergy"
+  },
+  {
+    "id": "td_rel_0001",
+    "kind": "relation",
+    "predicate": "changes",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Work",
+    "target": "InternalEnergy"
+  },
+  {
+    "id": "td_rel_0002",
+    "kind": "relation",
+    "predicate": "governs",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "FirstLaw",
+    "target": "InternalEnergy"
+  },
+  {
+    "id": "td_rel_0003",
+    "kind": "relation",
+    "predicate": "converts",
+    "reference": {
+      "locator": "44-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "HeatEngine",
+    "target": "Heat"
+  },
+  {
+    "id": "td_rel_0004",
+    "kind": "relation",
+    "predicate": "produces",
+    "reference": {
+      "locator": "44-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "HeatEngine",
+    "target": "Work"
+  },
+  {
+    "id": "td_rel_0005",
+    "kind": "relation",
+    "predicate": "governs",
+    "reference": {
+      "locator": "44-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "SecondLaw",
+    "target": "HeatEngine"
+  },
+  {
+    "id": "td_rel_0006",
+    "kind": "relation",
+    "predicate": "is-a",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "ReversibleEngine",
+    "target": "HeatEngine"
+  },
+  {
+    "id": "td_rel_0007",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Work",
+    "target": "Pressure"
+  },
+  {
+    "id": "td_rel_0008",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Work",
+    "target": "Volume"
+  },
+  {
+    "id": "td_rel_0009",
+    "kind": "relation",
+    "predicate": "uses",
+    "reference": {
+      "locator": "44-4",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "ReversibleEngine",
+    "target": "PerfectGas"
+  },
+  {
+    "id": "td_rel_0010",
+    "kind": "relation",
+    "predicate": "defines",
+    "reference": {
+      "locator": "44-5",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "ReversibleEngine",
+    "target": "Temperature"
+  },
+  {
+    "id": "td_rel_0011",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Entropy",
+    "target": "Heat"
+  },
+  {
+    "id": "td_rel_0012",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Entropy",
+    "target": "Temperature"
+  },
+  {
+    "id": "td_rel_0013",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Pressure",
+    "target": "Temperature"
+  },
+  {
+    "id": "td_rel_0014",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Pressure",
+    "target": "Volume"
+  },
+  {
+    "id": "td_rel_0015",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "InternalEnergy",
+    "target": "Temperature"
+  },
+  {
+    "id": "td_rel_0016",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "44-6",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "InternalEnergy",
+    "target": "Volume"
+  },
+  {
+    "definition": "An ideal, frictionless heat engine that a small change can run backwards.",
+    "id": "td_reversibleengine",
+    "kind": "concept",
+    "name": "ReversibleEngine",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "Heat cannot be turned into work at a single temperature with no other change.",
+    "id": "td_secondlaw",
+    "kind": "concept",
+    "name": "SecondLaw",
+    "reference": {
+      "locator": "44-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "How hot an object is, set by the heat a reversible engine absorbs from it.",
+    "id": "td_temperature",
+    "kind": "concept",
+    "name": "Temperature",
+    "reference": {
+      "locator": "44-5",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The space a substance occupies.",
+    "id": "td_volume",
+    "kind": "concept",
+    "name": "Volume",
+    "reference": {
+      "locator": "44-3",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "Energy put into a system by a force, as when a piston compresses a gas.",
+    "id": "td_work",
+    "kind": "concept",
+    "name": "Work",
+    "reference": {
+      "locator": "44-1",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  }
+]
