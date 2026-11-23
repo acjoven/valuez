@@ -312,6 +312,95 @@ def test_roundtrip_through_repository(tmp_path):
     assert isinstance(kant, Individual) and kant.name == "ImmanuelKant"
 
 
+_STALE = {"id": "left_over", "kind": "concept", "name": "LeftOver"}
+
+
+def _seed_stale(directory):
+    directory.mkdir(parents=True, exist_ok=True)
+    (directory / "left_over.json").write_text(json.dumps(_STALE), encoding="utf-8")
+
+
+def _exported_ids(path):
+    return {d["id"] for d in json.loads(path.read_text(encoding="utf-8"))}
+
+
+def test_export_without_data_dir_ignores_and_leaves_cwd_data(tmp_path, monkeypatch):
+    monkeypatch.delenv("DOTZ_DATA_DIR", raising=False)
+    monkeypatch.chdir(tmp_path)
+    _seed_stale(tmp_path / "data")
+
+    r = _sample_session()
+    path = r.export("o.json")
+
+    assert _exported_ids(path) == {v.id for v in r.values()}
+    assert sorted(p.name for p in (tmp_path / "data").iterdir()) == ["left_over.json"]
+
+
+def test_export_without_data_dir_creates_no_store(tmp_path, monkeypatch):
+    monkeypatch.delenv("DOTZ_DATA_DIR", raising=False)
+    monkeypatch.chdir(tmp_path)
+
+    _sample_session().export("o.json")
+
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["o.json"]
+
+
+def test_export_without_data_dir_ignores_dotz_data_dir(tmp_path, monkeypatch):
+    shared = tmp_path / "shared"
+    _seed_stale(shared)
+    monkeypatch.setenv("DOTZ_DATA_DIR", str(shared))
+
+    r = _sample_session()
+    path = r.export(tmp_path / "o.json")
+
+    assert _exported_ids(path) == {v.id for v in r.values()}
+    assert sorted(p.name for p in shared.iterdir()) == ["left_over.json"]
+
+
+def test_export_with_data_dir_keeps_stale_documents_out_of_the_file(tmp_path):
+    store = tmp_path / "store"
+    _seed_stale(store)
+
+    r = _sample_session()
+    path = r.export(tmp_path / "o.json", data_dir=store)
+
+    session_ids = {v.id for v in r.values()}
+    assert _exported_ids(path) == session_ids
+    stored = set(ValueRepository(data_dir=store).query("[*].id"))
+    assert stored == session_ids | {"left_over"}
+
+
+def test_export_after_rename_drops_the_old_name(tmp_path):
+    store = tmp_path / "store"
+    first = Reading(source="T")
+    with first.at("p. 1"):
+        first.concept("Convecton")
+    first.export(tmp_path / "o.json", data_dir=store)
+
+    second = Reading(source="T")
+    with second.at("p. 1"):
+        second.concept("Convection")
+    path = second.export(tmp_path / "o.json", data_dir=store)
+
+    assert _exported_ids(path) == {"convection"}
+
+
+def test_export_matches_repository_export_of_a_fresh_store(tmp_path):
+    r = _sample_session()
+    direct = r.export(tmp_path / "direct.json")
+
+    repo = ValueRepository(data_dir=tmp_path / "fresh")
+    repo.add_values(r.values())
+    via_store = repo.export_ontology(tmp_path / "via_store.json")
+
+    assert direct.read_bytes() == via_store.read_bytes()
+
+
+def test_export_creates_parent_dirs(tmp_path):
+    path = _sample_session().export(tmp_path / "nested" / "dir" / "o.json")
+    assert path.exists()
+
+
 def test_to_repository_contains_everything(tmp_path):
     r = _sample_session()
     repo = r.to_repository(data_dir=tmp_path / "store")
