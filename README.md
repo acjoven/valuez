@@ -160,9 +160,8 @@ They are test material, not a canon:
   is not a judgment.
 - The maps describe what the cited texts say. They are not claims by `valuez`
   about what is true.
-- Nothing in the library is specific to philosophy or to these two authors. Any
-  sourced body of ideas can be mapped the same way, and maps of other
-  traditions and fields are welcome.
+- Nothing in the library is specific to philosophy. Maps of other traditions
+  and fields are welcome.
 
 You do not need them to learn the library. When you want them, the builders are
 `examples/kant_ontology.py` and `examples/kierkegaard_ontology.py`, and
