@@ -1,5 +1,18 @@
 # Examples
 
+Each script runs on its own after the install in the top-level README. Start
+with `quickstart.py`, then pick by interest:
+
+- **Quantities** — `heat_transfer_cooling.py`, `dataset_htc.py`,
+  `empirical_functions.py`
+- **Ideas and arguments** — `philosophy_framework.py`,
+  `metaphysics_framework.py`, `reading_session.py`
+- **Sources** — `bibliography_demo.py`
+- **Joining and exploring maps** — `merge_demo.py`, `traversal_demo.py`,
+  `analysis_demo.py`
+- **Worked corpora** — two large maps and the scripts that run over them, at
+  the end of this page. You do not need them to learn the library.
+
 ## `quickstart.py` — a sourced number and a small concept map
 
 The README quickstart as a script. It holds one textbook range with its
@@ -214,10 +227,10 @@ your temp dir).
 
 ## `reading_session.py` — build an ontology *as you read*
 
-The ergonomic counterpart to `kant_ontology.py`. It reconstructs the epistemic
-core of the first Critique (sensibility / understanding, space & time, the
-categories, the Transcendental Deduction) using the Tier-1 authoring helper
-`valuez.Reading` instead of the raw `Concept` / `Relation` API.
+A longer `Reading` session than the quickstart. It maps one part of one book
+(the account of sensibility and understanding in Kant's first Critique: space
+and time, the categories, the Transcendental Deduction) with the Tier-1
+authoring helper `valuez.Reading` instead of the raw `Concept` / `Relation` API.
 
 The point is to show how much scaffolding the session removes:
 
@@ -294,128 +307,8 @@ committed maps, and the script rewrites them. `gas_universe.json` and
 `valuez_merge_demo/` folder in your temp dir). See
 [`../docs/merge.md`](../docs/merge.md) and
 [`../docs/discovery.md`](../docs/discovery.md). `merge_universe.py` and
-`discovery_demo.py` run the same steps over two much larger maps.
-
-## `kant_ontology.py` — the critical philosophy of Immanuel Kant
-
-A larger **content** example: a curated ontology of Kant's system spanning the
-three Critiques, built entirely from the semantic + metaphysics primitives.
-
-- **Particulars** (`Individual`): Kant and his major works.
-- **Universals** (`Universal`, ~134): faculties (sensibility / understanding /
-  reason), representations (intuition / concept / category / idea), the full
-  **table of categories** (four titles + twelve), phenomena vs. noumena, the
-  ideas of reason (soul / cosmos / God), the four **antinomies** (with their
-  paired **thesis / antithesis** claims) and four **paralogisms**, further
-  sections of the Analytic (metaphysical deduction, schematism, principles,
-  refutation of idealism), the moral concepts (categorical imperative and its
-  four **formulas**, autonomy, good will, kingdom of ends, the **postulates**
-  and the **highest good**), and the third-Critique concepts in depth
-  (reflecting vs. determining judgment, the four **moments of taste**,
-  mathematical / dynamical **sublime**, aesthetic idea, common sense, fine art,
-  and **teleological judgment** / natural purpose / organism). Each carries an
-  `ontological_status` (`transcendental` / `a priori` / `phenomenal` /
-  `noumenal` / ...).
-- **Instantiation**: typed `Individual --instantiates--> Universal` edges.
-- **Relations** (~242) over a controlled vocabulary: `is-a`, `part-of`
-  (structure of the Critiques), `contrasts-with` (Kant's dichotomies and the
-  antinomic thesis/antithesis pairs), `formulation-of` (the CI formulas), plus
-  `grounds` / `requires` / `produces` / `enables` / `presupposes` /
-  `applies-to` / `addresses` / `is-form-of`, including cross-Critique bridges
-  (e.g. transcendental idealism grounding freedom).
-- **Propositions** (14 cited theses) and five **Arguments**: the Transcendental
-  Deduction, the good-will argument, the resolution of the Third Antinomy, the
-  moral argument for the postulates, and the deduction of taste.
-
-The script checks **referential integrity** (every edge endpoint is a defined
-node), reasons over the graph (transitive closure of `is-a`; acyclicity of the
-strict orders), persists everything through `dotz`, **exports the canonical
-`ontologies/kant.json`**, and renders an interactive graph.
-
-### Run
-
-```bash
-python examples/kant_ontology.py
-```
-
-`ontologies/kant.json` is the committed source-of-truth artifact; the rendered
-`kant_ontology.html` / `kant_arguments.html` go to `$VALUEZ_EXAMPLE_OUT`
-(default: a `valuez_kant/` folder in your temp dir).
-
-## `kierkegaard_ontology.py` — the existential philosophy of Søren Kierkegaard
-
-A second large **content** example, built to the exact same shape as
-`kant_ontology.py` so the two can eventually be **merged** into one universe.
-
-- **Particulars** (`Individual`, 22): Kierkegaard, his **pseudonymous personae**
-  (Johannes de silentio, Johannes/Anti-Climacus, Vigilius Haufniensis, ...), his
-  major **works**, and the exemplary **figures** (Abraham, Don Juan, Judge
-  William).
-- **Universals** (`Universal`, ~68): the three **stages of existence**
-  (aesthetic / ethical / religious, plus Religiousness A/B), the **self as
-  synthesis** (possibility/necessity, finitude/infinitude, temporality/eternity),
-  **anxiety** and **despair**, **faith** and the **absolute paradox** (the god in
-  time), subjectivity / truth / inwardness, and indirect communication. Each
-  carries an `ontological_status` (`existential` / `theological` /
-  `psychological` / `abstract`).
-- **Instantiation**: typed `Individual --instantiates--> Universal` (personae are
-  `Pseudonym`s, works are `PhilosophicalWork`s, figures are `Exemplar`s).
-- **Relations** (~167) over a controlled vocabulary that is a **superset of the
-  Kantian one** plus `authored-as`, `critiques`, `exemplifies`, `synthesizes`,
-  and `leads-to` (the stage progression), alongside `is-a`, `part-of` (the self's
-  synthesis), `contrasts-with` (Kierkegaard's dualities), `grounds`, `requires`,
-  `presupposes`, `produces`, `addresses`, and `wrote`.
-- **Propositions** (11 cited theses) and five **Arguments**: the teleological
-  suspension of the ethical, subjectivity-is-truth, the self and despair, the
-  case against the system, and the paradox and offense.
-
-### Built for merging
-
-This graph deliberately **reuses universal names** from `kant_ontology.py` so a
-future *merge* has real overlap to resolve (`MERGE_ANCHORS` in the script):
-`Philosopher` / `PhilosophicalWork` are clean matches, while `Existence`,
-`Freedom`, `Possibility`, `Necessity`, `Reason`, `Understanding`, and `God` are
-genuine **semantic collisions** — the same name with a different definition and
-`ontological_status` in each system. The two files use disjoint id prefixes
-(`kk_` vs `k_`), so a merge is forced to key on **name** and decide how to fold
-colliding concepts.
-
-### Run
-
-```bash
-python examples/kierkegaard_ontology.py
-```
-
-`ontologies/kierkegaard.json` is the committed source-of-truth artifact; the
-rendered `kierkegaard_ontology.html` / `kierkegaard_arguments.html` go to
-`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_kierkegaard/` folder in your temp dir).
-
-## `merge_universe.py` — join two ontologies into one universe
-
-The payoff of the two content examples above: `valuez.merge_ontologies` folds
-`kant.json` and `kierkegaard.json` into a single connected graph by **joining
-their common nodes by name**. Because edges reference endpoints by name, once the
-two `Freedom` nodes collapse into one, every Kant edge and every Kierkegaard edge
-attaches to that single node — the two graphs are stitched together at the seam.
-
-The script prints a **merge report** (the nine join points; which are clean
-matches like `Philosopher` / `PhilosophicalWork` and which are genuine semantic
-collisions like `Existence` / `Freedom` / `God`), shows how each shared node now
-carries edges from *both* sources, exports the merged `universe.json`, and renders
-two graphs: the whole universe and a legible **seam** slice of just the edges
-incident to the join points.
-
-### Run
-
-```bash
-python examples/merge_universe.py
-```
-
-`universe.json`, `universe.html`, and `universe_seam.html` go to
-`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_merge/` folder in your temp dir). The
-merged universe is *derived* (regenerable from the two committed maps), so it is
-not itself committed. See [`../docs/merge.md`](../docs/merge.md) for the join
-semantics, conflict policies, and the `MergeReport` fields.
+`discovery_demo.py`, under *Worked corpora*, run the same steps over two much
+larger maps.
 
 ## `traversal_demo.py` — walk a stored map
 
@@ -427,8 +320,9 @@ have. It asks the questions the rest of the active-knowledge track leans on:
   arrows rendered when the walk runs against an asserted edge)
 - **topic subgraph** — the induced k-hop vicinity of one or more seeds
 
-It runs those queries against a tiny `Reading` session and against
-`ontologies/kant.json`, then writes `freedom_topic.html`.
+It runs those queries against a tiny `Reading` session, then repeats them at
+scale on one of the large maps (`ontologies/kant.json`, see *Worked corpora*)
+and writes `freedom_topic.html`.
 
 ### Run
 
@@ -439,27 +333,6 @@ python examples/traversal_demo.py
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_traversal/` folder in
 your temp dir). See [`../docs/traversal.md`](../docs/traversal.md).
 
-## `concept_brief.py` — read a node
-
-`explain(node)` assembles a readable page for one concept: definition and
-status, every incident relation with its citation, the claims and arguments
-that bear on it (attached by asserted edge, or by a labelled whole-word
-*mention*), and the sources behind all of it, grouped.
-
-The script briefs `Freedom` twice — in Kant's map alone, and in the merged
-Kant + Kierkegaard universe, where one page now draws on both authors' edges
-and sources — and writes each as Markdown (plus the universe brief as JSON).
-
-### Run
-
-```bash
-python examples/concept_brief.py
-```
-
-`freedom_kant.md`, `freedom_universe.md`, and `freedom_universe.json` go to
-`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_briefs/` folder in your temp dir).
-See [`../docs/briefs.md`](../docs/briefs.md).
-
 ## `analysis_demo.py` — infer, flag tensions, list gaps
 
 `analyze()` generalizes the one-predicate helpers in `valuez.reasoning` into a
@@ -469,8 +342,9 @@ truth-values), gaps (dangling / undefined / open questions / ...), and Dung
 grounded status of arguments. Derived edges are returned, not inserted, each
 with a `Reference` naming the rule and the asserted ids it rested on.
 
-The script runs a mereology, the Gettier argument map, an illicit
-cycle+clash fragment, and `ontologies/kant.json`.
+The script runs three small fragments (a mereology, the Gettier argument map,
+and an illicit cycle+clash), then one of the large maps
+(`ontologies/kant.json`, see *Worked corpora*).
 
 ### Run
 
@@ -481,18 +355,92 @@ python examples/analysis_demo.py
 `analysis_kant.json` goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_analysis/`
 folder in your temp dir). See [`../docs/analysis.md`](../docs/analysis.md).
 
-## `discovery_demo.py` — unexpected paths across a merged universe
+## Worked corpora: two large maps
 
-The payoff of merge + traversal: `valuez.discover` finds shortest paths from a
-concept that lived in *only one* source to a concept that lived *only in the
-other*, passing through a join point the merge created. Those walks do not
-exist in either ontology alone.
+The scripts above use maps small enough to read in full. The ones in this
+section build, and run over, two large curated maps: one of Kant's critical
+philosophy (407 documents) and one of Kierkegaard's authorship (295). They show
+the same features at a realistic size.
+
+The maps are test material, not a canon; see the
+[note in the top-level README](../README.md#worked-corpora-two-large-maps).
+
+### `kant_ontology.py` — builds `ontologies/kant.json`
+
+A curated map of Kant's system across the three Critiques, built from the
+semantic and metaphysics primitives: 6 individuals (Kant and his major works),
+134 universals, 242 relations over a controlled vocabulary, 14 cited
+propositions, and 5 arguments. The script's docstring lists what the map
+covers.
+
+The script checks **referential integrity** (every edge endpoint is a defined
+node), reasons over the graph (transitive closure of `is-a`; acyclicity of the
+strict orders), persists everything through `dotz`, **exports the canonical
+`ontologies/kant.json`**, and renders an interactive graph.
+
+```bash
+python examples/kant_ontology.py
+```
+
+`ontologies/kant.json` is the committed source-of-truth artifact; the rendered
+`kant_ontology.html` / `kant_arguments.html` go to `$VALUEZ_EXAMPLE_OUT`
+(default: a `valuez_kant/` folder in your temp dir).
+
+### `kierkegaard_ontology.py` — builds `ontologies/kierkegaard.json`
+
+A second map built to the same shape as the first: 22 individuals (Kierkegaard,
+his pseudonyms, his major works, and the exemplary figures), 68 universals, 167
+relations, 11 cited propositions, and 5 arguments. The script's docstring lists
+what the map covers.
+
+It reuses nine names from the Kant map (`MERGE_ANCHORS` in the script) so that
+a merge has real overlap to resolve. `Philosopher` and `PhilosophicalWork` mean
+the same in both. `Existence`, `Freedom`, `Possibility`, `Necessity`, `Reason`,
+`Understanding`, and `God` have a different definition and `ontological_status`
+in each. The two files use disjoint id prefixes (`kk_` vs `k_`), so a merge has
+to key on **name**.
+
+```bash
+python examples/kierkegaard_ontology.py
+```
+
+`ontologies/kierkegaard.json` is the committed source-of-truth artifact; the
+rendered `kierkegaard_ontology.html` / `kierkegaard_arguments.html` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_kierkegaard/` folder in your temp dir).
+
+### `merge_universe.py` — `merge_demo.py` at scale
+
+`valuez.merge_ontologies` folds `kant.json` and `kierkegaard.json` into a single
+connected graph by **joining their common nodes by name**, the same step
+`merge_demo.py` shows on two small maps.
+
+The script prints a **merge report** (the nine join points; which are clean
+matches like `Philosopher` / `PhilosophicalWork` and which are genuine semantic
+collisions like `Existence` / `Freedom` / `God`), shows how each shared node now
+carries edges from *both* sources, exports the merged `universe.json`, and renders
+two graphs: the whole universe and a legible **seam** slice of just the edges
+incident to the join points.
+
+```bash
+python examples/merge_universe.py
+```
+
+`universe.json`, `universe.html`, and `universe_seam.html` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_merge/` folder in your temp dir). The
+merged universe is *derived* (regenerable from the two committed maps), so it is
+not itself committed. See [`../docs/merge.md`](../docs/merge.md) for the join
+semantics, conflict policies, and the `MergeReport` fields.
+
+### `discovery_demo.py` — crossings at scale
+
+`valuez.discover` finds shortest paths from a concept that lived in *only one*
+source to a concept that lived *only in the other*, passing through a join
+point the merge created. `merge_demo.py` lists six such paths between two small
+maps; this script does it for the two large ones.
 
 It merges `kant.json` + `kierkegaard.json`, prints the ranked crossings
 (cutoff 2 hops), highlights `TranscendentalIdealism ~ Freedom ~ Anxiety`,
 and writes `crossings.json` plus an HTML subgraph of the shortest paths.
-
-### Run
 
 ```bash
 python examples/discovery_demo.py
@@ -500,3 +448,23 @@ python examples/discovery_demo.py
 
 Output goes to `$VALUEZ_EXAMPLE_OUT` (default: a `valuez_discovery/` folder in
 your temp dir). See [`../docs/discovery.md`](../docs/discovery.md).
+
+### `concept_brief.py` — read a node
+
+`explain(node)` assembles a readable page for one concept: definition and
+status, every incident relation with its citation, the claims and arguments
+that bear on it (attached by asserted edge, or by a labelled whole-word
+*mention*), and the sources behind all of it, grouped.
+
+The script briefs `Freedom` twice — in the Kant map alone, and in the merged
+Kant + Kierkegaard universe, where one page now draws on both maps' edges and
+sources — and writes each as Markdown (plus the universe brief as JSON).
+
+```bash
+python examples/concept_brief.py
+```
+
+`freedom_kant.md`, `freedom_universe.md`, and `freedom_universe.json` go to
+`$VALUEZ_EXAMPLE_OUT` (default: a `valuez_briefs/` folder in your temp dir).
+See [`../docs/briefs.md`](../docs/briefs.md), which walks through a brief on
+the small gas maps.

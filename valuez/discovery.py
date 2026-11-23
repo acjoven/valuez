@@ -1,9 +1,9 @@
 """Cross-universe discovery: unexpected paths created by joining ontologies.
 
-Merging two maps by name stitches them at join points (``Freedom``, ``God``,
-...). That seam is visible in the merge report. This module asks the next
-question: **which concepts that lived in only one source are now close to
-concepts that lived only in the other?**
+Merging two maps by name stitches them at join points (``Temperature``,
+``Pressure``, ...). That seam is visible in the merge report. This module asks
+the next question: **which concepts that lived in only one source are now close
+to concepts that lived only in the other?**
 
 Those paths do not exist in either ontology alone -- they are an artifact of
 the join -- so they are the first kind of *unexpected connection* the active-

@@ -23,13 +23,15 @@ Edges reference concepts by **name**; propositions and arguments are keyed by
 relation's endpoint is a handle (`Gettier-Argument --attacks--> JustifiedTrueBelief`).
 That is the structural link, marked `edge`.
 
-In the curated maps, arguments are cited but not wired to concepts by edge, so a
-brief also looks for **mentions**: a whole-word, case-insensitive match of the
-concept name (and its de-CamelCased form, so `MoralLaw` matches "the moral law")
-in a proposition's statement or an argument's premises / conclusion. Hits are
-marked `mention` in `to_dict()` and rendered as `(…; mention)` in Markdown, so a
-reader never confuses a textual hit with an asserted relation. Pass
-`mentions=False` to keep only edge-linked items.
+In the committed maps, claims and arguments are cited but not wired to concepts
+by edge, so a brief also looks for **mentions**: a whole-word, case-insensitive
+match of the concept name (and its de-CamelCased form, so `InternalEnergy`
+matches "the internal energy") in a proposition's statement or an argument's
+premises / conclusion. In the kinetic-theory map, the claim "The mean molecular
+kinetic energy is a property only of the temperature." attaches to
+`Temperature` this way. Hits are marked `mention` in `to_dict()` and rendered
+as `(…; mention)` in Markdown, so a reader never confuses a textual hit with an
+asserted relation. Pass `mentions=False` to keep only edge-linked items.
 
 This is the one heuristic in the module. It adds no content; it surfaces
 existing, cited content that names the node.
@@ -39,18 +41,18 @@ existing, cited content that names the node.
 ```python
 from valuez import explain
 
-brief = explain(values, "Freedom")          # values: Value objects or document dicts
-brief = book.explain("Freedom")             # Reading
-brief = repo.explain("Freedom")             # ValueRepository
-brief = merge_result.explain("Freedom")     # merged universe
+brief = explain(values, "Temperature")      # values: Value objects or document dicts
+brief = book.explain("Temperature")         # Reading
+brief = repo.explain("Temperature")         # ValueRepository
+brief = merge_result.explain("Temperature") # merged universe
 
 brief.definition, brief.kind, brief.ontological_status
 brief.outgoing, brief.incoming, brief.neighbors
-brief.by_predicate("out")                   # {"is-a": ["MoralConcept", "Postulate"], ...}
+brief.by_predicate("in")                    # {"defines": ["ReversibleEngine"], "depends-on": ["Entropy", ...]}
 brief.propositions                          # [(Proposition, "edge" | "mention"), ...]
 brief.arguments                             # [(Argument, "edge" | "mention"), ...]
 brief.citations()                           # distinct References, node first
-brief.sources()                             # {"Kant, CPrR (1788)": ["5:29", ...], ...}
+brief.sources()                             # {"Feynman, Leighton & Sands, ...": ["39-4", "39-5", "44-2", ...]}
 brief.bibliography()                        # ReferenceRepository (passage-only refs included)
 brief.to_markdown(); brief.to_dict()
 ```
@@ -65,10 +67,51 @@ or persist.
 
 ## On a merged universe
 
-Because merge joins nodes by name, `MergeResult.explain("Freedom")` produces one
-page whose relations and sources come from every contributing map — the Kant
-edges and the Kierkegaard edges, with both authors under **Sources**. See
-`examples/concept_brief.py`.
+Because merge joins nodes by name, a brief on a merged universe is one page
+whose relations and sources come from every contributing map.
+
+Take `Temperature` in the two small gas maps (see [`merge.md`](merge.md)). In
+`kinetic_theory.json` alone it has two relations, both cited to chapter 39.
+After the merge it has five, and the page cites sections of both chapters:
+
+```python
+from valuez import merge_ontologies
+
+universe = merge_ontologies(["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"])
+print(universe.explain("Temperature").to_markdown())
+```
+
+```
+# Temperature
+*concept*
+Cited: Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 44-5
+
+How hot an object is, set by the heat a reversible engine absorbs from it.
+
+## Relations
+- Temperature —measures→ MeanKineticEnergy  (Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 39-4)
+- ReversibleEngine —defines→ Temperature  (Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 44-5)
+- Entropy —depends-on→ Temperature  (Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 44-6)
+- InternalEnergy —depends-on→ Temperature  (Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 44-6)
+- Pressure —depends-on→ Temperature  (Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 44-6)
+
+## Claims
+- **P-MeanEnergy** — The mean molecular kinetic energy is a property only of the temperature. (asserted)  (Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963), 39-4; mention)
+
+## Mentioned in definitions of
+- Entropy, HeatEngine, IdealGas, Pressure, SecondLaw
+
+## Sources
+- Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963) — 39-4, 39-5, 44-2, 44-3, 44-5, 44-6
+```
+
+The definition shown is the thermodynamics one, because that map came first
+and the default conflict policy keeps the first source's fields. The merge
+report still lists both definitions.
+
+`examples/concept_brief.py` does the same at scale: it briefs `Freedom` in one
+of the large maps, then in the merged pair, where the page draws on both maps'
+edges and sources.
 
 ## Not in this slice
 

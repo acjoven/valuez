@@ -44,28 +44,36 @@ Tier-1 API. Design: [`docs/llm_assist.md`](docs/llm_assist.md).
 
 ## Content & knowledge graphs
 
-### Kant ontology — `done`
-Curated ontology of Kant's critical philosophy across the three Critiques.
-Builder `examples/kant_ontology.py`; canonical `ontologies/kant.json`.
+### Small merge fixtures — `done`
+Two maps of the same gas, small enough to read in full: thermodynamics (12
+concepts) and kinetic theory (9), from two chapters of the Feynman Lectures.
+They share four names, three of them with different definitions, so the merge,
+traversal, brief, and discovery docs can show a join end to end. Builder
+`examples/merge_demo.py`; canonical `ontologies/thermodynamics.json` and
+`ontologies/kinetic_theory.json`.
 
-### Kierkegaard ontology — `done`
-Companion ontology of Kierkegaard's existential authorship, deliberately sharing
-node **names** with the Kant map (`MERGE_ANCHORS`) as fixtures for the merge
-below. Builder `examples/kierkegaard_ontology.py`; canonical
-`ontologies/kierkegaard.json`.
+### Worked corpora — two large maps — `done`
+Two curated maps at a realistic size, as test material for the features below:
+Kant's critical philosophy across the three Critiques (builder
+`examples/kant_ontology.py`; canonical `ontologies/kant.json`) and Kierkegaard's
+authorship (builder `examples/kierkegaard_ontology.py`; canonical
+`ontologies/kierkegaard.json`). The second deliberately shares nine node
+**names** with the first (`MERGE_ANCHORS`). They are test material, not a
+canon; see the note in [`README.md`](README.md#worked-corpora-two-large-maps).
 
 ### Ontology merge — fold many files into one universe — `done`
-`valuez.merge_ontologies` imports multiple exported maps (e.g. `kant.json` +
-`kierkegaard.json`) into a single connected graph by keying on concept **name**,
-joining common nodes so every edge from either source attaches to the one shared
-node. It resolves collisions by policy (`first` / `last` / `raise`) and reports
-clean matches (`Philosopher`, `PhilosophicalWork`) vs genuine semantic collisions
-(`Existence`, `Freedom`, `God`, `Reason`, ...) that differ in definition and
-`ontological_status` between sources. Now also supports **curated `aliases`**
-(join differently-named nodes like `Soul` = `TheSelf`, rewriting edge endpoints),
-**per-node provenance** (`node_sources`), and the **cross-source bridges**
-(`MergeResult.bridges()`). API in `valuez/merge.py`; worked run in
-`examples/merge_universe.py`; design note: [`docs/merge.md`](docs/merge.md).
+`valuez.merge_ontologies` imports multiple exported maps into a single connected
+graph by keying on concept **name**, joining common nodes so every edge from
+either source attaches to the one shared node. It resolves collisions by policy
+(`first` / `last` / `raise`) and reports clean matches (`Volume` in the gas
+maps) vs genuine semantic collisions (`Temperature`, `Pressure`,
+`InternalEnergy`) whose fields differ between sources. Now also supports
+**curated `aliases`** (join differently-named nodes like `IdealGas` =
+`PerfectGas`, rewriting edge endpoints), **per-node provenance**
+(`node_sources`), and the **cross-source bridges** (`MergeResult.bridges()`).
+API in `valuez/merge.py`; worked runs in `examples/merge_demo.py` (small) and
+`examples/merge_universe.py` (the two large maps); design note:
+[`docs/merge.md`](docs/merge.md).
 
 ---
 
@@ -81,10 +89,11 @@ enters the canonical graph only through a human-reviewed path.
 Join concepts that mean the same thing, not just spell the same.
 
 **Shipped (this slice):** curated `aliases` on `merge_ontologies`
-(`[["TheSelf", "Soul"]]` or `{"Soul": "TheSelf"}`) fold differently-named nodes
-to one canonical name and rewrite edge endpoints, so alias-different subgraphs
-join too; the report lists `aliases_applied`. Design:
-[`docs/merge.md`](docs/merge.md). Worked run: `examples/merge_universe.py`.
+(`[["IdealGas", "PerfectGas"]]` or `{"PerfectGas": "IdealGas"}`) fold
+differently-named nodes to one canonical name and rewrite edge endpoints, so
+alias-different subgraphs join too; the report lists `aliases_applied`. Design:
+[`docs/merge.md`](docs/merge.md). Worked runs: `examples/merge_demo.py`, and
+`examples/merge_universe.py` at scale.
 
 **Next:** meaning-based *candidate* alignment (embeddings → suggested
 `closeMatch`, human-approved into `aliases`), overlapping the Tier-4
@@ -143,8 +152,8 @@ crossing is an undirected walk from a node exclusive to source A to a node
 exclusive to source B that passes through at least one join point; joins
 include alias-made ones (item 1). `MergeResult.bridges()` lists the edges
 incident to a join point — the seam the crossings run through. Design:
-[`docs/discovery.md`](docs/discovery.md). Worked run:
-`examples/discovery_demo.py`.
+[`docs/discovery.md`](docs/discovery.md). Worked runs:
+`examples/merge_demo.py`, and `examples/discovery_demo.py` at scale.
 
 **Next:** thematic clustering of exclusive neighborhoods; proposing new
 bridging concepts (synthesis; needs (4) to score candidates).

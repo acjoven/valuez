@@ -2,11 +2,12 @@
 
 Each ontology is a set of serialized :class:`~valuez.values.Value` documents
 (as produced by :meth:`ValueRepository.export_ontology`). Two ontologies authored
-independently -- e.g. ``ontologies/kant.json`` and ``ontologies/kierkegaard.json``
--- may describe some of the *same* concepts under the *same name* (``Freedom``,
-``God``, ``Philosopher``, ...). Merging them should not just concatenate the two
-files; it should **identify those points of overlap and join the common nodes**,
-so the two graphs become one connected universe.
+independently -- e.g. ``ontologies/thermodynamics.json`` and
+``ontologies/kinetic_theory.json`` -- may describe some of the *same* concepts
+under the *same name* (``Temperature``, ``Pressure``, ``Volume``, ...). Merging
+them should not just concatenate the two files; it should **identify those
+points of overlap and join the common nodes**, so the two graphs become one
+connected universe.
 
 The default join key is a node's **name**. This works because edges
 (:class:`~valuez.Relation` / :class:`~valuez.Instantiation`) reference their
@@ -15,13 +16,12 @@ from either source automatically attaches to that single node, wiring the two
 subgraphs together through the shared concept.
 
 Exact-name matching only catches concepts that happen to be *spelled* the same.
-Two traditions often name the same idea differently -- Kant's ``Soul`` (the
-thinking subject) and Kierkegaard's ``TheSelf`` (a relation that relates itself
-to itself). The optional ``aliases`` argument declares such equivalences: the
-named nodes are folded to one **canonical** name, and edge endpoints are
-rewritten to match, so alias-different subgraphs join too. (Automatic,
-meaning-based alignment -- e.g. via embeddings -- is future work; ``aliases`` is
-the curated, human-reviewed layer that principle asks for.)
+Two sources often name the same idea differently -- ``IdealGas`` in one map and
+``PerfectGas`` in the other. The optional ``aliases`` argument declares such
+equivalences: the named nodes are folded to one **canonical** name, and edge
+endpoints are rewritten to match, so alias-different subgraphs join too.
+(Automatic, meaning-based alignment -- e.g. via embeddings -- is future work;
+``aliases`` is the curated, human-reviewed layer that principle asks for.)
 
 What this module does:
 
@@ -416,7 +416,8 @@ def merge_ontologies(
     more than one source into a single edge.
 
     ``aliases`` declares curated cross-name equivalences so differently-named
-    nodes join too (e.g. ``[["TheSelf", "Soul"]]`` or ``{"Soul": "TheSelf"}``).
+    nodes join too (e.g. ``[["IdealGas", "PerfectGas"]]`` or
+    ``{"PerfectGas": "IdealGas"}``).
     Aliased names are folded to a single **canonical** name (the first in a
     group, or the dict value) and edge endpoints are rewritten to match.
     """
