@@ -8,7 +8,8 @@ traceable semantic exploration. It is built on the sibling toolkit `dotz`
 qualitative primitives, `Concept`/`Relation`, `Individual`/`Universal`,
 `DataSet`/`Function`), a fluent `Reading` authoring session, BibTeX-backed
 `ReferenceRepository`, and committed ontology maps under `ontologies/`. See
-`README.md` for the full API tour and `examples/README.md` for runnable demos.
+`README.md` for the overview, `docs/tour.md` for the full API tour, and
+`examples/README.md` for runnable demos.
 
 Dependencies install into a gitignored virtualenv at `.venv`. The committed
 bootstrap script [`scripts/setup_env.sh`](scripts/setup_env.sh) (re)creates it and
