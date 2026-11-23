@@ -1,5 +1,22 @@
 # Examples
 
+## `quickstart.py` — a sourced number and a small concept map
+
+The README quickstart as a script. It holds one textbook range with its
+citation, then builds a six-concept map of the modes of heat transfer with the
+`Reading` session, citing each passage once. It prints the inherited citation,
+the two `is-a` edges the map entails, and the path between two concepts, shows
+a typo being rejected on entry, and exports the map.
+
+### Run
+
+```bash
+python examples/quickstart.py
+```
+
+Writes `quickstart.json` and `quickstart.html` to `$VALUEZ_EXAMPLE_OUT`
+(default: a `valuez_quickstart/` folder in your temp dir).
+
 ## `heat_transfer_cooling.py` — natural-convection cooling of stainless steel
 
 A worked engineering example that uses the valuez `Scalar` / `Range` / `Reference`
