@@ -1,0 +1,191 @@
+[
+  {
+    "definition": "A lot of molecules in perpetual motion.",
+    "id": "kt_gas",
+    "kind": "concept",
+    "name": "Gas",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "A gas whose pressure, volume, and temperature obey PV = NkT.",
+    "id": "kt_idealgas",
+    "kind": "concept",
+    "name": "IdealGas",
+    "reference": {
+      "locator": "39-5",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The total energy of the molecules; for a monatomic gas, their kinetic energy.",
+    "id": "kt_internalenergy",
+    "kind": "concept",
+    "name": "InternalEnergy",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The average kinetic energy of a molecule's center-of-mass motion.",
+    "id": "kt_meankineticenergy",
+    "kind": "concept",
+    "name": "MeanKineticEnergy",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "A molecule bouncing off a wall and handing it momentum.",
+    "id": "kt_molecularcollision",
+    "kind": "concept",
+    "name": "MolecularCollision",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "One of the moving particles a gas is made of.",
+    "id": "kt_molecule",
+    "kind": "concept",
+    "name": "Molecule",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The momentum per second that molecular collisions deliver to a unit area of wall.",
+    "id": "kt_pressure",
+    "kind": "concept",
+    "name": "Pressure",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "id": "kt_prop_0000",
+    "kind": "proposition",
+    "label": "P-MeanEnergy",
+    "reference": {
+      "locator": "39-4",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "statement": "The mean molecular kinetic energy is a property only of the temperature.",
+    "truth_value": true
+  },
+  {
+    "id": "kt_rel_0000",
+    "kind": "relation",
+    "predicate": "made-of",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Gas",
+    "target": "Molecule"
+  },
+  {
+    "id": "kt_rel_0001",
+    "kind": "relation",
+    "predicate": "causes",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "MolecularCollision",
+    "target": "Pressure"
+  },
+  {
+    "id": "kt_rel_0002",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Pressure",
+    "target": "MeanKineticEnergy"
+  },
+  {
+    "id": "kt_rel_0003",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Pressure",
+    "target": "Volume"
+  },
+  {
+    "id": "kt_rel_0004",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "InternalEnergy",
+    "target": "MeanKineticEnergy"
+  },
+  {
+    "id": "kt_rel_0005",
+    "kind": "relation",
+    "predicate": "measures",
+    "reference": {
+      "locator": "39-4",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Temperature",
+    "target": "MeanKineticEnergy"
+  },
+  {
+    "id": "kt_rel_0006",
+    "kind": "relation",
+    "predicate": "is-a",
+    "reference": {
+      "locator": "39-5",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "IdealGas",
+    "target": "Gas"
+  },
+  {
+    "id": "kt_rel_0007",
+    "kind": "relation",
+    "predicate": "depends-on",
+    "reference": {
+      "locator": "39-5",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    },
+    "source": "Pressure",
+    "target": "Temperature"
+  },
+  {
+    "definition": "A measure of the mean kinetic energy of a molecule.",
+    "id": "kt_temperature",
+    "kind": "concept",
+    "name": "Temperature",
+    "reference": {
+      "locator": "39-4",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  },
+  {
+    "definition": "The space a substance occupies.",
+    "id": "kt_volume",
+    "kind": "concept",
+    "name": "Volume",
+    "reference": {
+      "locator": "39-2",
+      "source": "Feynman, Leighton & Sands, The Feynman Lectures on Physics, Vol. I (1963)"
+    }
+  }
+]
