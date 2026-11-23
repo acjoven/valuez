@@ -15,9 +15,9 @@ Until this slice, the only ways to inspect a stored map were exact-name join
 (`merge_ontologies`) and JMESPath over flat documents (`ValueRepository.query`).
 Neither answers:
 
-- what sits next to `Freedom`?
-- how does `Space` relate to `Understanding`?
-- what is the topic around `Cognition`?
+- what sits next to `Pressure`?
+- how does `MolecularCollision` relate to `Temperature`?
+- what is the topic around `InternalEnergy`?
 
 Those questions are the foundation for concept briefs, path-based
 cross-universe discovery, and guided reading (see [`ROADMAP.md`](../ROADMAP.md)).
@@ -31,20 +31,36 @@ edges already use):
 from valuez import Graph, Reading
 
 g = book.graph()                          # a Reading / OntologyBuilder
-g = Graph.from_ontology("ontologies/kant.json")
 g = repo.graph()                          # a ValueRepository
 g = merge_result.graph()                  # a merged universe
+g = Graph.from_ontology("ontologies/kinetic_theory.json")   # a committed map
 
-g.neighbors("Freedom")                    # adjacent names
-g.neighborhood("Freedom", hops=2)         # k-hop vicinity + induced edges
-g.how("Space", "Intuition")               # shortest connecting path (undirected)
-g.shortest_path("Human", "LivingThing")   # directed by default
-g.shortest_paths_from("Freedom")          # one BFS: shortest path to every reachable node
-g.paths("A", "B", cutoff=4, limit=10)     # simple paths, shortest first
-g.topic("Freedom", hops=1)                # induced subgraph around one or more seeds
-g.topic(["Freedom", "God"], hops=1)
-g.incident("Freedom", predicates="grounds")
-g.visualize("freedom.html")
+g.neighbors("Pressure")                   # adjacent names
+g.neighborhood("Pressure", hops=2)        # k-hop vicinity + induced edges
+g.how("MolecularCollision", "Temperature")   # shortest connecting path (undirected)
+g.shortest_path("IdealGas", "Molecule")   # directed by default
+g.shortest_paths_from("Pressure")         # one BFS: shortest path to every reachable node
+g.paths("Pressure", "MeanKineticEnergy", cutoff=4, limit=10)   # simple paths, shortest first
+g.topic("Pressure", hops=1)               # induced subgraph around one or more seeds
+g.topic(["Pressure", "InternalEnergy"], hops=1)
+g.incident("Pressure", predicates="depends-on")
+g.visualize("pressure.html")
+```
+
+The names are from `ontologies/kinetic_theory.json`, a nine-concept map of a
+gas as molecules in motion (built by `examples/merge_demo.py`). On it:
+
+```
+>>> g.neighbors("Pressure")
+['MeanKineticEnergy', 'MolecularCollision', 'Temperature', 'Volume']
+>>> print(g.how("MolecularCollision", "Temperature"))
+MolecularCollision -causes-> Pressure -depends-on-> Temperature
+>>> print(g.shortest_path("IdealGas", "Molecule"))
+IdealGas -is-a-> Gas -made-of-> Molecule
+>>> for path in g.paths("Pressure", "MeanKineticEnergy", cutoff=4, limit=10):
+...     print(path)
+Pressure -depends-on-> MeanKineticEnergy
+Pressure -depends-on-> Temperature -measures-> MeanKineticEnergy
 ```
 
 Functional aliases matching `valuez.reasoning` also exist (`how(relations, a, b)`,
@@ -63,7 +79,8 @@ When an undirected walk runs *against* an asserted edge, `Path.describe()`
 renders a reverse arrow:
 
 ```
-Organism <-part-of- Organ <-part-of- Tissue <-part-of- Cell
+>>> print(g.how("Temperature", "MolecularCollision"))
+Temperature <-depends-on- Pressure <-causes- MolecularCollision
 ```
 
 ### Predicate filters
@@ -101,5 +118,6 @@ Path-based cross-universe discovery now lives in [`discovery.md`](discovery.md).
 
 ## Example
 
-`examples/traversal_demo.py` asks these questions of the fluent reading session
-and of `ontologies/kant.json`, and writes a Freedom topic-subgraph HTML.
+`examples/traversal_demo.py` asks these questions of a small reading session,
+then repeats them at scale on one of the large maps (`ontologies/kant.json`)
+and writes a topic-subgraph HTML.

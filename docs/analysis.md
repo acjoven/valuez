@@ -16,7 +16,7 @@ enters the map only through a human-reviewed path.
 | Bucket | What | Notes |
 | --- | --- | --- |
 | **Derived** | new `Relation`s / `Instantiation`s | `modality="inferred"`; deterministic ids `inferred:<rule>:...` |
-| **Tensions** | cycles, predicate clashes, contradictory truth-values | illicit *structure*, not a judgment of the philosophy |
+| **Tensions** | cycles, predicate clashes, contradictory truth-values | illicit *structure*, not a judgment of the content |
 | **Gaps** | dangling / isolated / undefined / ungrounded nodes; open questions; missing premises | inventory of unfinished work |
 | **Arguments** | Dung *grounded* status | `accepted` / `defeated` / `undecided` under `attacks` |
 
@@ -95,8 +95,14 @@ The low-level helpers `reasoning.infer_transitive` / `is_acyclic` /
 
 ## Example
 
-`examples/analysis_demo.py` runs a mereology (transitivity), the Gettier map
-(Dung + open questions), an illicit cycle+clash fragment, and `ontologies/kant.json`.
+`examples/analysis_demo.py` runs three small fragments built to have something
+to find: a mereology (transitivity), the Gettier map (Dung + open questions),
+and an illicit cycle+clash. It then runs one of the large maps
+(`ontologies/kant.json`) to show the closure at scale.
+
+The two small gas maps under `ontologies/` come back clean, alone and merged
+(`Analysis: 0 derived, 0 tension(s), 0 gap(s)`): they have no chains for the
+transitive rules to extend and no arguments to score.
 
 ## Not in this slice
 
