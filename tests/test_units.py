@@ -51,3 +51,16 @@ def test_to_quantity_without_pint(monkeypatch):
     monkeypatch.setattr(units, "_UREG", None)
     with pytest.raises(RuntimeError):
         units.to_quantity(1.0, "kg")
+
+
+@pytest.mark.skipif(not units.pint_available(), reason="pint not installed")
+def test_usd_currency_dimension():
+    """USD is a defined currency unit; SI prefixes and ratios then parse."""
+    s = Scalar(2.15, unit="USD/gal")
+    assert s.unit == "USD/gal"
+    q = s.to_quantity()
+    assert str(q.dimensionality) == "[currency] / [length] ** 3"
+    assert Scalar(422.5, unit="MUSD").to_quantity().to("USD").magnitude == pytest.approx(
+        422_500_000.0
+    )
+    assert units.validate_unit("USD/kmol") == "USD/kmol"
