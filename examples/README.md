@@ -53,7 +53,7 @@ into a **range** of cooling rates and time constants.
 ### Run
 
 ```bash
-# dotz (sibling repo) must be importable, e.g.:  pip install -e ../dotz
+# dotz must be installed -- see "Installation" in the top-level README
 python examples/heat_transfer_cooling.py
 ```
 
