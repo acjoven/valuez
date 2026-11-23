@@ -10,15 +10,23 @@ one map reviewable; merge makes many maps *one universe*.
 Every edge in a `valuez` graph -- a `Relation` or an `Instantiation` -- stores
 its endpoints **by name**, not by id (`valuez/semantic.py`). So the identity that
 matters across files is a node's `name`. When two ontologies each define a node
-called `Freedom`, joining them is simply: collapse the two `Freedom` documents
-into one. Every edge that referenced `"Freedom"` in either file now points at the
-single surviving node, and the two subgraphs become connected *through* it -- no
-edge rewriting required.
+called `Temperature`, joining them is simply: collapse the two `Temperature`
+documents into one. Every edge that referenced `"Temperature"` in either file now
+points at the single surviving node, and the two subgraphs become connected
+*through* it -- no edge rewriting required.
 
-This is exactly why `examples/kant_ontology.py` and
-`examples/kierkegaard_ontology.py` were built to the same shape and deliberately
-share names (the Kierkegaard map's `MERGE_ANCHORS`): they are the fixtures that
-make a merge meaningful.
+The examples below use two small maps of the same gas, committed under
+`ontologies/` and built by `examples/merge_demo.py`:
+
+- `thermodynamics.json` — 12 concepts from chapter 44 of the Feynman Lectures,
+  which describes a gas without mentioning what it is made of.
+- `kinetic_theory.json` — 9 concepts from chapter 39, which starts from
+  molecules in motion.
+
+They share four names. `Volume` means the same thing in both. `Temperature`,
+`Pressure`, and `InternalEnergy` do not: each chapter defines them in its own
+terms. The Kant and Kierkegaard maps are the same situation at a few hundred
+nodes each (`examples/merge_universe.py`).
 
 ## What gets merged
 
@@ -30,16 +38,17 @@ make a merge meaningful.
 
 ## Aligning by meaning: aliases
 
-Exact-name matching only catches concepts spelled the same. Two traditions often
-name the same idea differently — Kant's `Soul` (the thinking subject) and
-Kierkegaard's `TheSelf` (a relation that relates itself to itself). The optional
-`aliases` argument declares such equivalences so they join too:
+Exact-name matching only catches concepts spelled the same. Two sources often
+name the same idea differently — the textbook says "perfect gas" in chapter 44
+and "ideal gas" in chapter 39, so the two maps have `PerfectGas` and `IdealGas`.
+The optional `aliases` argument declares such equivalences so they join too:
 
 ```python
 res = merge_ontologies(
-    ["ontologies/kant.json", "ontologies/kierkegaard.json"],
-    aliases=[["TheSelf", "Soul"]],          # or {"Soul": "TheSelf"}
+    ["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"],
+    aliases=[["IdealGas", "PerfectGas"]],   # or {"PerfectGas": "IdealGas"}
 )
+res.report.aliases_applied                  # {'IdealGas': ['IdealGas', 'PerfectGas']}
 ```
 
 Each group's first member (or the dict value) is the **canonical** name. Aliased
@@ -66,9 +75,11 @@ When contributors to one name disagree, `on_conflict` decides:
 Two flavors of divergence are recorded on the `MergeReport` either way:
 
 - **field conflict** — the same node has a different `definition`,
-  `ontological_status`, `label`, or `reference` in each source (e.g. `Existence`
-  is an *a priori category of modality* for Kant but an *existential task* for
-  Kierkegaard). Under `first`/`last` these resolve silently but are reported.
+  `ontological_status`, `label`, or `reference` in each source (e.g.
+  `Temperature` is *set by the heat a reversible engine absorbs* in the
+  thermodynamics map but *a measure of the mean kinetic energy of a molecule* in
+  the kinetic-theory map). Under `first`/`last` these resolve silently but are
+  reported.
 - **type conflict** — the same name is an `individual` in one source and a
   `universal` in another. Always reported; `raise` refuses it.
 
@@ -94,25 +105,40 @@ Two flavors of divergence are recorded on the `MergeReport` either way:
 ```python
 from valuez import merge_ontologies
 
-res = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+res = merge_ontologies(["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"])
 print(res.report.summary())
-res.export("ontologies/universe.json")     # optional: a derived, regenerable map
+res.export("gas_universe.json")            # optional: a derived, regenerable map
+```
+
+```
+Merged 2 sources: thermodynamics (30), kinetic_theory (18)
+Documents: 48 in -> 42 out
+Join points (common nodes joined): 4
+    InternalEnergy  <- thermodynamics, kinetic_theory  [differs: definition, reference]
+    Pressure  <- thermodynamics, kinetic_theory  [differs: definition, reference]
+    Temperature  <- thermodynamics, kinetic_theory  [differs: definition, reference]
+    Volume  <- thermodynamics, kinetic_theory  [differs: reference]
+Edges: 25 in -> 23 out (2 duplicate(s) collapsed, 2 asserted by multiple sources)
+Cross-source bridges (edges incident to a join point): 15
+Field conflicts (resolved by policy): 4
 ```
 
 Sources may be file paths, `ValueRepository` instances, or iterables of `Value`
 objects / document dicts, so you can merge committed files, in-memory `Reading`
 sessions, or a mix.
 
-See `examples/merge_universe.py` for a worked run that merges Kant + Kierkegaard,
-shows how each join point stitches the two graphs together, and renders a legible
-"seam" of just the edges incident to the shared nodes.
+See `examples/merge_demo.py` for this run end to end: it builds the two small
+maps, merges them, prints both definitions of each clashing name, and lists the
+paths the join created. `examples/merge_universe.py` does the same for the Kant
+and Kierkegaard maps and renders a "seam" of just the edges incident to the
+shared nodes.
 
 ## Referential integrity
 
 The merged universe is checked: any edge whose endpoint is not a node in the
 union is reported as a `dangling_edge` (a warning, not a hard failure, so partial
-maps still merge). Merging the two committed ontologies yields zero dangling
-edges.
+maps still merge). Merging either committed pair (the two gas maps, or Kant and
+Kierkegaard) yields zero dangling edges.
 
 ## Scope and future work
 

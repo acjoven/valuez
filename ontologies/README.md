@@ -13,18 +13,28 @@ and reviewable in git.
 
 | File | Builder | What it maps |
 | --- | --- | --- |
+| `thermodynamics.json` | `examples/merge_demo.py` | A gas described without molecules: heat, work, engines, entropy. 12 concepts from chapter 44 of the Feynman Lectures, Vol. I (ids `td_*`). |
+| `kinetic_theory.json` | `examples/merge_demo.py` | The same gas as molecules in motion. 9 concepts from chapter 39 (ids `kt_*`). |
 | `kant.json` | `examples/kant_ontology.py` | Kant's critical philosophy across the three Critiques (ids `k_*`). |
 | `kierkegaard.json` | `examples/kierkegaard_ontology.py` | Kierkegaard's existential authorship (ids `kk_*`). |
 
-`kant.json` and `kierkegaard.json` are intentionally two **independent** graphs
-that overlap by *name* (e.g. `Philosopher`, `PhilosophicalWork`, and the
-semantic collisions `Existence` / `Freedom` / `God` / `Reason`), while their ids
-are disjoint (`k_*` vs `kk_*`). They are the fixtures for the **merge** function
-(`valuez.merge_ontologies`), which folds multiple exported files into one universe
-by keying on name and resolving collisions — see
-[`../docs/merge.md`](../docs/merge.md) and `examples/merge_universe.py`. The
-merged `universe.json` is *derived* (regenerable from these two maps), so it is
-intentionally **not** committed here.
+The maps come in two pairs, one small and one large. Each pair is two
+**independent** graphs that overlap by *name* while their ids are disjoint, so
+they are the fixtures for the **merge** function (`valuez.merge_ontologies`),
+which folds multiple exported files into one universe by keying on name and
+resolving collisions.
+
+- `thermodynamics.json` and `kinetic_theory.json` share four names. `Volume`
+  means the same in both; `Temperature`, `Pressure`, and `InternalEnergy` are
+  defined differently by each. Start here: the whole merge fits on one screen
+  (`examples/merge_demo.py`).
+- `kant.json` and `kierkegaard.json` share nine, among them `Philosopher` and
+  `PhilosophicalWork` (same meaning) and `Existence` / `Freedom` / `God` /
+  `Reason` (different meanings). This is the same merge at a few hundred nodes
+  each (`examples/merge_universe.py`).
+
+See [`../docs/merge.md`](../docs/merge.md). A merged universe is *derived*
+(regenerable from its sources), so it is intentionally **not** committed here.
 
 ## Workflow
 

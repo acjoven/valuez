@@ -66,8 +66,8 @@ For sharing a model in git, export the whole store to one deterministic,
 diff-friendly JSON file and re-hydrate it later:
 
 ```python
-repo.export_ontology("ontologies/kant.json")           # sorted, stable-keyed
-repo = ValueRepository.from_ontology("ontologies/kant.json")
+repo.export_ontology("ontologies/my_map.json")         # sorted, stable-keyed
+repo = ValueRepository.from_ontology("ontologies/my_map.json")
 ```
 
 The committed `ontologies/*.json` files are the source of truth; the expanded
@@ -84,23 +84,26 @@ at the concepts they have in common:
 ```python
 from valuez import merge_ontologies
 
-res = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
-print(res.report.summary())        # join points, semantic collisions, edge dedup
-res.export("ontologies/universe.json")   # optional: a derived, regenerable map
+maps = ["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"]
+res = merge_ontologies(maps)
+print(res.report.summary())        # 4 join points, 3 with clashing definitions
+res.export("gas_universe.json")    # optional: a derived, regenerable map
 ```
 
-Conflicting definitions are resolved by policy (`first` / `last` / `raise`) and
-reported. Concepts the two traditions name differently join through curated
-aliases, and `bridges()` lists the edges that now cross the seam:
+The two maps are small (12 and 9 concepts) and describe the same gas, one
+without molecules and one starting from them. Conflicting definitions are
+resolved by policy (`first` / `last` / `raise`) and reported. Concepts the two
+sources name differently join through curated aliases, and `bridges()` lists
+the edges that now cross the seam:
 
 ```python
-aligned = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"],
-                           aliases=[["TheSelf", "Soul"]])   # or {"Soul": "TheSelf"}
-aligned.report.aliases_applied       # {"TheSelf": ["Soul", "TheSelf"]}
+aligned = merge_ontologies(maps, aliases=[["IdealGas", "PerfectGas"]])
+aligned.report.aliases_applied       # {'IdealGas': ['IdealGas', 'PerfectGas']}
 aligned.bridges()                    # edges incident to a join point
 ```
 
-See [`merge.md`](merge.md) and `examples/merge_universe.py`.
+See [`merge.md`](merge.md) and `examples/merge_demo.py`; `examples/merge_universe.py`
+merges the two large maps the same way.
 
 ### Walking the graph
 
@@ -110,10 +113,11 @@ questions over concept **name** (the same identity edges already use):
 ```python
 from valuez import Graph
 
-g = Graph.from_ontology("ontologies/kant.json")
-print(g.how("Space", "Intuition"))          # Space -is-form-of-> Intuition
-print(g.neighborhood("Freedom", hops=1).nodes)
-g.topic("Freedom", hops=1).visualize("freedom.html")
+g = Graph.from_ontology("ontologies/kinetic_theory.json")
+print(g.how("MolecularCollision", "Temperature"))
+# MolecularCollision -causes-> Pressure -depends-on-> Temperature
+print(g.neighborhood("Pressure", hops=1).nodes)
+g.topic("Pressure", hops=1).visualize("pressure.html")
 ```
 
 `Reading.graph()`, `ValueRepository.graph()`, and `MergeResult.graph()` return
@@ -128,8 +132,8 @@ behind all of that:
 ```python
 from valuez import explain, merge_ontologies
 
-universe = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
-print(universe.explain("Freedom").to_markdown())   # Kant and Kierkegaard on one page
+universe = merge_ontologies(["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"])
+print(universe.explain("Temperature").to_markdown())   # both chapters on one page
 ```
 
 `Reading.explain()` and `ValueRepository.explain()` do the same for a session or
@@ -162,13 +166,14 @@ merge created:
 ```python
 from valuez import discover, merge_ontologies
 
-res = merge_ontologies(["ontologies/kant.json", "ontologies/kierkegaard.json"])
+res = merge_ontologies(["ontologies/thermodynamics.json", "ontologies/kinetic_theory.json"])
 found = res.discover(cutoff=2)
 print(found.summary())
-# TranscendentalIdealism [kant] ~ Freedom ~ Anxiety [kierkegaard]
+# ReversibleEngine [thermodynamics] ~ Temperature ~ MeanKineticEnergy [kinetic_theory]
 ```
 
-See [`discovery.md`](discovery.md) and `examples/discovery_demo.py`.
+See [`discovery.md`](discovery.md) and `examples/merge_demo.py`;
+`examples/discovery_demo.py` runs it over the two large maps.
 
 ### Managing sources (BibTeX)
 
