@@ -1,17 +1,11 @@
-# valuez runtime dependencies.
-#
-# `dotz` (storage/query/graph) is intentionally not listed here because it is not
-# published to PyPI. Install it from GitHub:
+# Prefer installing from pyproject.toml:
 #   pip install "dotz @ git+https://github.com/acjoven/dotz.git"
-# or, when developing both, editable from a checkout next to this repo:
-#   pip install -e ../dotz
+#   pip install -e ".[dev]"
+#
+# This file mirrors the runtime + `dev` extras for environments that still
+# install with `pip install -r requirements.txt`. `dotz` is intentionally not
+# listed here because it is not published to PyPI yet.
 
 pint==0.25.3
-
-# Optional: BibTeX-backed source management (valuez.bibliography /
-# ReferenceRepository). The library degrades gracefully without it -- only the
-# BibTeX import/export/format operations require it.
 pybtex==0.26.1
-
-# Test tooling
 pytest==8.3.3
